@@ -1,0 +1,105 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.AriaLabelledTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.AriaLabelledTest</h2></header><article><br/>This test ensures we can find elements based on their aria-labelledby or aria-label attribute. We use a mock server running to serve the HTML defined in this page.<br/><p class="note">The mock server serves the content as <i>text/xml</i>, but the browser does not seem to mind.</p><br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;div id="a1"&gt;A&lt;/div&gt;
+&lt;div id="a2"&gt;
+    &lt;div&gt;A&lt;span&gt;KH&lt;span&gt;asdas&lt;div&gt;sadasd&lt;p&gt;jhsdhf&lt;/p&gt; &lt;strong&gt;B &lt;/strong&gt;&lt;/div&gt;dad&lt;/span&gt;FGH&lt;/span&gt;&lt;/div&gt;
+    asdasudia
+&lt;/div&gt;
+&lt;div id="a3"&gt;And some more&lt;/div&gt;
+&lt;button aria-labelledby="a1"&gt;Button 1&lt;/button&gt;
+&lt;input name="f" aria-labelledby="a2" value="Piet"&gt;
+&lt;div aria-labelledby="a3" value="Jan"&gt;
+&lt;input name="f2" aria-label="The button" value="Add"&gt;
+&lt;div name="f3" aria-label="The red button"&gt;Remove&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;div id="a1"&gt;A&lt;/div&gt;
+&lt;div id="a2"&gt;
+    &lt;div&gt;A&lt;span&gt;KH&lt;span&gt;asdas&lt;div&gt;sadasd&lt;p&gt;jhsdhf&lt;/p&gt; &lt;strong&gt;B &lt;/strong&gt;&lt;/div&gt;dad&lt;/span&gt;FGH&lt;/span&gt;&lt;/div&gt;
+    asdasudia
+&lt;/div&gt;
+&lt;div id="a3"&gt;And some more&lt;/div&gt;
+&lt;button aria-labelledby="a1"&gt;Button 1&lt;/button&gt;
+&lt;input name="f" aria-labelledby="a2" value="Piet"&gt;
+&lt;div aria-labelledby="a3" value="Jan"&gt;
+&lt;input name="f2" aria-label="The button" value="Add"&gt;
+&lt;div name="f3" aria-label="The red button"&gt;Remove&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.114.223:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.114.223:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">exact match of aria-labelledby</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>B</td>
+		<td><span class="pass">Piet</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">contains match of aria-labelledby</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>more</td>
+		<td><span class="pass">Jan</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">exact match of aria-label</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>The button</td>
+		<td><span class="pass">Add</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">contains match of aria-label</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>red button</td>
+		<td><span class="pass">Remove</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+</article></body></html>

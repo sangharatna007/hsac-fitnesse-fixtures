@@ -1,0 +1,98 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.SubmitResetButtonTests</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.SubmitResetButtonTests</h2></header><article><br/>This test ensures we can work with reset/submit buttons that have no explicit text/value.<br/><br/><span class="meta">variable defined: HTML_INPUT1= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="a" type="submit"&gt;
+&lt;input name="z" type="reset"&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><span class="meta">variable defined: HTML_INPUT2= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="b" type="submit" value="Reload"&gt;
+&lt;input name="y" type="reset" value="Herstel"&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="a" type="submit"&gt;
+&lt;input name="z" type="reset"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="b" type="submit" value="Reload"&gt;
+&lt;input name="y" type="reset" value="Herstel"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.114.223:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td>1</td>
+	</tr>
+</table>
+<br/><br/>First we check page using inputs without values.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td>$url->[http://172.17.114.223:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">is enabled</span></td>
+		<td>Submit</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">is enabled</span></td>
+		<td>Reset</td>
+	</tr>
+</table>
+<br/>Then we check page using inputs with values.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="2">script</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td>$url->[http://172.17.114.223:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">is enabled</span></td>
+		<td>Reload</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">is enabled</span></td>
+		<td>Herstel</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/><br/></article></body></html>
