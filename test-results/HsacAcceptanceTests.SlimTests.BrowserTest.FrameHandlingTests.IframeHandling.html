@@ -1,0 +1,288 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.FrameHandlingTests.IframeHandling</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.FrameHandlingTests.IframeHandling</h2></header><article><br/>This test ensures we can find elements inside iframes.<br/><br/><span class="meta">variable defined: HTML_MAIN= {{{
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;input name="remove" type="button" value="Remove"&gt;
+&lt;iframe id="iframe1" src="frame1.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="iframe2" src="frame2.html"&gt;&lt;/iframe&gt;
+&lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
+&lt;label&gt;Upload 1 button&lt;input name="fileChooser1" type="file"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><span class="meta">variable defined: HTML_FRAME1= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove1" type="button" value="Remove1"&gt;
+&lt;iframe id="iframe1_1" src="frame3.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="iframe1_2" src="frame4.html"&gt;&lt;/iframe&gt;
+&lt;label&gt;Add button1&lt;input name="add" type="button" value="Add1"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><span class="meta">variable defined: HTML_FRAME2= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove2" type="button" value="Remove2"&gt;
+&lt;label&gt;Add button2&lt;input name="add" type="button" value="Add2"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><span class="meta">variable defined: HTML_FRAME3= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove3" type="button" value="Remove3"&gt;
+&lt;label&gt;Add button3&lt;input name="add" type="button" value="Add3"&gt;&lt;/label&gt;
+&lt;label&gt;Upload button&lt;input name="fileChooser" type="file"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><span class="meta">variable defined: HTML_FRAME4= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove4" type="button" value="Remove4"&gt;
+&lt;label&gt;Add button4&lt;input name="add" type="button" value="Add4"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><br/><br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td colspan="3"><pre>
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;input name="remove" type="button" value="Remove"&gt;
+&lt;iframe id="iframe1" src="frame1.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="iframe2" src="frame2.html"&gt;&lt;/iframe&gt;
+&lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
+&lt;label&gt;Upload 1 button&lt;input name="fileChooser1" type="file"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove1" type="button" value="Remove1"&gt;
+&lt;iframe id="iframe1_1" src="frame3.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="iframe1_2" src="frame4.html"&gt;&lt;/iframe&gt;
+&lt;label&gt;Add button1&lt;input name="add" type="button" value="Add1"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+		<td>for</td>
+		<td>GET: /FitNesseMock/frame1.html</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove2" type="button" value="Remove2"&gt;
+&lt;label&gt;Add button2&lt;input name="add" type="button" value="Add2"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+		<td>for</td>
+		<td>GET: /FitNesseMock/frame2.html</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove3" type="button" value="Remove3"&gt;
+&lt;label&gt;Add button3&lt;input name="add" type="button" value="Add3"&gt;&lt;/label&gt;
+&lt;label&gt;Upload button&lt;input name="fileChooser" type="file"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+		<td>for</td>
+		<td>GET: /FitNesseMock/frame3.html</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove4" type="button" value="Remove4"&gt;
+&lt;label&gt;Add button4&lt;input name="add" type="button" value="Add4"&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+		<td>for</td>
+		<td>GET: /FitNesseMock/frame4.html</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.153:8000/FitNesseMock]</td>
+		<td colspan="3">get mock server url</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4"><span class="pass">file fixture</span></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$file&lt;-[<a href="files/fileFixture/testUpload.txt">testUpload.txt</a>]</td>
+		<td>create</td>
+		<td>testUpload.txt</td>
+		<td>containing</td>
+		<td>Hallo</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.0.153:8000/FitNesseMock]/main</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>page title</td>
+		<td colspan="2"><span class="pass">Start Page Title</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Add button</td>
+		<td><span class="pass">Add</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Add button1</td>
+		<td><span class="pass">Add1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Add button2</td>
+		<td><span class="pass">Add2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Add button3</td>
+		<td><span class="pass">Add3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Add button4</td>
+		<td><span class="pass">Add4</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Remove1</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Remove3</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Remove4</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Remove2</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Remove</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">select file</span></td>
+		<td colspan="3">$file->[<a href="files/fileFixture/testUpload.txt">testUpload.txt</a>]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">select file</span></td>
+		<td>$file->[<a href="files/fileFixture/testUpload.txt">testUpload.txt</a>]</td>
+		<td>for</td>
+		<td>Upload button</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">select file</span></td>
+		<td>$file->[<a href="files/fileFixture/testUpload.txt">testUpload.txt</a>]</td>
+		<td>for</td>
+		<td>Upload 1 button</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="3">Add</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="3">Add3</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">switch to frame</span></td>
+		<td colspan="3">id=iframe2</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="4">switch to parent frame</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">switch to frame</span></td>
+		<td colspan="3">id=iframe1</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Add4</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Add3</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">switch to frame</span></td>
+		<td colspan="3">id=iframe1_2</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Add4</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>click if available</td>
+		<td colspan="2">Add3</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>switch to frame</td>
+		<td colspan="2">id=iframe2</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td colspan="4">switch to default content</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">switch to frame</span></td>
+		<td colspan="3">id=iframe2</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>click if available</td>
+		<td colspan="2">Add4</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td colspan="4">switch to default content</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td colspan="2"><span class="pass">verify all responses served</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/><br/></article></body></html>
