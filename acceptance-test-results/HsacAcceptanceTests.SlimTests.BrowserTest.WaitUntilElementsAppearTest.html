@@ -1,0 +1,192 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.WaitUntilElementsAppearTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.WaitUntilElementsAppearTest</h2></header><article><br/>This test ensures we can wait for elements explicitly (which means test will stop on timeout), but also implicitly (which will cause exception).<br/><br/><br/><span class="meta">variable defined: HTML1= {{{
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;input name="remove" type="button" value="Remove"&gt;
+&lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
+&lt;a id="link" href="#"&gt;My link&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><span class="meta">variable defined: HTML2= {{{
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;input name="remove" type="button" value="Remove"&gt;
+&lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
+&lt;label id="addL" for="inp2"&gt;Add 2 button&lt;/label&gt;&lt;input id="inp2" value="Toevoegen"&gt;
+&lt;a id="link" href="#"&gt;My link&lt;/a&gt;
+&lt;script type="text/javascript"&gt;
+    window.onload = function() {
+		setTimeout(function() { document.title = "Changed Page Title"; }, 500);
+		setTimeout(function() { document.getElementById("link").innerHTML = "Hallo link\n"; }, 1500);
+		setTimeout(function() { document.getElementsByName("add")[0].setAttribute("value", "Add more"); }, 2000);
+		setTimeout(function() { document.getElementById("addL").innerHTML = "Button to add more"; }, 2500);
+		setTimeout(function() { document.getElementsByName("remove")[0].setAttribute("value", "Remove more"); }, 2500);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;input name="remove" type="button" value="Remove"&gt;
+&lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
+&lt;a id="link" href="#"&gt;My link&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;input name="remove" type="button" value="Remove"&gt;
+&lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
+&lt;label id="addL" for="inp2"&gt;Add 2 button&lt;/label&gt;&lt;input id="inp2" value="Toevoegen"&gt;
+&lt;a id="link" href="#"&gt;My link&lt;/a&gt;
+&lt;script type="text/javascript"&gt;
+    window.onload = function() {
+		setTimeout(function() { document.title = "Changed Page Title"; }, 500);
+		setTimeout(function() { document.getElementById("link").innerHTML = "Hallo link\n"; }, 1500);
+		setTimeout(function() { document.getElementsByName("add")[0].setAttribute("value", "Add more"); }, 2000);
+		setTimeout(function() { document.getElementById("addL").innerHTML = "Button to add more"; }, 2500);
+		setTimeout(function() { document.getElementsByName("remove")[0].setAttribute("value", "Remove more"); }, 2500);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.191:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.0.191:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>page title</td>
+		<td colspan="2"><span class="pass">Start Page Title</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Add button</td>
+		<td><span class="pass">Add</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>click if available</td>
+		<td colspan="2">My link</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>seconds before timeout</td>
+		<td colspan="2"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>seconds before page load timeout</td>
+		<td colspan="2"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>seconds before page load timeout</td>
+		<td colspan="3">4</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>seconds before timeout</td>
+		<td colspan="2"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>seconds before page load timeout</td>
+		<td colspan="2"><span class="pass">4</span></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="4"><span class="pass">refresh</span></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td><span class="pass">wait for page</span></td>
+		<td colspan="3">Changed Page Title</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Hallo link</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Add more</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Button to add more</td>
+		<td><span class="pass">Toevoegen</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">non-existing item's value is null</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>delete</td>
+		<td><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">text may be value or actual text, and will be trimmed</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">wait for tag</span></td>
+		<td>a</td>
+		<td>with text</td>
+		<td>Hallo link</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">wait for tag</span></td>
+		<td>input</td>
+		<td>with text</td>
+		<td>Remove more</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">wait for visible</span></td>
+		<td colspan="3">Add button</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>click if available</td>
+		<td colspan="2">My link</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+</article></body></html>
