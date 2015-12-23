@@ -1,0 +1,59 @@
+<html><head><title>HsacExamples.SlimTests.HttpTests.HttpGetTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.HttpTests.HttpGetTest</h2></header><article><br/><h2>Http GET</h2>
+<br/>Performs HTTP GET adding values as parameters in the query string.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">xml http test</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>90210</td>
+		<td>for</td>
+		<td>ZIP</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">get from</span></td>
+		<td colspan="3"><a href="http://wsf.cdyne.com/WeatherWS/Weather.asmx">http://wsf.cdyne.com/WeatherWS/Weather.asmx</a>/GetCityWeatherByZIP</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2"><span class="pass">200</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">request</td>
+	<td>http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityWeatherByZIP?ZIP=90210</td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">response</td>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;WeatherReturn xmlns=&quot;http://ws.cdyne.com/WeatherWS/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;Success&gt;true&lt;/Success&gt;
+    &lt;ResponseText&gt;City Found&lt;/ResponseText&gt;
+    &lt;State&gt;CA&lt;/State&gt;
+    &lt;City&gt;Beverly Hills&lt;/City&gt;
+    &lt;WeatherStationCity&gt;Van Nuys&lt;/WeatherStationCity&gt;
+    &lt;WeatherID&gt;4&lt;/WeatherID&gt;
+    &lt;Description&gt;Sunny&lt;/Description&gt;
+    &lt;Temperature&gt;68&lt;/Temperature&gt;
+    &lt;RelativeHumidity&gt;54&lt;/RelativeHumidity&gt;
+    &lt;Wind&gt;CALM&lt;/Wind&gt;
+    &lt;Pressure&gt;29.89R&lt;/Pressure&gt;
+    &lt;Visibility/&gt;
+    &lt;WindChill/&gt;
+    &lt;Remarks/&gt;
+&lt;/WeatherReturn&gt;
+</pre></td></tr>
+	<tr class="slimRowColor5">
+		<td>register prefix</td>
+		<td>weather</td>
+		<td>for namespace</td>
+		<td><a href="http://ws.cdyne.com/WeatherWS/">http://ws.cdyne.com/WeatherWS/</a></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>xPath</td>
+		<td>//weather:City/text()</td>
+		<td><span class="pass">Beverly Hills</span></td>
+	</tr>
+</table>
+</article></body></html>
