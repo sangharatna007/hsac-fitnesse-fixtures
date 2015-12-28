@@ -26,14 +26,14 @@ The first example below calls a weather service, similar to <a href="HsacExample
 		<td>Vancouver International Air-Port, B. C.</td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;CurrentWeather&gt;
     &lt;Location&gt;Vancouver International Air-Port, B. C., Canada (CYVR) 49-11N 123-10W 2M&lt;/Location&gt;
-    &lt;Time&gt;Dec 24, 2015 - 04:00 AM EST / 2015.12.24 0900 UTC&lt;/Time&gt;
-    &lt;Wind&gt;from the E (080 degrees) at 8 MPH (7 KT):0&lt;/Wind&gt;
-    &lt;Visibility&gt;15 mile(s):0&lt;/Visibility&gt;
-    &lt;SkyConditions&gt;overcast&lt;/SkyConditions&gt;
-    &lt;Temperature&gt;37 F (3 C)&lt;/Temperature&gt;
-    &lt;DewPoint&gt;35 F (2 C)&lt;/DewPoint&gt;
-    &lt;RelativeHumidity&gt;93%&lt;/RelativeHumidity&gt;
-    &lt;Pressure&gt;29.45 in. Hg (997 hPa)&lt;/Pressure&gt;
+    &lt;Time&gt;Dec 28, 2015 - 04:00 PM EST / 2015.12.28 2100 UTC&lt;/Time&gt;
+    &lt;Wind&gt;from the NNW (330 degrees) at 7 MPH (6 KT):0&lt;/Wind&gt;
+    &lt;Visibility&gt;12 mile(s):0&lt;/Visibility&gt;
+    &lt;SkyConditions&gt;mostly cloudy&lt;/SkyConditions&gt;
+    &lt;Temperature&gt;39 F (4 C)&lt;/Temperature&gt;
+    &lt;DewPoint&gt;33 F (1 C)&lt;/DewPoint&gt;
+    &lt;RelativeHumidity&gt;80%&lt;/RelativeHumidity&gt;
+    &lt;Pressure&gt;30.13 in. Hg (1020 hPa)&lt;/Pressure&gt;
     &lt;Status&gt;Success&lt;/Status&gt;
 &lt;/CurrentWeather&gt;
 </pre></span></td>
@@ -96,13 +96,13 @@ Validating the check call gives the expected response is similar to checking the
 		<td>USD</td>
 		<td> <span class="fit_grey">-1.0</span></td>
 		<td> <span class="fit_grey">2.8387</span></td>
-		<td class="fail">0.90 < <b>-0.35227392820657344</b> < 1.10</td>
+		<td class="pass">-0.50 < <b>-0.35227392820657344</b> < 1.10</td>
 	</tr>
 	<tr>
 		<td>EUR</td>
 		<td> <span class="fit_grey">-1.0</span></td>
 		<td> <span class="fit_grey">3.4528</span></td>
-		<td class="fail">0.8 < <b>-0.2896200185356812</b> < 1.01</td>
+		<td class="pass">-0.5 < <b>-0.2896200185356812</b> < 1.01</td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita' fixture is another single class: <pre>
@@ -195,7 +195,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">186</span></td>
+		<td> <span class="fit_grey">181</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;ConversionRateResponse xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
@@ -213,7 +213,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">887</span></td>
+		<td> <span class="fit_grey">842</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
