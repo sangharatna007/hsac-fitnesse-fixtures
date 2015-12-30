@@ -1,4 +1,4 @@
-<html><head><title>HsacAcceptanceTests.SlimTests.MockXmlServerTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.MockXmlServerTest</h2></header><article><br/>Here we use FitNesse as a HTTP server so we can control which responses the application being tested receives.<br/><br/><h2>No Messages</h2>
+<html><head><title>HsacAcceptanceTests.SlimTests.MockXmlServerTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.MockXmlServerTest</h2></header><article><br/>Here we use FitNesse as a HTTP server so we can control which responses the application being tested receives.<br/><br/><h2>No Messages</h2>
 <br/><p class="note">The messages report table does not fail a test, it just shows the current status. It will be have an 'ignored' status when no messages were expected nor served.</p><br/><table>
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
@@ -21,7 +21,7 @@
 		<td>201</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.4.102:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -34,7 +34,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.4.102:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -65,7 +65,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.4.102:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -113,7 +113,7 @@
 		<td><pre>&lt;bye/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.4.102:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -126,7 +126,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.4.102:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -142,7 +142,7 @@
 		<td>post</td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.4.102:8000/FitNesseMock]</td>
 	<td>false</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>

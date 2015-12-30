@@ -1,4 +1,4 @@
-<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.FrameHandlingTests.FrameHandling</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.FrameHandlingTests.FrameHandling</h2></header><article><br/>This test ensures we can find elements inside frames.<br/><br/><br/><span class="meta">variable defined: HTML_MAIN= {{{
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.FrameHandlingTests.FrameHandling</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.FrameHandlingTests.FrameHandling</h2></header><article><br/>This test ensures we can find elements inside frames.<br/><br/><br/><span class="meta">variable defined: HTML_MAIN= {{{
 &lt;!DOCTYPE html&gt;
 &lt;frameset cols="50%,*"&gt;
 &lt;frame name="frame1" src="frame1.html"&gt;
@@ -101,7 +101,7 @@
 		<td>GET: /FitNesseMock/frame4.html</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.145:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.4.102:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -125,7 +125,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3">$url->[http://172.17.0.145:8000/FitNesseMock]/main</td>
+		<td colspan="3">$url->[http://172.17.4.102:8000/FitNesseMock]/main</td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td>seconds before timeout</td>
