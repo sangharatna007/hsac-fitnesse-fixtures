@@ -52,6 +52,25 @@
             </button>
         </td>
     </tr><!-- end ngRepeat: item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage() --><tr ng-repeat="item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage()" ng-click="vm.onTableRowClickHandler(item)" class="table-animation ng-scope">
+        <td style="max-width:160px;word-wrap:break-word" attribute="name" at-implicit="" sortable="" initial-sorting="asc" class="ng-binding">gcv</td>
+        <td attribute="country" at-implicit="" sortable="" class="ng-binding">Aruba</td>
+        <td attribute="year_formed" at-implicit="" sortable="" class="56px ng-binding" title="Year">2014</td>
+        <td attribute="genre.name" sortable="" title="Genre" class="ng-binding">
+            RNB
+        </td>
+        <td class="56px">
+            <button ui-sref="artist-form({artist_id:item.id})" class="btn btn-primary btn-xs" id="edit_1774"><i class="glyphicon glyphicon-pencil"> </i> Edit
+            </button>
+        </td>
+        <td class="56px">
+            <button ng-disabled="$state.current.name != 'index'" ng-click="vm.onDeleteButtonClick(item.id)" class="btn btn-danger btn-xs" disabled="disabled"><i class="glyphicon glyphicon-remove-sign"></i> Delete
+            </button>
+        </td>
+        <td class="56px">
+            <button ui-sref="artist-details({artist_id:item.id})" class="btn btn-info btn-xs" id="details_1774"><i class="glyphicon glyphicon-music"></i> Details
+            </button>
+        </td>
+    </tr><!-- end ngRepeat: item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage() --><tr ng-repeat="item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage()" ng-click="vm.onTableRowClickHandler(item)" class="table-animation ng-scope">
         <td style="max-width:160px;word-wrap:break-word" attribute="name" at-implicit="" sortable="" initial-sorting="asc" class="ng-binding">Justin Timberlake</td>
         <td attribute="country" at-implicit="" sortable="" class="ng-binding">United States</td>
         <td attribute="year_formed" at-implicit="" sortable="" class="56px ng-binding" title="Year">2004</td>
@@ -182,25 +201,6 @@
         </td>
         <td class="56px">
             <button ui-sref="artist-details({artist_id:item.id})" class="btn btn-info btn-xs" id="details_1725"><i class="glyphicon glyphicon-music"></i> Details
-            </button>
-        </td>
-    </tr><!-- end ngRepeat: item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage() --><tr ng-repeat="item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage()" ng-click="vm.onTableRowClickHandler(item)" class="table-animation ng-scope">
-        <td style="max-width:160px;word-wrap:break-word" attribute="name" at-implicit="" sortable="" initial-sorting="asc" class="ng-binding">Missy Elliot</td>
-        <td attribute="country" at-implicit="" sortable="" class="ng-binding">United States</td>
-        <td attribute="year_formed" at-implicit="" sortable="" class="56px ng-binding" title="Year">1997</td>
-        <td attribute="genre.name" sortable="" title="Genre" class="ng-binding">
-            Hip Hop
-        </td>
-        <td class="56px">
-            <button ui-sref="artist-form({artist_id:item.id})" class="btn btn-primary btn-xs" id="edit_47"><i class="glyphicon glyphicon-pencil"> </i> Edit
-            </button>
-        </td>
-        <td class="56px">
-            <button ng-disabled="$state.current.name != 'index'" ng-click="vm.onDeleteButtonClick(item.id)" class="btn btn-danger btn-xs" disabled="disabled"><i class="glyphicon glyphicon-remove-sign"></i> Delete
-            </button>
-        </td>
-        <td class="56px">
-            <button ui-sref="artist-details({artist_id:item.id})" class="btn btn-info btn-xs" id="details_47"><i class="glyphicon glyphicon-music"></i> Details
             </button>
         </td>
     </tr><!-- end ngRepeat: item in artistPagination.list | orderBy:predicate:descending | limitTo:fromPage() | limitTo:toPage() -->
