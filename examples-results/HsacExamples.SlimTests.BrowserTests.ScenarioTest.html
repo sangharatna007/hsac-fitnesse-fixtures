@@ -1,9 +1,9 @@
-<html><head><title>HsacExamples.SlimTests.BrowserTests.ScenarioTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.7.2.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.ScenarioTest</h2></header><article><br/><h1>Website testing using <i>scenario</i> and BrowserTest</h1>
+<html><head><title>HsacExamples.SlimTests.BrowserTests.ScenarioTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.ScenarioTest</h2></header><article><br/><h1>Website testing using <i>scenario</i> and BrowserTest</h1>
 <br/><br/>On this page we test whether we check the prices of a couple of houses for sale in Utrecht, The Netherlands. <br/>This test continues where <a href="HsacExamples.SlimTests.BrowserTests.ScriptTest">ScriptTest</a> left of. It uses a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> to define a parameterized script.<br/>This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row.<br/><br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
 		<td>check original price _</td>
-		<td colspan="2">address, city, price, originalPrice</td>
+		<td colspan="2">address, city</td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td>open</td>
@@ -75,7 +75,7 @@
 	<tr class="slimRowTitle">
 		<td>scenario</td>
 		<td>check original price _</td>
-		<td colspan="2">address, city, price, originalPrice</td>
+		<td colspan="2">address, city</td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
@@ -131,7 +131,7 @@
 	<tr class="slimRowTitle">
 		<td>scenario</td>
 		<td>check original price _</td>
-		<td colspan="2">address, city, price, originalPrice</td>
+		<td colspan="2">address, city</td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
