@@ -1,0 +1,279 @@
+<html><head><title>HsacExamples.SlimTests.BrowserTests.HeuristicVsTechnicalSelectors</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.HeuristicVsTechnicalSelectors</h2></header><article><br/>This page shows the same test twice: once using the heuristics in BrowserTest, and then using <a href="HsacExamples.SlimTests.BrowserTests.TechnicalSelectors">technical selectors</a>. In both cases we will be booking a trip using Expedia. Because Expedia is not the fastest of sites both scripts also showcase that BrowserTest waits for elements to apear, without the need for explicit 'wait' operations. Unfortunately the speed of Expedia also means this page is quite slow to complete.<br/><br/>We believe this comparisson will highlight why the heuristics are a good idea: a more readable (and maintainable) test without the need for custom code (like 'page objects') or extensive 'scenario libraries' just to make test scripts readable. Tests using the heuristics are easier to write, and to understand, <i>and</i> do not require a completed implementation before they can be written. <br/><br/>The heuristics based test is something you can create based on a <i>functional</i> understanding of the application (e.g. the wireframes of an application). This can be done before, or in parallel with, implementation of the application. Furthermore this also makes for more robust tests: only changes the affect the customer's journey will impact the tests, most technical changes will not require maintenance re-work on the test set.<br/>The test using technical selectors require knowledge on the various way an element can be selected using Selenium and can only be created after implementation, because only then will implementation details like ids and classes be known. Writing it takes quite a bit of puzzeling through the site's HTML and therefore creation of a test using this approach takes more time. Furthermore technical changes, without real end-user impact, will probably require maintenance effort to ensure the test keeps working. On the other: hand the execution time of this type of test will be a bit shorter than for the heuristics one (especially in other browsers than Chrome). BrowserTest does not have to try various options to locate elements, the test's authors have done that work. <br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Some common setup</p>
+	<div><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td colspan="2">open Expedia.com</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>open</td>
+		<td colspan="2"><a href="http://expedia.com">http://expedia.com</a></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="2"><p class="note">Expedia might route us to a localized version of the site </p></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>click if available</td>
+		<td>link=Continue to the U.S. site at Expedia.com</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>cleanup for next test</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td><p class="note">Cleanup for fresh start of next test</p></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td colspan="2">close tab</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td colspan="2">clear local storage</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td colspan="2">delete all cookies</td>
+	</tr>
+</table>
+<br/></div>
+</div>
+<h2>Heuristics Based</h2>
+We first show a test attempting to use Expedia.com to look for a flight, and a suite in a nice hotel, for a trip to New York making use of BrowserTest's heuristics to identify controls in the application. These heuristics allow use to use the texts displayed on the screen, or the descriptions provided to assist people with visual impairments (e.g. screen readers). <br/><br/>This version shows a test can be understood, and even written, by people without deep technical knowledge of HTML and various ways elements can be selected using Selenium.<br/><table>
+	<tr>
+		<td>storyboard</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="scenario closed">
+		<td colspan="4" class="pass">open Expedia.com</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td colspan="2">open Expedia.com</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="2"><a href="http://expedia.com">http://expedia.com</a></td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2.0_1.png"><img src="files/screenshots/storyboard/20160102-223033/2.0_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2.0_1.png" height="200"/></a></td></tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="2"><p class="note">Expedia might route us to a localized version of the site </p></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>click if available</td>
+		<td>link=Continue to the U.S. site at Expedia.com</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2.0_3.png"><img src="files/screenshots/storyboard/20160102-223033/2.0_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2.0_3.png" height="200"/></a></td><td>false</td></tr>
+</table></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>Amsterdam</td>
+		<td>as</td>
+		<td>Flying from</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_2.png"><img src="files/screenshots/storyboard/20160102-223033/2_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_2.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>New York</td>
+		<td>as</td>
+		<td>Flying to</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_3.png"><img src="files/screenshots/storyboard/20160102-223033/2_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_3.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>11/8/2016</td>
+		<td>as</td>
+		<td>Departing</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_4.png"><img src="files/screenshots/storyboard/20160102-223033/2_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_4.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>11/15/2016</td>
+		<td>as</td>
+		<td>Returning</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_5.png"><img src="files/screenshots/storyboard/20160102-223033/2_5.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_5.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">select</span></td>
+		<td>2</td>
+		<td>as</td>
+		<td>Adults</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_6.png"><img src="files/screenshots/storyboard/20160102-223033/2_6.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_6.png" height="200"/></a></td></tr>
+	<tr>
+		<td>note</td>
+		<td colspan="3"><p class="note">Searching may take a while so we set a longer timeout                                                  </p></td>
+	</tr>
+	<tr>
+		<td>seconds before timeout</td>
+		<td colspan="3">30</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_8.png"><img src="files/screenshots/storyboard/20160102-223033/2_8.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_8.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Search</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_9.png"><img src="files/screenshots/storyboard/20160102-223033/2_9.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_9.png" height="200"/></a></td></tr>
+	<tr>
+		<td>click <span class="error"><div><div>Timed-out waiting (after 30s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException.html">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout.png"><img src="files/screenshots/timeouts/BrowserTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout.png" height="200"/></a></div></div></span></td>
+		<td colspan="3">Broadway - Times Square</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_10.png"><img src="files/screenshots/storyboard/20160102-223033/2_10.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_10.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Star Rating</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_11.png"><img src="files/screenshots/storyboard/20160102-223033/2_11.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_11.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">The Peninsula New York</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_12.png"><img src="files/screenshots/storyboard/20160102-223033/2_12.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_12.png" height="200"/></a></td></tr>
+	<tr>
+		<td colspan="4"><span class="pass">switch to next tab</span></td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_13.png"><img src="files/screenshots/storyboard/20160102-223033/2_13.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_13.png" height="200"/></a></td></tr>
+	<tr>
+		<td>note</td>
+		<td colspan="3"><p class="note">The next two actions make use of the accessibility features of Expedia (i.e. its screen reader support)</p></td>
+	</tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Switch main photo to next photo</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_15.png"><img src="files/screenshots/storyboard/20160102-223033/2_15.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_15.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Select Junior, Executive Suite, 1 King Bed with Sofabed</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_16.png"><img src="files/screenshots/storyboard/20160102-223033/2_16.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_16.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">wait for visible</span></td>
+		<td colspan="3">Now select your departing flight</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2_17.png"><img src="files/screenshots/storyboard/20160102-223033/2_17.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2_17.png" height="200"/></a></td></tr>
+	<tr class="scenario closed">
+		<td colspan="4" class="pass">cleanup for next test</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>cleanup for next test</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td><p class="note">Cleanup for fresh start of next test</p></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td colspan="2"><span class="pass">close tab</span></td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2.1_2.png"><img src="files/screenshots/storyboard/20160102-223033/2.1_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2.1_2.png" height="200"/></a></td></tr>
+	<tr class="slimRowColor3">
+		<td colspan="2">clear local storage</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2.1_3.png"><img src="files/screenshots/storyboard/20160102-223033/2.1_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2.1_3.png" height="200"/></a></td></tr>
+	<tr class="slimRowColor3">
+		<td colspan="2">delete all cookies</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/2.1_4.png"><img src="files/screenshots/storyboard/20160102-223033/2.1_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/2.1_4.png" height="200"/></a></td></tr>
+</table></td></tr>
+</table>
+<h2>Technical Selector Based</h2>
+This section will perform the same test as the previous one, verifying a hotel room can be selected to be booked using Expedia.com. But this time no heuristics are used but controls are identified using <a href="HsacExamples.SlimTests.BrowserTests.TechnicalSelectors">'technical selectors'</a>.<br/>Although the identifiers used inside Expedia's HTML are quite descriptive this test is not as easy to understand as the previous one. Writing it takes quite a bit of puzzeling through the site's HTML and (technical) knowledge on how to find elements. So creation of the test takes more time using this approach. The execution time of this version of the test will be a bit shorter than the previous one. The fixture code does not have to try various options to locate elements, the test's author has done that work. The fact one specific approach to find an element is used makes the test more fragile: a change in identifier or page structure will probably mean the element can no longer be found.<br/><br/>A script using these selector does not have to be as 'technical' as this example. FitNesse's scenario's<a title="create page" href="FitNesse.FullReferenceGuide.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> may be used to provide a layer of abstraction on top of the actual selectors. Or custom Java code can be used to provide a similar abstraction. But either of these approaches will also introduce an extra layer of complexity to be maintained, and understood, as part of the test set.<br/><table>
+	<tr>
+		<td>storyboard</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="scenario closed">
+		<td colspan="4" class="pass">open Expedia.com</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td colspan="2">open Expedia.com</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="2"><a href="http://expedia.com">http://expedia.com</a></td>
+	<td><a href="files/screenshots/storyboard/20160102-223338/3.0_1.png"><img src="files/screenshots/storyboard/20160102-223338/3.0_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223338/3.0_1.png" height="200"/></a></td></tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="2"><p class="note">Expedia might route us to a localized version of the site </p></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>click if available</td>
+		<td>link=Continue to the U.S. site at Expedia.com</td>
+	<td><a href="files/screenshots/storyboard/20160102-223338/3.0_3.png"><img src="files/screenshots/storyboard/20160102-223338/3.0_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223338/3.0_3.png" height="200"/></a></td><td>false</td></tr>
+</table></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>Amsterdam</td>
+		<td>as</td>
+		<td>id=package-origin</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_2.png"><img src="files/screenshots/storyboard/20160102-223033/3_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_2.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>New York</td>
+		<td>as</td>
+		<td>id=package-destination</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_3.png"><img src="files/screenshots/storyboard/20160102-223033/3_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_3.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>11/8/2016</td>
+		<td>as</td>
+		<td>id=package-departing</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_4.png"><img src="files/screenshots/storyboard/20160102-223033/3_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_4.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">enter</span></td>
+		<td>11/15/2016</td>
+		<td>as</td>
+		<td>id=package-returning</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_5.png"><img src="files/screenshots/storyboard/20160102-223033/3_5.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_5.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">select</span></td>
+		<td>2</td>
+		<td>as</td>
+		<td>id=package-1-adults</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_6.png"><img src="files/screenshots/storyboard/20160102-223033/3_6.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_6.png" height="200"/></a></td></tr>
+	<tr>
+		<td>seconds before timeout</td>
+		<td colspan="3">30</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_7.png"><img src="files/screenshots/storyboard/20160102-223033/3_7.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_7.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">id=search-button</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_8.png"><img src="files/screenshots/storyboard/20160102-223033/3_8.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_8.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">id=id_NeighborhoodRegionName800077</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_9.png"><img src="files/screenshots/storyboard/20160102-223033/3_9.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_9.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">link=Star Rating</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_10.png"><img src="files/screenshots/storyboard/20160102-223033/3_10.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_10.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">partialLink=The Peninsula New York</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_11.png"><img src="files/screenshots/storyboard/20160102-223033/3_11.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_11.png" height="200"/></a></td></tr>
+	<tr>
+		<td colspan="4"><span class="pass">switch to next tab</span></td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_12.png"><img src="files/screenshots/storyboard/20160102-223033/3_12.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_12.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">css=.jumbo-image-next>a</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_13.png"><img src="files/screenshots/storyboard/20160102-223033/3_13.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_13.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">xpath=//span[text()='Select Junior, Executive Suite, 1 King Bed with Sofabed']/../..</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_14.png"><img src="files/screenshots/storyboard/20160102-223033/3_14.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_14.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">wait for visible</span></td>
+		<td colspan="3">id=BYOT-DepTitle</td>
+	<td><a href="files/screenshots/storyboard/20160102-223033/3_15.png"><img src="files/screenshots/storyboard/20160102-223033/3_15.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223033/3_15.png" height="200"/></a></td></tr>
+	<tr class="scenario closed">
+		<td colspan="4" class="pass">cleanup for next test</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>cleanup for next test</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td><p class="note">Cleanup for fresh start of next test</p></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td colspan="2"><span class="pass">close tab</span></td>
+	<td><a href="files/screenshots/storyboard/20160102-223338/3.1_2.png"><img src="files/screenshots/storyboard/20160102-223338/3.1_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223338/3.1_2.png" height="200"/></a></td></tr>
+	<tr class="slimRowColor3">
+		<td colspan="2">clear local storage</td>
+	<td><a href="files/screenshots/storyboard/20160102-223338/3.1_3.png"><img src="files/screenshots/storyboard/20160102-223338/3.1_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223338/3.1_3.png" height="200"/></a></td></tr>
+	<tr class="slimRowColor3">
+		<td colspan="2">delete all cookies</td>
+	<td><a href="files/screenshots/storyboard/20160102-223338/3.1_4.png"><img src="files/screenshots/storyboard/20160102-223338/3.1_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-223338/3.1_4.png" height="200"/></a></td></tr>
+</table></td></tr>
+</table>
+<br/><br/>Showing the same test using these two approaches on a single page makes it clear why we believe the heuristics provide a lot of added value. But in writing tests you are not limited to using only the heuristics: the technical selectors are at your disposal. Even in a single test one can combine the two approaches. Use the approach that suites your testing needs!<br/></article></body></html>
