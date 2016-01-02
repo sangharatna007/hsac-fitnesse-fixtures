@@ -1,0 +1,803 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.ClickOnLinkTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.ClickOnLinkTest</h2></header><article><br/>This test ensures we can click on links based on their text content.<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Mock server</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;a href=""&gt;First Link&lt;/a&gt; 
+&lt;a href=""&gt;Second Link&lt;/a&gt; 
+&lt;a href=""&gt;Third Link&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span&gt;4th Link&lt;/span&gt;&lt;/a&gt; 
+&lt;a href=""&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;5th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;6th Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;7TH Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:uppercase"&gt;8th Link&lt;/a&gt; 
+&lt;a href="" style="text-transform:lowercase"&gt;&lt;span class="btn-label"&gt;&lt;span aria-hidden="true"&gt;Select&lt;/span&gt;&lt;span style="position: absolute !important;width: 1px;height: 1px;margin: -1px;padding: 0;clip: rect(0 0 0 0);border: 0;overflow: hidden;" class="visuallyhidden"&gt;9TH Link&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; 
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.8.75:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/></div>
+</div>
+<br/><table>
+	<tr>
+		<td>storyboard</td>
+		<td><span class="pass">browser test</span></td>
+	</tr>
+	<tr>
+		<td><span class="pass">open</span></td>
+		<td>$url->[http://172.17.8.75:8000/FitNesseMock]</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_1.png"><img src="files/screenshots/storyboard/20160102-055621/1_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_1.png" height="200"/></a></td></tr>
+	<tr>
+		<td>seconds before timeout</td>
+		<td>1</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_2.png"><img src="files/screenshots/storyboard/20160102-055621/1_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_2.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>Second Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_3.png"><img src="files/screenshots/storyboard/20160102-055621/1_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_3.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>hird</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_4.png"><img src="files/screenshots/storyboard/20160102-055621/1_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_4.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>4th Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_5.png"><img src="files/screenshots/storyboard/20160102-055621/1_5.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_5.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>4th</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_6.png"><img src="files/screenshots/storyboard/20160102-055621/1_6.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_6.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>5th Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_7.png"><img src="files/screenshots/storyboard/20160102-055621/1_7.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_7.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>5th</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_8.png"><img src="files/screenshots/storyboard/20160102-055621/1_8.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_8.png" height="200"/></a></td></tr>
+	<tr>
+		<td>note</td>
+		<td>text-transform to uppercase means standard selenium By.link only finds all uppercase text</td>
+	</tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>6TH LINK</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_10.png"><img src="files/screenshots/storyboard/20160102-055621/1_10.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_10.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>6TH</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_11.png"><img src="files/screenshots/storyboard/20160102-055621/1_11.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_11.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>6th Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_12.png"><img src="files/screenshots/storyboard/20160102-055621/1_12.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_12.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>6th</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_13.png"><img src="files/screenshots/storyboard/20160102-055621/1_13.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_13.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>7th link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_14.png"><img src="files/screenshots/storyboard/20160102-055621/1_14.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_14.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>7th</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_15.png"><img src="files/screenshots/storyboard/20160102-055621/1_15.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_15.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>7TH Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_16.png"><img src="files/screenshots/storyboard/20160102-055621/1_16.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_16.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>7TH</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_17.png"><img src="files/screenshots/storyboard/20160102-055621/1_17.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_17.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>8th Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_18.png"><img src="files/screenshots/storyboard/20160102-055621/1_18.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_18.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>8th</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_19.png"><img src="files/screenshots/storyboard/20160102-055621/1_19.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_19.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>8TH LINK</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_20.png"><img src="files/screenshots/storyboard/20160102-055621/1_20.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_20.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>8TH</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_21.png"><img src="files/screenshots/storyboard/20160102-055621/1_21.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_21.png" height="200"/></a></td></tr>
+	<tr>
+		<td>note</td>
+		<td>text-transform to lowercase means standard selenium By.link only finds all lowercase text</td>
+	</tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>9th link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_23.png"><img src="files/screenshots/storyboard/20160102-055621/1_23.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_23.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>9th</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_24.png"><img src="files/screenshots/storyboard/20160102-055621/1_24.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_24.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>9TH Link</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_25.png"><img src="files/screenshots/storyboard/20160102-055621/1_25.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_25.png" height="200"/></a></td></tr>
+	<tr>
+		<td><span class="pass">click</span></td>
+		<td>9TH</td>
+	<td><a href="files/screenshots/storyboard/20160102-055621/1_26.png"><img src="files/screenshots/storyboard/20160102-055621/1_26.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/storyboard/20160102-055621/1_26.png" height="200"/></a></td></tr>
+</table>
+<br/><br/><br/><br/><table>
+	<tr>
+		<td>comment</td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/></article></body></html>
