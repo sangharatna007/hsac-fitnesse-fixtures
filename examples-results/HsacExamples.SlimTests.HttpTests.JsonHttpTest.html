@@ -105,7 +105,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 3550250,
+    &quot;parse_time_nanoseconds&quot;: 3034576,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -136,7 +136,7 @@ json={"key":"value"}
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	<td><div><ul><li>object</li><li>false</li><li>3550250</li><li>true</li><li>1</li></ul></div></td></tr>
+	<td><div><ul><li>object</li><li>false</li><li>3034576</li><li>true</li><li>1</li></ul></div></td></tr>
 </table>
 <br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
 	<tr class="slimRowTitle">
@@ -159,7 +159,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 26584,
+    &quot;parse_time_nanoseconds&quot;: 34226,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -192,65 +192,22 @@ json={"key":"value"}
     &quot;error&quot;: 0,
     &quot;fields&quot;: {
         &quot;order&quot;: {
-            &quot;listdiscount&quot;: [{
-                &quot;price&quot;: &quot;-37,50&quot;,
-                &quot;product_id&quot;: &quot;monteur&quot;,
-                &quot;product_name&quot;: &quot;Installatie Basis&quot;,
-                &quot;price_decimal&quot;: -37.5
-            }],
-            &quot;basic_products&quot;: [
-                {
-                    &quot;price&quot;: &quot;32,50&quot;,
-                    &quot;product_id&quot;: &quot;internet-fiber-start&quot;,
-                    &quot;price_period&quot;: &quot;p. mnd.&quot;,
-                    &quot;product_name&quot;: &quot;Internet 50Mb&quot;,
-                    &quot;price_decimal&quot;: 32.5,
-                    &quot;product_type&quot;: &quot;Internet&quot;
-                },
-                {
-                    &quot;price&quot;: &quot;13,50&quot;,
-                    &quot;product_id&quot;: &quot;televisie-start&quot;,
-                    &quot;price_period&quot;: &quot;p. mnd.&quot;,
-                    &quot;product_name&quot;: &quot;TV Start&quot;,
-                    &quot;price_decimal&quot;: 13.5,
-                    &quot;product_type&quot;: &quot;Televisie&quot;
-                },
-                {
-                    &quot;price&quot;: &quot;30,00&quot;,
-                    &quot;product_id&quot;: &quot;activatie&quot;,
-                    &quot;product_name&quot;: &quot;Activatiekosten&quot;,
-                    &quot;price_decimal&quot;: 30,
-                    &quot;product_type&quot;: &quot;Connect&quot;
-                },
-                {
-                    &quot;price&quot;: &quot;37,50&quot;,
-                    &quot;product_id&quot;: &quot;monteur&quot;,
-                    &quot;product_name&quot;: &quot;Installatie Basis&quot;,
-                    &quot;price_decimal&quot;: 37.5,
-                    &quot;product_type&quot;: &quot;Installatie&quot;,
-                    &quot;price_after_period&quot;: &quot;Van &amp;euro;&amp;nbsp;75,00 voor &amp;euro;&amp;nbsp;37,50&quot;
-                }
-            ],
+            &quot;listdiscount&quot;: [],
+            &quot;basic_products&quot;: [],
             &quot;extras&quot;: []
         },
         &quot;pricing_info&quot;: {
             &quot;initial_onetime&quot;: {
-                &quot;price&quot;: &quot;67,50&quot;,
+                &quot;price&quot;: &quot;0,00&quot;,
                 &quot;pricing_info&quot;: &quot;Eenmalig betaal je&quot;,
                 &quot;price_id&quot;: &quot;initial_onetime&quot;,
-                &quot;price_decimal&quot;: 67.5
+                &quot;price_decimal&quot;: 0
             },
             &quot;initial_monthly&quot;: {
-                &quot;price&quot;: &quot;46,00&quot;,
+                &quot;price&quot;: &quot;0,00&quot;,
                 &quot;pricing_info&quot;: &quot;Maandelijks&quot;,
                 &quot;price_id&quot;: &quot;initial_monthly&quot;,
-                &quot;price_decimal&quot;: 46
-            },
-            &quot;discount&quot;: {
-                &quot;price&quot;: &quot;-37,50&quot;,
-                &quot;pricing_info&quot;: &quot;Je korting&quot;,
-                &quot;price_id&quot;: &quot;discount&quot;,
-                &quot;price_decimal&quot;: -37.5
+                &quot;price_decimal&quot;: 0
             }
         }
     }
@@ -265,13 +222,13 @@ json={"key":"value"}
 		<td>check</td>
 		<td>json path</td>
 		<td>$.fields.order.basic_products[0].product_name</td>
-		<td><span class="pass">Internet 50Mb</span></td>
+		<td>[n<span class="diff">ull</span>] <span class="fail">expected [</span><span class="diff">I</span><span class="fail">n</span><span class="diff">ternet 50Mb</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.fields.order.basic_products[1].product_name</td>
-		<td><span class="pass">TV Start</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">TV Start</span><span class="fail">]</span></td>
 	</tr>
 </table>
 <br/>Next a POST/DELETE combination<br/><br/><table>
@@ -319,34 +276,34 @@ json={"key":"value"}
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2"><span class="pass">200</span></td>
+		<td colspan="2">[<span class="diff">50</span>2] <span class="fail">expected [2</span><span class="diff">00</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;message&quot;: &quot;Record Created&quot;,
-    &quot;data&quot;: {
-        &quot;totalCount&quot;: &quot;1&quot;,
-        &quot;artist&quot;: {
-            &quot;genre&quot;: {
-                &quot;id&quot;: &quot;1&quot;,
-                &quot;description&quot;: &quot;&quot;,
-                &quot;name&quot;: &quot;Heavy Metal&quot;
-            },
-            &quot;id&quot;: &quot;1790&quot;,
-            &quot;year_formed&quot;: &quot;2010&quot;,
-            &quot;description&quot;: null,
-            &quot;albums&quot;: [],
-            &quot;name&quot;: &quot;dsfsdf&quot;,
-            &quot;genre_id&quot;: &quot;1&quot;,
-            &quot;country&quot;: &quot;Afghanistan&quot;
-        }
-    },
-    &quot;success&quot;: &quot;true&quot;
-}</pre></td></tr>
+	<td>&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;Service Temporarily Unavailable&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;h1&gt;Service Temporarily Unavailable&lt;/h1&gt;
+
+&lt;p&gt;The server closed the connection without sending any data.
+
+&lt;p&gt;The server is temporarily unable to service your request due to
+maintenance downtime or capacity problems.
+
+&lt;p&gt;Due to heavy load on the server, connections may be temporarily
+blocked from locations that fetch an unusually high number of
+pages.
+
+&lt;p&gt;We apologize for the inconvenience.
+
+&lt;hr&gt;
+&lt;/body&gt;&lt;/html&gt;
+</td></tr>
 	<tr class="slimRowColor2">
-		<td>$id&lt;-[1790]</td>
+		<td>$id&lt;-[null]</td>
 		<td>json path</td>
 		<td colspan="2">data.artist.id</td>
 	</tr>
@@ -354,17 +311,17 @@ json={"key":"value"}
 		<td>check</td>
 		<td>json path</td>
 		<td>data.artist.name</td>
-		<td><span class="pass">dsfsdf</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">dsfsdf</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>data.artist.country</td>
-		<td><span class="pass">Afghanistan</span></td>
+		<td>[n<span class="diff">ull</span>] <span class="fail">expected [</span><span class="diff">Afgha</span><span class="fail">n</span><span class="diff">istan</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id->[1790]">http://rest.kabasakalis.tk/api/artist/$id->[1790]</a></td>
+		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id->[null]">http://rest.kabasakalis.tk/api/artist/$id->[null]</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -374,26 +331,12 @@ json={"key":"value"}
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;message&quot;: &quot;Record Deleted&quot;,
-    &quot;data&quot;: {
-        &quot;totalCount&quot;: &quot;1&quot;,
-        &quot;artist&quot;: {
-            &quot;id&quot;: &quot;1790&quot;,
-            &quot;year_formed&quot;: &quot;2010&quot;,
-            &quot;description&quot;: null,
-            &quot;name&quot;: &quot;dsfsdf&quot;,
-            &quot;genre_id&quot;: &quot;1&quot;,
-            &quot;country&quot;: &quot;Afghanistan&quot;
-        }
-    },
-    &quot;success&quot;: &quot;true&quot;
-}</pre></td></tr>
+	<td> </td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>success</td>
-		<td><span class="pass">true</span></td>
+		<td>[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [</span><span class="diff">tr</span><span class="fail">u</span><span class="diff">e</span><span class="fail">]</span></td>
 	</tr>
 </table>
 <br/>Next a PUT example<br/><span class="meta">variable defined: PUT_BODY= {{{
