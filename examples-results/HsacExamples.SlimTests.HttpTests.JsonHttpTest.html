@@ -373,29 +373,9 @@ This application is temporarily over its serving quota.  Please try again later.
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;message&quot;: &quot;Record Created&quot;,
-    &quot;data&quot;: {
-        &quot;totalCount&quot;: &quot;1&quot;,
-        &quot;artist&quot;: {
-            &quot;genre&quot;: {
-                &quot;id&quot;: &quot;1&quot;,
-                &quot;description&quot;: &quot;&quot;,
-                &quot;name&quot;: &quot;Heavy Metal&quot;
-            },
-            &quot;id&quot;: &quot;1796&quot;,
-            &quot;year_formed&quot;: &quot;2010&quot;,
-            &quot;description&quot;: null,
-            &quot;albums&quot;: [],
-            &quot;name&quot;: &quot;dsfsdf&quot;,
-            &quot;genre_id&quot;: &quot;1&quot;,
-            &quot;country&quot;: &quot;Afghanistan&quot;
-        }
-    },
-    &quot;success&quot;: &quot;true&quot;
-}</pre></td></tr>
+	<td> </td></tr>
 	<tr class="slimRowColor2">
-		<td>$id&lt;-[1796]</td>
+		<td>$id&lt;-[null]</td>
 		<td>json path</td>
 		<td colspan="2">data.artist.id</td>
 	</tr>
@@ -403,17 +383,17 @@ This application is temporarily over its serving quota.  Please try again later.
 		<td>check</td>
 		<td>json path</td>
 		<td>data.artist.name</td>
-		<td><span class="pass">dsfsdf</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">dsfsdf</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>data.artist.country</td>
-		<td><span class="pass">Afghanistan</span></td>
+		<td>[n<span class="diff">ull</span>] <span class="fail">expected [</span><span class="diff">Afgha</span><span class="fail">n</span><span class="diff">istan</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id->[1796]">http://rest.kabasakalis.tk/api/artist/$id->[1796]</a></td>
+		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id->[null]">http://rest.kabasakalis.tk/api/artist/$id->[null]</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -423,26 +403,12 @@ This application is temporarily over its serving quota.  Please try again later.
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;message&quot;: &quot;Record Deleted&quot;,
-    &quot;data&quot;: {
-        &quot;totalCount&quot;: &quot;1&quot;,
-        &quot;artist&quot;: {
-            &quot;id&quot;: &quot;1796&quot;,
-            &quot;year_formed&quot;: &quot;2010&quot;,
-            &quot;description&quot;: null,
-            &quot;name&quot;: &quot;dsfsdf&quot;,
-            &quot;genre_id&quot;: &quot;1&quot;,
-            &quot;country&quot;: &quot;Afghanistan&quot;
-        }
-    },
-    &quot;success&quot;: &quot;true&quot;
-}</pre></td></tr>
+	<td> </td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>success</td>
-		<td><span class="pass">true</span></td>
+		<td>[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [</span><span class="diff">tr</span><span class="fail">u</span><span class="diff">e</span><span class="fail">]</span></td>
 	</tr>
 </table>
 <br/>Next a PUT example<br/><span class="meta">variable defined: PUT_BODY= {{{
