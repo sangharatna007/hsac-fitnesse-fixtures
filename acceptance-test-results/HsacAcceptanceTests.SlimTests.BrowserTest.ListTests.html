@@ -1,0 +1,204 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.ListTests</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.ListTests</h2></header><article><br/>This test ensures we can work with lists and select boxes. We use a mock server running to serve the HTML defined in this page.<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;ul&gt;
+    &lt;li&gt;1st&lt;/li&gt;
+    &lt;li&gt;2nd&lt;/li&gt;
+    &lt;li style="display: none"&gt;3rd&lt;/li&gt;
+    &lt;li&gt;4th&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li value="5"&gt;1st&lt;/li&gt;
+    &lt;li style="display: none"&gt;2nd&lt;/li&gt;
+    &lt;li&gt;3rd&lt;/li&gt;
+    &lt;li&gt;4th&lt;/li&gt;
+&lt;/ol&gt;
+&lt;label for="s"&gt;Option to choose&lt;/label&gt;
+&lt;select id="s"&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2" disabled&gt;Option 2&lt;/option&gt;
+    &lt;option value="3" selected&gt;Option 3&lt;/option&gt;
+    &lt;option value="4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;label for="s2"&gt;Options to choose&lt;/label&gt;
+&lt;select id="s2" multiple&gt;
+    &lt;option value="1"&gt;Option 5&lt;/option&gt;
+    &lt;option value="2" selected&gt;Option 6&lt;/option&gt;
+    &lt;option value="3" selected&gt;Option 7&lt;/option&gt;
+    &lt;option value="4"&gt;Option 8&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;ul&gt;
+    &lt;li&gt;1st&lt;/li&gt;
+    &lt;li&gt;2nd&lt;/li&gt;
+    &lt;li style="display: none"&gt;3rd&lt;/li&gt;
+    &lt;li&gt;4th&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li value="5"&gt;1st&lt;/li&gt;
+    &lt;li style="display: none"&gt;2nd&lt;/li&gt;
+    &lt;li&gt;3rd&lt;/li&gt;
+    &lt;li&gt;4th&lt;/li&gt;
+&lt;/ol&gt;
+&lt;label for="s"&gt;Option to choose&lt;/label&gt;
+&lt;select id="s"&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2" disabled&gt;Option 2&lt;/option&gt;
+    &lt;option value="3" selected&gt;Option 3&lt;/option&gt;
+    &lt;option value="4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;label for="s2"&gt;Options to choose&lt;/label&gt;
+&lt;select id="s2" multiple&gt;
+    &lt;option value="1"&gt;Option 5&lt;/option&gt;
+    &lt;option value="2" selected&gt;Option 6&lt;/option&gt;
+    &lt;option value="3" selected&gt;Option 7&lt;/option&gt;
+    &lt;option value="4"&gt;Option 8&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.2.243:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/>Ensure we use our custom list formatting.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">list fixture</span></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="4">display lists numbered</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">1st</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">2nd</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">4th</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>$ul&lt;-[<ol start="0"><li>1st</li><li>2nd</li><li>4th</li></ol>]</td>
+		<td colspan="3">copy list</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>3rd</td>
+		<td>at</td>
+		<td>1</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$ol&lt;-[<ol start="0"><li>1st</li><li>3rd</li><li>4th</li></ol>]</td>
+		<td colspan="3">copy list</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td colspan="4">reset</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">Option 6</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">Option 7</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>$selected&lt;-[<ol start="0"><li>Option 6</li><li>Option 7</li></ol>]</td>
+		<td colspan="3">copy list</td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.2.243:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Option to choose</td>
+		<td><span class="pass">Option 3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>Option 1</td>
+		<td>for</td>
+		<td>Option to choose</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click if available</span></td>
+		<td colspan="3">Option 4</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>click if available</td>
+		<td colspan="2">Option 2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>xpath=//ul/li[2]</td>
+		<td><span class="pass">2nd</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>xpath=//ol/li[4]</td>
+		<td><span class="pass">4th</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>xpath=//ul</td>
+		<td><span class="pass">$ul-&gt;[<ol start="0"><li>1st</li><li>2nd</li><li>4th</li></ol>]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>xpath=//ol[1]</td>
+		<td><span class="pass">$ol-&gt;[<ol start="0"><li>1st</li><li>3rd</li><li>4th</li></ol>]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>Options to choose</td>
+		<td><span class="pass">$selected-&gt;[<ol start="0"><li>Option 6</li><li>Option 7</li></ol>]</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+</article></body></html>
