@@ -10,9 +10,18 @@
 &lt;/ul&gt;
 &lt;ol&gt;
     &lt;li value="5"&gt;1st&lt;/li&gt;
-    &lt;li style="display: none"&gt;2nd&lt;/li&gt;
+    &lt;li style="display: none" value="4"&gt;2nd&lt;/li&gt;
     &lt;li&gt;3rd&lt;/li&gt;
     &lt;li&gt;4th&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+    &lt;li&gt;5th&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;6th&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start="10"&gt;
+    &lt;li&gt;7th&lt;/li&gt;
+    &lt;li&gt;8th&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;9th&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;label for="s"&gt;Option to choose&lt;/label&gt;
 &lt;select id="s"&gt;
@@ -50,9 +59,18 @@
 &lt;/ul&gt;
 &lt;ol&gt;
     &lt;li value="5"&gt;1st&lt;/li&gt;
-    &lt;li style="display: none"&gt;2nd&lt;/li&gt;
+    &lt;li style="display: none" value="4"&gt;2nd&lt;/li&gt;
     &lt;li&gt;3rd&lt;/li&gt;
     &lt;li&gt;4th&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+    &lt;li&gt;5th&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;6th&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start="10"&gt;
+    &lt;li&gt;7th&lt;/li&gt;
+    &lt;li&gt;8th&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;9th&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;label for="s"&gt;Option to choose&lt;/label&gt;
 &lt;select id="s"&gt;
@@ -73,7 +91,7 @@
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.1.90:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.22.36:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -127,14 +145,14 @@
 		<td colspan="3">copy list</td>
 	</tr>
 </table>
-<br/><br/><br/><table>
+<br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3">$url->[http://172.17.1.90:8000/FitNesseMock]</td>
+		<td colspan="3">$url->[http://172.17.22.36:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td>seconds before timeout</td>
@@ -191,8 +209,50 @@
 		<td>Options to choose</td>
 		<td><span class="pass">$selected-&gt;[<ol start="0"><li>Option 6</li><li>Option 7</li></ol>]</span></td>
 	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>1st</td>
+		<td><span class="pass">5</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>2nd</td>
+		<td><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>4th</td>
+		<td><span class="pass">7</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>6th</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>5t</td>
+		<td><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>8th</td>
+		<td><span class="pass">11</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>9t</td>
+		<td><span class="pass">12</span></td>
+	</tr>
 </table>
-<br/><table>
+<br/><br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td><span class="pass">mock xml server setup</span></td>
