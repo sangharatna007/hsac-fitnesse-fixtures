@@ -10,46 +10,21 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>
-&lt;html&gt;&lt;head&gt;
-&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;503 Over Quota&lt;/title&gt;
-&lt;style&gt;&lt;!--
-body {font-family: arial,sans-serif}
-div.nav {margin-top: 1ex}
-div.nav A {font-size: 10pt; font-family: arial,sans-serif}
-span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
-div.nav A,span.big {font-size: 12pt; color: #0000cc}
-div.nav A {font-size: 10pt; color: black}
-A.l:link {color: #6f6f6f}
-A.u:link {color: green}
-//--&gt;&lt;/style&gt;
-
-&lt;/head&gt;
-&lt;body text=#000000 bgcolor=#ffffff&gt;
-&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
-&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;H1&gt;Over Quota&lt;/H1&gt;
-This application is temporarily over its serving quota.  Please try again later.
-
-&lt;p&gt;
-&lt;/blockquote&gt;
-&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;&lt;/html&gt;
-</td></tr>
+	<td><pre>{
+    &quot;one&quot;: &quot;two&quot;,
+    &quot;key&quot;: &quot;value&quot;
+}</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.key</td>
-		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">va</span><span class="fail">l</span><span class="diff">ue</span><span class="fail">]</span></td>
+		<td><span class="pass">value</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.one</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">two</span><span class="fail">]</span></td>
+		<td><span class="pass">two</span></td>
 	</tr>
 </table>
 <br/><br/>Then a POST, showing the multiple notations of JsonPath expressions supported (notice that adding the '$.' prefix is not required).<br/><br/><span class="meta">variable defined: BAD_BODY= {{{
@@ -71,64 +46,41 @@ json={"key":"value"
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>
-&lt;html&gt;&lt;head&gt;
-&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;503 Over Quota&lt;/title&gt;
-&lt;style&gt;&lt;!--
-body {font-family: arial,sans-serif}
-div.nav {margin-top: 1ex}
-div.nav A {font-size: 10pt; font-family: arial,sans-serif}
-span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
-div.nav A,span.big {font-size: 12pt; color: #0000cc}
-div.nav A {font-size: 10pt; color: black}
-A.l:link {color: #6f6f6f}
-A.u:link {color: green}
-//--&gt;&lt;/style&gt;
-
-&lt;/head&gt;
-&lt;body text=#000000 bgcolor=#ffffff&gt;
-&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
-&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;H1&gt;Over Quota&lt;/H1&gt;
-This application is temporarily over its serving quota.  Please try again later.
-
-&lt;p&gt;
-&lt;/blockquote&gt;
-&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;&lt;/html&gt;
-</td></tr>
+	<td><pre>{
+    &quot;error&quot;: &quot;Expected a ',' or '}' at 15 [character 16 line 1]&quot;,
+    &quot;object_or_array&quot;: &quot;object&quot;,
+    &quot;error_info&quot;: &quot;This error came from the org.json reference parser.&quot;,
+    &quot;validate&quot;: false
+}</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.validate</td>
-		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">fa</span><span class="fail">l</span><span class="diff">se</span><span class="fail">]</span></td>
+		<td><span class="pass">false</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">fa</span><span class="fail">l</span><span class="diff">se</span><span class="fail">]</span></td>
+		<td><span class="pass">false</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>.validate</td>
-		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">fa</span><span class="fail">l</span><span class="diff">se</span><span class="fail">]</span></td>
+		<td><span class="pass">false</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$['validate']</td>
-		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">fa</span><span class="fail">l</span><span class="diff">se</span><span class="fail">]</span></td>
+		<td><span class="pass">false</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>['validate']</td>
-		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">fa</span><span class="fail">l</span><span class="diff">se</span><span class="fail">]</span></td>
+		<td><span class="pass">false</span></td>
 	</tr>
 </table>
 <br/><br/>Next another POST, showing that expressions resulting in a boolean or integer value are recognized and can be used accordingly by the script table. Furthermore expressions returning more than a single member are supported.<br/><br/><span class="meta">variable defined: GOOD_BODY= {{{
@@ -150,43 +102,21 @@ json={"key":"value"}
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>
-&lt;html&gt;&lt;head&gt;
-&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;503 Over Quota&lt;/title&gt;
-&lt;style&gt;&lt;!--
-body {font-family: arial,sans-serif}
-div.nav {margin-top: 1ex}
-div.nav A {font-size: 10pt; font-family: arial,sans-serif}
-span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
-div.nav A,span.big {font-size: 12pt; color: #0000cc}
-div.nav A {font-size: 10pt; color: black}
-A.l:link {color: #6f6f6f}
-A.u:link {color: green}
-//--&gt;&lt;/style&gt;
-
-&lt;/head&gt;
-&lt;body text=#000000 bgcolor=#ffffff&gt;
-&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
-&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;H1&gt;Over Quota&lt;/H1&gt;
-This application is temporarily over its serving quota.  Please try again later.
-
-&lt;p&gt;
-&lt;/blockquote&gt;
-&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;&lt;/html&gt;
-</td></tr>
+	<td><pre>{
+    &quot;object_or_array&quot;: &quot;object&quot;,
+    &quot;empty&quot;: false,
+    &quot;parse_time_nanoseconds&quot;: 10675671,
+    &quot;validate&quot;: true,
+    &quot;size&quot;: 1
+}</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td>[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [</span><span class="diff">tr</span><span class="fail">u</span><span class="diff">e</span><span class="fail">]</span></td>
+		<td><span class="pass">true</span></td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="fail">ensure</span></td>
+		<td><span class="pass">ensure</span></td>
 		<td>json path</td>
 		<td colspan="2">validate</td>
 	</tr>
@@ -194,19 +124,19 @@ This application is temporarily over its serving quota.  Please try again later.
 		<td>check</td>
 		<td>json path</td>
 		<td>size</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">&gt;0</span><span class="fail">]</span></td>
+		<td><span class="pass">1&gt;0</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>$.*</td>
-		<td><span class="fail">0&gt;=5</span></td>
+		<td><span class="pass">5&gt;=5</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	<td>null</td></tr>
+	<td><div><ul><li>object</li><li>false</li><li>10675671</li><li>true</li><li>1</li></ul></div></td></tr>
 </table>
 <br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
 	<tr class="slimRowTitle">
@@ -226,40 +156,18 @@ This application is temporarily over its serving quota.  Please try again later.
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>
-&lt;html&gt;&lt;head&gt;
-&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;503 Over Quota&lt;/title&gt;
-&lt;style&gt;&lt;!--
-body {font-family: arial,sans-serif}
-div.nav {margin-top: 1ex}
-div.nav A {font-size: 10pt; font-family: arial,sans-serif}
-span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
-div.nav A,span.big {font-size: 12pt; color: #0000cc}
-div.nav A {font-size: 10pt; color: black}
-A.l:link {color: #6f6f6f}
-A.u:link {color: green}
-//--&gt;&lt;/style&gt;
-
-&lt;/head&gt;
-&lt;body text=#000000 bgcolor=#ffffff&gt;
-&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
-&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;H1&gt;Over Quota&lt;/H1&gt;
-This application is temporarily over its serving quota.  Please try again later.
-
-&lt;p&gt;
-&lt;/blockquote&gt;
-&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;&lt;/html&gt;
-</td></tr>
+	<td><pre>{
+    &quot;object_or_array&quot;: &quot;object&quot;,
+    &quot;empty&quot;: false,
+    &quot;parse_time_nanoseconds&quot;: 21246,
+    &quot;validate&quot;: true,
+    &quot;size&quot;: 1
+}</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td>[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [</span><span class="diff">tr</span><span class="fail">u</span><span class="diff">e</span><span class="fail">]</span></td>
+		<td><span class="pass">true</span></td>
 	</tr>
 </table>
 <br/>Next another POST, posting of url-enoded array of values defined in the wiki.<br/><p class="note">We have to specify 'products\[]' as value name since the service requires a value called 'products[]' and the fixture interprets a value name ending on '[]' as an indicator the value is an array, and will normally not include that postfix in the name of the value sent to the service. By specifying '\[]' we indicate we <i>don't</i> want the brackets removed from the name.</p><br/><table>
@@ -368,34 +276,34 @@ This application is temporarily over its serving quota.  Please try again later.
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">50</span>2] <span class="fail">expected [2</span><span class="diff">00</span><span class="fail">]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
-&lt;html&gt;&lt;head&gt;
-&lt;title&gt;Service Temporarily Unavailable&lt;/title&gt;
-&lt;/head&gt;&lt;body&gt;
-
-&lt;h1&gt;Service Temporarily Unavailable&lt;/h1&gt;
-
-&lt;p&gt;The server closed the connection without sending any data.
-
-&lt;p&gt;The server is temporarily unable to service your request due to
-maintenance downtime or capacity problems.
-
-&lt;p&gt;Due to heavy load on the server, connections may be temporarily
-blocked from locations that fetch an unusually high number of
-pages.
-
-&lt;p&gt;We apologize for the inconvenience.
-
-&lt;hr&gt;
-&lt;/body&gt;&lt;/html&gt;
-</td></tr>
+	<td><pre>{
+    &quot;message&quot;: &quot;Record Created&quot;,
+    &quot;data&quot;: {
+        &quot;totalCount&quot;: &quot;1&quot;,
+        &quot;artist&quot;: {
+            &quot;genre&quot;: {
+                &quot;id&quot;: &quot;1&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;name&quot;: &quot;Heavy Metal&quot;
+            },
+            &quot;id&quot;: &quot;1805&quot;,
+            &quot;year_formed&quot;: &quot;2010&quot;,
+            &quot;description&quot;: null,
+            &quot;albums&quot;: [],
+            &quot;name&quot;: &quot;dsfsdf&quot;,
+            &quot;genre_id&quot;: &quot;1&quot;,
+            &quot;country&quot;: &quot;Afghanistan&quot;
+        }
+    },
+    &quot;success&quot;: &quot;true&quot;
+}</pre></td></tr>
 	<tr class="slimRowColor2">
-		<td>$id&lt;-[null]</td>
+		<td>$id&lt;-[1805]</td>
 		<td>json path</td>
 		<td colspan="2">data.artist.id</td>
 	</tr>
@@ -403,52 +311,46 @@ pages.
 		<td>check</td>
 		<td>json path</td>
 		<td>data.artist.name</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">dsfsdf</span><span class="fail">]</span></td>
+		<td><span class="pass">dsfsdf</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>data.artist.country</td>
-		<td>[n<span class="diff">ull</span>] <span class="fail">expected [</span><span class="diff">Afgha</span><span class="fail">n</span><span class="diff">istan</span><span class="fail">]</span></td>
+		<td><span class="pass">Afghanistan</span></td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id->[null]">http://rest.kabasakalis.tk/api/artist/$id->[null]</a></td>
+		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id->[1805]">http://rest.kabasakalis.tk/api/artist/$id->[1805]</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">50</span>2] <span class="fail">expected [2</span><span class="diff">00</span><span class="fail">]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
-&lt;html&gt;&lt;head&gt;
-&lt;title&gt;Service Temporarily Unavailable&lt;/title&gt;
-&lt;/head&gt;&lt;body&gt;
-
-&lt;h1&gt;Service Temporarily Unavailable&lt;/h1&gt;
-
-&lt;p&gt;The server closed the connection without sending any data.
-
-&lt;p&gt;The server is temporarily unable to service your request due to
-maintenance downtime or capacity problems.
-
-&lt;p&gt;Due to heavy load on the server, connections may be temporarily
-blocked from locations that fetch an unusually high number of
-pages.
-
-&lt;p&gt;We apologize for the inconvenience.
-
-&lt;hr&gt;
-&lt;/body&gt;&lt;/html&gt;
-</td></tr>
+	<td><pre>{
+    &quot;message&quot;: &quot;Record Deleted&quot;,
+    &quot;data&quot;: {
+        &quot;totalCount&quot;: &quot;1&quot;,
+        &quot;artist&quot;: {
+            &quot;id&quot;: &quot;1805&quot;,
+            &quot;year_formed&quot;: &quot;2010&quot;,
+            &quot;description&quot;: null,
+            &quot;name&quot;: &quot;dsfsdf&quot;,
+            &quot;genre_id&quot;: &quot;1&quot;,
+            &quot;country&quot;: &quot;Afghanistan&quot;
+        }
+    },
+    &quot;success&quot;: &quot;true&quot;
+}</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>success</td>
-		<td>[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [</span><span class="diff">tr</span><span class="fail">u</span><span class="diff">e</span><span class="fail">]</span></td>
+		<td><span class="pass">true</span></td>
 	</tr>
 </table>
 <br/>Next a PUT example<br/><span class="meta">variable defined: PUT_BODY= {{{
