@@ -45,8 +45,12 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>add response</td>
 		<td colspan="3"><no xml</td>
 	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td colspan="3"><pre>&lt;binary/&gt;</pre></td>
+	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.7.225:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.11.91:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -59,7 +63,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.7.225:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.11.91:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -72,7 +76,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;ClientFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.7.225:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.11.91:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -109,7 +113,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Tue, 12 Apr 2016 18:50:31 GMT</td>
+		<td class="hash_value">Fri, 15 Apr 2016 13:46:12 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-length</td>
@@ -138,7 +142,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;ServerFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.7.225:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.11.91:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -185,7 +189,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;NoXml/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.7.225:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.11.91:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -209,6 +213,45 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>0</td>
 	</tr>
 </table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td><span class="pass">table: Mock Server Message Report</span></td>
+	</tr>
+<tr><td><table><tbody><tr class="scenario"><td class="fail">1 (of 5) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag/&gt;
+</pre></div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;ClientFault/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;SOAP-ENV:Fault&gt;
+            &lt;faultcode&gt;SOAP-ENV:Client&lt;/faultcode&gt;
+            &lt;faultstring&gt;Message does not have necessary info&lt;/faultstring&gt;
+            &lt;faultactor&gt;http://gizmos.com/order&lt;/faultactor&gt;
+            &lt;detail&gt;
+                &lt;PO:order xmlns:PO=&quot;http://gizmos.com/orders/&quot;&gt;Quantity element does not have a value&lt;/PO:order&gt;
+                &lt;PO:confirmation xmlns:PO=&quot;http://gizmos.com/confirm&quot;&gt;Incomplete address: no zip code&lt;/PO:confirmation&gt;
+            &lt;/detail&gt;
+        &lt;/SOAP-ENV:Fault&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre></div></div></td></tr><tr><td class="pass">3</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;ServerFault/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;SOAP-ENV:Fault&gt;
+            &lt;faultcode&gt;soapenv:Server&lt;/faultcode&gt;
+            &lt;faultstring&gt;Message does not have necessary info&lt;/faultstring&gt;
+            &lt;faultactor&gt;http://gizmos.com/order&lt;/faultactor&gt;
+            &lt;detail&gt;
+                &lt;PO:order xmlns:PO=&quot;http://gizmos.com/orders/&quot;&gt;Quantity element does not have a value&lt;/PO:order&gt;
+                &lt;PO:confirmation xmlns:PO=&quot;http://gizmos.com/confirm&quot;&gt;Incomplete address: no zip code&lt;/PO:confirmation&gt;
+            &lt;/detail&gt;
+        &lt;/SOAP-ENV:Fault&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre></div></div></td></tr><tr><td class="pass">4</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;NoXml/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><no xml</div></div></td></tr><tr><td class="fail">5</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;binary/&gt;
+</pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
