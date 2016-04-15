@@ -1,0 +1,87 @@
+<html><head><title>HsacExamples.SlimTests.HttpTests.HttpPostFileTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.HttpTests.HttpPostFileTest</h2></header><article><br/><div class="contents">
+	<b>Contents:</b>
+	<ul class="toc1"/><ul class="toc1"/>
+</div>
+<br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">We start a mock server to receive the binary file and display the request later (specify one response per request)</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>&lt;status&gt;OK&lt;/status&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>&lt;status&gt;OK&lt;/status&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>&lt;status&gt;OK&lt;/status&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>&lt;status&gt;OK&lt;/status&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$mockUrl&lt;-[http://172.17.1.48:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/></div>
+</div>
+Now we post files to the service. Note the different notation options. We can:<br/><br/><ul>
+	<li>Use wiki-urls pointing to files in the files folder or below</li>
+	<li>Use relative paths (non links) from files folder (include files folder)</li>
+</ul>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">http test</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>post file <span class="fail">File &lt;a href="files/subfolder/testFile.txt"&gt;http://files/subfolder/testFile.txt&lt;/a&gt; not found. Resolved to: /home/travis/build/fhoeben/hsac-fitnesse-fixtures/files/subfolder/testFile.txt</span></td>
+		<td><a href="files/subfolder/testFile.txt">http://files/subfolder/testFile.txt</a></td>
+		<td>to</td>
+		<td>$mockUrl->[http://172.17.1.48:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>post file <span class="ignore">Test not run</span></td>
+		<td>files/subfolder/testFile.txt</td>
+		<td>to</td>
+		<td>$mockUrl->[http://172.17.1.48:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>post file <span class="ignore">Test not run</span></td>
+		<td><img src="files/test.png"/></td>
+		<td>to</td>
+		<td>$mockUrl->[http://172.17.1.48:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>post file <span class="ignore">Test not run</span></td>
+		<td>files/test.png</td>
+		<td>to</td>
+		<td>$mockUrl->[http://172.17.1.48:8000/FitNesseMock]</td>
+	</tr>
+</table>
+<br/>The Message report will show the received request:<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td><span class="ignore">No results from table</span></td>
+	</tr>
+</table>
+<br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Stop the mock server</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td>mock xml server setup <span class="ignore">Test not run</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop <span class="ignore">Test not run</span></td>
+	</tr>
+</table>
+<br/></div>
+</div>
+</article></body></html>

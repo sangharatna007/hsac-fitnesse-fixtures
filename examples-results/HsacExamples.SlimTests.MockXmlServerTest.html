@@ -3,7 +3,11 @@
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
-<tr><td><span class="ignore">No requests expected or received at: /FitNesseMock</span></td></tr></table>
+<tr><td><table><tbody><tr class="scenario"><td class="fail">4 (of 4) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="fail">1</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">2</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">3</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">4</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><h2>Too Few Messages</h2>
 <br/><table>
 	<tr class="slimRowTitle">
@@ -21,7 +25,7 @@
 		<td>201</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.4.154:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.1.48:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -34,7 +38,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.4.154:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.1.48:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -44,16 +48,20 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>&lt;dag/&gt;
+	<td><pre>&lt;status&gt;OK&lt;/status&gt;
 </pre></td></tr>
 </table>
 <br/><p class="note">The messages report table does not fail a test, it just shows the current status. It will show red lines for expected requests that never came, or extra requests received.</p><br/><table>
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
-<tr><td><table><tbody><tr class="scenario"><td class="fail">1 (of 2) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
-</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag/&gt;
-</pre></div></div></td></tr><tr><td class="fail">2</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag2/&gt;
+<tr><td><table><tbody><tr class="scenario"><td class="fail">5 (of 6) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">2</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">3</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">4</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">5</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag/&gt;
+</pre></div></div></td></tr><tr><td class="fail">6</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag2/&gt;
 </pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><h2>Messages As Expected</h2>
 <br/><table>
@@ -65,27 +73,31 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.4.154:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.1.48:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2"><span class="pass">201</span></td>
+		<td colspan="2">[20<span class="diff">0</span>] <span class="fail">expected [20</span><span class="diff">1</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>&lt;dag2/&gt;
+	<td><pre>&lt;status&gt;OK&lt;/status&gt;
 </pre></td></tr>
 </table>
 <br/><p class="note">The messages report table does not fail a test, it just shows the current status. It will show red lines for expected requests that never came, or extra requests received.</p><br/><table>
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
-<tr><td><table><tbody><tr class="scenario closed"><td class="pass">Expected and received 2 requests</td></tr><tr class="scenario-detail closed-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
-</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag/&gt;
+<tr><td><table><tbody><tr class="scenario"><td class="fail">4 (of 6) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
 </pre></div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo2/&gt;
-</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag2/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">3</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">4</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;status&gt;OK&lt;/status&gt;
+</pre></div></div></td></tr><tr><td class="fail">5</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag/&gt;
+</pre></div></div></td></tr><tr><td class="fail">6</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag2/&gt;
 </pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><table>
 	<tr class="slimRowTitle">
@@ -93,7 +105,7 @@
 		<td><span class="pass">mock xml server setup</span></td>
 	</tr>
 	<tr class="slimRowColor3">
-		<td colspan="2"><span class="pass">verify all responses served</span></td>
+		<td colspan="2">verify all responses served <span class="error"><div>4 response(s) not requested: <ol><li><pre>&lt;status&gt;OK&lt;/status&gt;<br/></pre></li><li><pre>&lt;status&gt;OK&lt;/status&gt;<br/></pre></li><li><pre>&lt;dag/&gt;<br/></pre></li><li><pre>&lt;dag2/&gt;<br/></pre></li></ol></div></span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td colspan="2"><span class="pass">verify no extra requests</span></td>
@@ -113,7 +125,7 @@
 		<td><pre>&lt;bye/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.4.154:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.1.48:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -126,7 +138,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.4.154:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.1.48:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -142,7 +154,7 @@
 		<td>post</td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.4.154:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.1.48:8000/FitNesseMock]</td>
 	<td>false</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
