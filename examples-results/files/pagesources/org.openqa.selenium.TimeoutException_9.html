@@ -6,7 +6,7 @@
 
     
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" href="//assets.fstatic.nl/master_22/assets/components/app-icons/icons.data.svg.css" media="all"><script type="text/javascript" src="http://bam.nr-data.net/1/a0d846db61?a=9040792&amp;v=918.2e0ff1d&amp;to=YwZTZUVRWBJRUkVfXlpMfGd0H3kDWlRSQmNREERdQ3xfEkRyXlhFRgxdXVJCGSheVVRO&amp;rst=1849&amp;ap=127&amp;be=602&amp;fe=1190&amp;dc=881&amp;tt=A09EBD9407BF08F&amp;f=%5B%5D&amp;perf=%7B%22timing%22:%7B%22of%22:1460729552077,%22n%22:0,%22u%22:559,%22ue%22:563,%22dl%22:582,%22di%22:1463,%22ds%22:1483,%22de%22:1514,%22dc%22:1791,%22l%22:1791,%22le%22:1803,%22r%22:3,%22re%22:198,%22f%22:198,%22dn%22:198,%22dne%22:198,%22c%22:198,%22ce%22:198,%22rq%22:199,%22rp%22:555,%22rpe%22:557%7D,%22navigation%22:%7B%22rc%22:1%7D%7D&amp;jsonp=NREUM.setToken"></script><script src="http://js-agent.newrelic.com/nr-918.min.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script><script async="" src="//www.google.com/adsense/search/async-ads.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NPB6HG&amp;l=gtmDataLayer"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a0d846db61","applicationID":"9040792","transactionName":"YwZTZUVRWBJRUkVfXlpMfGd0H3kDWlRSQmNREERdQ3xfEkRyXlhFRgxdXVJCGSheVVRO","queueTime":0,"applicationTime":127,"ttGuid":"A09EBD9407BF08F","agent":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(e,t){return function(){o(e,[(new Date).getTime()].concat(a(arguments)),null,t)}}var o=e("handle"),i=e(2),a=e(3);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var u=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(u,function(e,t){newrelic[t]=r(f+t,"api")}),i(c,function(e,t){newrelic[t]=r(f+t)}),t.exports=newrelic,newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),o("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(0>o?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?u(e,a,i):i()}function n(n,r,o){e&&e(n,r,o);for(var i=t(o),a=l(n),u=a.length,c=0;u>c;c++)a[c].apply(i,r);var s=f[g[n]];return s&&s.push([m,n,r,i]),i}function p(e,t){w[e]=l(e).concat(t)}function l(e){return w[e]||[]}function d(e){return s[e]=s[e]||o(n)}function v(e,t){c(e,function(e,n){t=t||"feature",g[n]=t,t in f||(f[t]=[])})}var w={},g={},m={on:p,emit:n,get:d,listeners:l,context:t,buffer:v};return m}function i(){return new r}var a="nr@context",u=e("gos"),c=e(2),f={},s={},p=t.exports=o();p.backlog=f},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!w++){var e=v.info=NREUM.info,t=s.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&t){c(l,function(t,n){e[t]||(e[t]=n)});var n="https"===p.split(":")[0]||e.sslForHttp;v.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=v.proto+e.agent,t.parentNode.insertBefore(r,t)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=window,s=f.document;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},e(1);var p=""+location,l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-918.min.js"},d=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),v=t.exports={offset:a(),origin:p,features:{},xhrWrappable:d};s.addEventListener?(s.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(s.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),u("mark",["firstbyte",a()],null,"api");var w=0},{}]},{},["loader"]);</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" href="//assets.fstatic.nl/master_25/assets/components/app-icons/icons.data.svg.css" media="all"><script type="text/javascript" src="http://bam.nr-data.net/1/a0d846db61?a=9040792&amp;v=918.2e0ff1d&amp;to=YwZTZUVRWBJRUkVfXlpMfGd0H3kDWlRSQmNREERdQ3xfEkRyXlhFRgxdXVJCGSheVVRO&amp;rst=2029&amp;ap=96&amp;be=569&amp;fe=1430&amp;dc=816&amp;tt=9965447744F83F36&amp;f=%5B%5D&amp;perf=%7B%22timing%22:%7B%22of%22:1460805044018,%22n%22:0,%22u%22:533,%22ue%22:537,%22dl%22:550,%22di%22:1362,%22ds%22:1385,%22de%22:1437,%22dc%22:1998,%22l%22:1998,%22le%22:2005,%22r%22:1,%22re%22:208,%22f%22:208,%22dn%22:208,%22dne%22:208,%22c%22:208,%22ce%22:208,%22rq%22:208,%22rp%22:529,%22rpe%22:538%7D,%22navigation%22:%7B%22rc%22:1%7D%7D&amp;jsonp=NREUM.setToken"></script><script src="http://js-agent.newrelic.com/nr-918.min.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script><script async="" src="//www.google.com/adsense/search/async-ads.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NPB6HG&amp;l=gtmDataLayer"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a0d846db61","applicationID":"9040792","transactionName":"YwZTZUVRWBJRUkVfXlpMfGd0H3kDWlRSQmNREERdQ3xfEkRyXlhFRgxdXVJCGSheVVRO","queueTime":0,"applicationTime":96,"ttGuid":"9965447744F83F36","agent":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(e,t){return function(){o(e,[(new Date).getTime()].concat(a(arguments)),null,t)}}var o=e("handle"),i=e(2),a=e(3);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var u=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(u,function(e,t){newrelic[t]=r(f+t,"api")}),i(c,function(e,t){newrelic[t]=r(f+t)}),t.exports=newrelic,newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),o("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(0>o?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?u(e,a,i):i()}function n(n,r,o){e&&e(n,r,o);for(var i=t(o),a=l(n),u=a.length,c=0;u>c;c++)a[c].apply(i,r);var s=f[g[n]];return s&&s.push([m,n,r,i]),i}function p(e,t){w[e]=l(e).concat(t)}function l(e){return w[e]||[]}function d(e){return s[e]=s[e]||o(n)}function v(e,t){c(e,function(e,n){t=t||"feature",g[n]=t,t in f||(f[t]=[])})}var w={},g={},m={on:p,emit:n,get:d,listeners:l,context:t,buffer:v};return m}function i(){return new r}var a="nr@context",u=e("gos"),c=e(2),f={},s={},p=t.exports=o();p.backlog=f},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!w++){var e=v.info=NREUM.info,t=s.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&t){c(l,function(t,n){e[t]||(e[t]=n)});var n="https"===p.split(":")[0]||e.sslForHttp;v.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=v.proto+e.agent,t.parentNode.insertBefore(r,t)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=window,s=f.document;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},e(1);var p=""+location,l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-918.min.js"},d=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),v=t.exports={offset:a(),origin:p,features:{},xhrWrappable:d};s.addEventListener?(s.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(s.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),u("mark",["firstbyte",a()],null,"api");var w=0},{}]},{},["loader"]);</script>
 
 
 
@@ -45,13 +45,13 @@
         /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
 		(function(e){function n(n,t,o,a){"use strict";var i=e.document.createElement("link"),r=t||e.document.getElementsByTagName("script")[0],d=e.document.styleSheets;return i.rel="stylesheet",i.href=n,i.media="only x",a&&(i.onload=a),r.parentNode.insertBefore(i,r),i.onloadcssdefined=function(e){for(var t,o=0;d.length>o;o++)d[o].href&&d[o].href.indexOf(n)>-1&&(t=!0);t?e():setTimeout(function(){i.onloadcssdefined(e)})},i.onloadcssdefined(function(){i.media=o||"all"}),i}function t(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}var o=function(a,i){"use strict";if(a&&3===a.length){var r=e.Image,d=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===navigator.userAgent.indexOf("Chrome")||-1!==navigator.userAgent.indexOf("Series40")),c=new r;c.onerror=function(){o.method="png",o.href=a[2],n(a[2])},c.onload=function(){var e=1===c.width&&1===c.height,r=a[e&&d?0:e?1:2];o.method=e&&d?"svg":e?"datapng":"png",o.href=r,t(n(r),i)},c.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};o.loadCSS=n,o.onloadCSS=t,e.grunticon=o})(this);(function(e,n){"use strict";var t=n.document,o="grunticon:",r=function(e){if(t.attachEvent?"complete"===t.readyState:"loading"!==t.readyState)e();else{var n=!1;t.addEventListener("readystatechange",function(){n||(n=!0,e())},!1)}},a=function(e){return n.document.querySelector('link[href$="'+e+'"]')},i=function(e){var n,t,r,a,i,c,d={};if(n=e.sheet,!n)return d;t=n.cssRules?n.cssRules:n.rules;for(var s=0;t.length>s;s++)r=t[s].cssText,a=o+t[s].selectorText,i=r.split(");")[0].match(/US\-ASCII\,([^"']+)/),i&&i[1]&&(c=decodeURIComponent(i[1]),d[a]=c);return d},c=function(e){var n,r,a;r="data-grunticon-embed";for(var i in e){a=i.slice(o.length);try{n=t.querySelectorAll(a+"["+r+"]")}catch(c){continue}if(n.length)for(var d=0;n.length>d;d++)n[d].innerHTML=e[i],n[d].style.backgroundImage="none",n[d].removeAttribute(r)}return n},d=function(n){"svg"===e.method&&r(function(){c(i(a(e.href))),"function"==typeof n&&n()})};e.embedIcons=c,e.getCSS=a,e.getIcons=i,e.ready=r,e.svgLoadedCallback=d,e.embedSVG=d})(grunticon,this);(function(e,n){"use strict";var t=n.document,o=function(e,t){var o=new n.XMLHttpRequest;return"withCredentials"in o?o.open("GET",e,!0):n.XDomainRequest!==void 0&&(o=new n.XDomainRequest,o.open("GET",e)),t&&(o.onload=t),o.send(),o},r=function(n){"svg"===e.method&&e.ready(function(){o(e.href,function(){var o=t.createElement("style");o.innerHTML=this.responseText;var r=e.getCSS(e.href);r&&(r.parentNode.insertBefore(o,r),r.parentNode.removeChild(r),e.embedIcons(e.getIcons(o)),"function"==typeof n&&n())})})};e.ajaxGet=o,e.svgLoadedCORSCallback=r,e.embedSVGCors=r})(grunticon,this);
         
-		grunticon(['//assets.fstatic.nl/master_22/assets/components/app-icons/icons.data.svg.css',
-		           '//assets.fstatic.nl/master_22/assets/components/app-icons/icons.data.png.css',
-                   '//assets.fstatic.nl/master_22/assets/components/app-icons/icons.fallback.css'], grunticon.svgLoadedCORSCallback);
+		grunticon(['//assets.fstatic.nl/master_25/assets/components/app-icons/icons.data.svg.css',
+		           '//assets.fstatic.nl/master_25/assets/components/app-icons/icons.data.png.css',
+                   '//assets.fstatic.nl/master_25/assets/components/app-icons/icons.fallback.css'], grunticon.svgLoadedCORSCallback);
     }());
 </script>
 <noscript>
-    &lt;link rel="stylesheet" href="//assets.fstatic.nl/master_22/assets/components/app-icons/icons.fallback.css"&gt;
+    &lt;link rel="stylesheet" href="//assets.fstatic.nl/master_25/assets/components/app-icons/icons.fallback.css"&gt;
 </noscript>
 
     <!--[if lt IE 9]>
@@ -64,34 +64,34 @@
 <script>var googletag=googletag||{};googletag.cmd=googletag.cmd||[],function(){var t=document.createElement("script");t.async=!0,t.type="text/javascript";var e="https:"==document.location.protocol;t.src=(e?"https:":"http:")+"//www.googletagservices.com/tag/js/gpt.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(t,o)}();</script>
 
     <!--[if !IE]><!-->
-    <link rel="stylesheet" type="text/css" href="//assets.fstatic.nl/master_22/assets/index.css">
+    <link rel="stylesheet" type="text/css" href="//assets.fstatic.nl/master_25/assets/index.css">
     <!--<![endif]-->
     
     <!--[if lte IE 9]>
-    <link rel="stylesheet" type="text/css" href="//assets.fstatic.nl/master_22/assets/index.bless.css"/>
+    <link rel="stylesheet" type="text/css" href="//assets.fstatic.nl/master_25/assets/index.bless.css"/>
     <![endif]-->
 
-    <link rel="icon" sizes="192x192" href="//assets.fstatic.nl/master_22/assets/funda-icon-192.png">
-    <link rel="icon" type="image/x-icon" href="//assets.fstatic.nl/master_22/assets/favicon.ico">
-    <link rel="apple-touch-icon" href="//assets.fstatic.nl/master_22/assets/funda-icon-180.png">
-    <link rel="manifest" href="//assets.fstatic.nl/master_22/assets/manifest.json">
+    <link rel="icon" sizes="192x192" href="//assets.fstatic.nl/master_25/assets/funda-icon-192.png">
+    <link rel="icon" type="image/x-icon" href="//assets.fstatic.nl/master_25/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="//assets.fstatic.nl/master_25/assets/funda-icon-180.png">
+    <link rel="manifest" href="//assets.fstatic.nl/master_25/assets/manifest.json">
     <meta property="fb:app_id" content="201092619940862">
 
     
-<script type="text/javascript" src="/fundadst.rxcqwesu.js" defer=""></script><style type="text/css">#d__fFH{position:absolute;top:-5000px;left:-5000px}#d__fF{font-family:serif;font-size:200px;visibility:hidden}#qwabruxfcaxwsy{display:none!important}</style><script src="http://partner.googleadservices.com/gpt/pubads_impl_84.js" async=""></script></head>
+<script type="text/javascript" src="/fundadst.yffaztxxv.js" defer=""></script><style type="text/css">#d__fFH{position:absolute;top:-5000px;left:-5000px}#d__fF{font-family:serif;font-size:200px;visibility:hidden}#adecbtdqa{display:none!important}</style><script src="http://partner.googleadservices.com/gpt/pubads_impl_84.js" async=""></script></head>
 
 <body role="document">
 
 
 <noscript>
-    &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-NPB6HG&amp;userId=7ebbfbea-73cd-424d-8beb-ca58d165ae58&amp;isAnonymous=true&amp;language=nl" 
+    &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-NPB6HG&amp;userId=6b3b6f88-63e9-4513-bb41-c43554e605ed&amp;isAnonymous=true&amp;language=nl" 
             height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
 </noscript>
 <script>
     // Fill GtmDataLayer with data
     gtmDataLayer = [];
     gtmDataLayer.push({
-            'userId' : '7ebbfbea-73cd-424d-8beb-ca58d165ae58',
+            'userId' : '6b3b6f88-63e9-4513-bb41-c43554e605ed',
             'isAnonymous' : 'true',
             'language' : 'nl',
     });
@@ -105,7 +105,7 @@
             j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
             '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'gtmDataLayer', 'GTM-NPB6HG');
-</script><iframe src="http://tpc.googlesyndication.com/safeframe/1-0-2/html/container.html" style="visibility: hidden; display: none;" cd_frame_id_="ba616a1df34e28f58c31ae7d0404bc51"></iframe>
+</script>
 
 
 
@@ -114,8 +114,8 @@
         <nav role="navigation" class="app-header-nav">
                 <h1 class="a11y-sr-only">Hoofdmenu</h1>
                 <a class="logo" rel="home" href="/koop/" title="Naar home" data-component="logo">
-                    <img alt="funda logo" src="//assets.fstatic.nl/master_22/assets/components/logo/funda-logo.svg" onerror="this.onerror = null; this.src = '//assets.fstatic.nl/master_22/assets/components/logo/funda-logo.svg'; ">
-                </a><div style="display: none;"><a href="ycecstccv.html" id="qwabruxfcaxwsy" rel="file">efwvvuaz</a></div>
+                    <img alt="funda logo" src="//assets.fstatic.nl/master_25/assets/components/logo/funda-logo.svg" onerror="this.onerror = null; this.src = '//assets.fstatic.nl/master_25/assets/components/logo/funda-logo.svg'; ">
+                </a><div style="display: none;"><a href="yxcrdbcwesvrrrsy.html" id="adecbtdqa" rel="file">faxbrucqqayeawz</a></div>
                 <button class="app-header-nav-button" data-expandible-handle="">
                     <span class="icon-user-menu-white app-header-nav-icon app-header-nav-icon-open"></span>
                     <span class="icon-close-white app-header-nav-icon app-header-nav-icon-close"></span>
@@ -170,7 +170,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_22/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_25/assets/components/app-spinner/spinner.gif">
 </div>
         </div>
     </div>
@@ -422,7 +422,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_22/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_25/assets/components/app-spinner/spinner.gif">
 </div>
         <div class="save-search-container" data-save-search="expandible"></div>
     </div>
@@ -438,7 +438,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_22/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_25/assets/components/app-spinner/spinner.gif">
 </div>
 </div>
 <!-- /search-results-loading component -->
@@ -499,7 +499,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_22/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_25/assets/components/app-spinner/spinner.gif">
 </div>
 
                 <div class="save-search-container" data-save-search="flyout"></div>
@@ -1007,7 +1007,7 @@
                 <span class="icon-close-blue" data-grunticon-embed></span> {label}
             </label>
         </li>
-    </script>
+    </script><iframe src="http://tpc.googlesyndication.com/safeframe/1-0-2/html/container.html" style="visibility: hidden; display: none;" cd_frame_id_="581ca928c805b668bf87fcd082a8e6ad"></iframe>
 </div>
 
 
@@ -3302,52 +3302,52 @@
     <div class="divider" id="makelaarAdsDivider"></div>
     <h4 makelaar-ads-header="" class="makelaar-ads-header" style="max-height: inherit;">Makelaar in de buurt</h4>
 
-    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2920978" rel="nofollow" style="max-height: inherit;" href="http://www.vanasenvanhooff.nl/">
-        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/062/293/469_logomiddel.png">
+    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="1186970" rel="nofollow" style="max-height: inherit;" href="http://www.eelmannienhuys.nl/">
+        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/053/853/347_pasfoto.jpg">
             
         </div>
         <div class="makelaar-ads-text">
-            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Van As &amp; Van Hooff makelaars </h4>
+            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">AANKOOPMAKELAAR</h4>
             <p data-makelaar-ads-body="" class="makelaar-ads-body">
-                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">woning aankoop of verkoop in </span>
-                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">Utrecht, Houten, De Bilt e.o.</span>
+                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">wie een huis koopt,</span>
+                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">kan hulp gebruiken</span>
             </p>
-            <p data-makelaar-ads-website="" class="makelaar-ads-website">vanasenvanhooff.nl</p>
+            <p data-makelaar-ads-website="" class="makelaar-ads-website">eelmannienhuys.nl</p>
         </div>
     </a>
 
-    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2775705" rel="nofollow" style="max-height: inherit;" href="http://www.kraaijkampmakelaars.nl/diensten/aankoopmakelaar-op-uurtarief/">
-        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/045/874/075_logomiddel.png">
+    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="1172771" rel="nofollow" style="max-height: inherit;" href="http://www.brecheisen.nl/index.html">
+        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/061/151/864_logomiddel.png">
             
         </div>
         <div class="makelaar-ads-text">
-            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Aankoopmakelaar op uurtarief</h4>
+            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Brecheisen Makelaars </h4>
             <p data-makelaar-ads-body="" class="makelaar-ads-body">
-                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">Zoveel Makelaar als je zelf </span>
-                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">wilt! Jouw makelaar v.a  € 800</span>
+                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">GRATIS DOWNLOAD </span>
+                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">De Woningmarktrapportage Q3</span>
             </p>
-            <p data-makelaar-ads-website="" class="makelaar-ads-website">kraaijkampmakelaars.nl</p>
+            <p data-makelaar-ads-website="" class="makelaar-ads-website">brecheisen.nl</p>
         </div>
     </a>
 
-    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="3230678" rel="nofollow" style="max-height: inherit;" href="http://www.makelaarsland.nl/huis-verkopen/?utm_source=funda&amp;utm_medium=cpc&amp;utm_campaign=funda-ads">
-        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/062/837/205_logomiddel.png">
+    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2381794" rel="nofollow" style="max-height: inherit;" href="http://www.quistmakelaardij.nl/">
+        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/053/824/297_pasfoto.jpg">
             
         </div>
         <div class="makelaar-ads-text">
-            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">RONDLEIDEN GEDOE?</h4>
+            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Quist Makelaardij</h4>
             <p data-makelaar-ads-body="" class="makelaar-ads-body">
-                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">LAAT JE NIKS WIJSMAKEN!</span>
-                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">HUIS VERKOPEN? MAKELAARSLAND </span>
+                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">uw huis, uw thuis</span>
+                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">samen vinden wij uw droomhuis</span>
             </p>
-            <p data-makelaar-ads-website="" class="makelaar-ads-website">makelaarsland.nl</p>
+            <p data-makelaar-ads-website="" class="makelaar-ads-website">quistmakelaardij.nl</p>
         </div>
     </a>
 </div>
 
 <div class="container adsense" data-adsense="" data-pubid="funda" data-width="462px" data-query="/koop/utrecht/straat-maliebaan/1000000-2000000/" data-attribution-text="Advertenties door Google">
-    <div id="adcontainer1" data-ad-container="" style="height: 0px; width: 462px; font-weight: normal; text-align: center;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="{&quot;name&quot;:&quot;master-1&quot;,&quot;slave-1-1&quot;:{&quot;container&quot;:&quot;adcontainer2&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;},&quot;master-1&quot;:{&quot;container&quot;:&quot;adcontainer1&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;}}" id="master-1" src="https://www.google.com/afs/ads?q=%20woning%20kopen%20utrecht%20straat%20maliebaan%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&amp;lo=false&amp;adpage=1&amp;po=false&amp;r=m&amp;fexp=2631602%2C21404%2C7000108&amp;client=funda&amp;hl=nl&amp;type=0&amp;oe=UTF-8&amp;ie=UTF-8&amp;jsei=4&amp;format=n1%7Cn1&amp;ad=n2&amp;nocache=1561460729553695&amp;num=0&amp;output=uds_ads_only&amp;v=3&amp;bsl=10&amp;u_his=9&amp;u_tz=0&amp;dt=1460729553700&amp;u_w=1400&amp;u_h=1050&amp;biw=1382&amp;bih=976&amp;psw=1382&amp;psh=2891&amp;frm=0&amp;uio=uv3cs1vp1lo0po0sr0sl0-lhwi462st14sd13sv13sn13lt20ld20lv20da0-lhwi462st14sd13sv13sn13lt20ld20lv20da0&amp;jsv=14996&amp;rurl=http%3A%2F%2Fwww.funda.nl%2Fkoop%2Futrecht%2Fstraat-maliebaan%2F1000000-2000000%2F&amp;referer=http%3A%2F%2Fwww.funda.nl%2F#master-1" style="visibility: hidden; height: 0px;" cd_frame_id_="6f9a98e3fe4c45318276ac6e01edde26"></iframe></div>
-    <div id="adcontainer2" data-ad-container="" style="height: 0px; width: 462px; font-weight: normal; text-align: center;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="slave-1-1|{&quot;name&quot;:&quot;master-1&quot;,&quot;slave-1-1&quot;:{&quot;container&quot;:&quot;adcontainer2&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;},&quot;master-1&quot;:{&quot;container&quot;:&quot;adcontainer1&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;}}" id="slave-1-1" src="https://www.google.com/afs/ads/i/iframe.html#slave-1-1" style="visibility: hidden; height: 0px;" cd_frame_id_="8e309869e1250cfe2f9ca2f9ca56d829"></iframe></div>
+    <div id="adcontainer1" data-ad-container="" style="height: 0px; width: 462px; font-weight: normal; text-align: center;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="{&quot;name&quot;:&quot;master-1&quot;,&quot;slave-1-1&quot;:{&quot;container&quot;:&quot;adcontainer2&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;},&quot;master-1&quot;:{&quot;container&quot;:&quot;adcontainer1&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;}}" id="master-1" src="https://www.google.com/afs/ads?q=%20woning%20kopen%20utrecht%20straat%20maliebaan%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&amp;lo=false&amp;adpage=1&amp;po=false&amp;r=m&amp;fexp=21404&amp;client=funda&amp;hl=nl&amp;type=0&amp;oe=UTF-8&amp;ie=UTF-8&amp;format=n1%7Cn1&amp;ad=n2&amp;nocache=9361460805045554&amp;num=0&amp;output=uds_ads_only&amp;v=3&amp;bsl=10&amp;u_his=9&amp;u_tz=0&amp;dt=1460805045557&amp;u_w=1400&amp;u_h=1050&amp;biw=1382&amp;bih=976&amp;psw=1382&amp;psh=2891&amp;frm=0&amp;uio=uv3cs1vp1lo0po0sr0sl0-lhwi462st14sd13sv13sn13lt20ld20lv20da0-lhwi462st14sd13sv13sn13lt20ld20lv20da0&amp;jsv=14996&amp;rurl=http%3A%2F%2Fwww.funda.nl%2Fkoop%2Futrecht%2Fstraat-maliebaan%2F1000000-2000000%2F&amp;referer=http%3A%2F%2Fwww.funda.nl%2F#master-1" style="visibility: hidden; height: 0px;" cd_frame_id_="4477ae1f3c5eb2a3fc09ad3709768717"></iframe></div>
+    <div id="adcontainer2" data-ad-container="" style="height: 0px; width: 462px; font-weight: normal; text-align: center;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="slave-1-1|{&quot;name&quot;:&quot;master-1&quot;,&quot;slave-1-1&quot;:{&quot;container&quot;:&quot;adcontainer2&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;},&quot;master-1&quot;:{&quot;container&quot;:&quot;adcontainer1&quot;,&quot;linkTarget&quot;:&quot;_top&quot;,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;462px&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;}}" id="slave-1-1" src="https://www.google.com/afs/ads/i/iframe.html#slave-1-1" style="visibility: hidden; height: 0px;" cd_frame_id_="96168fa1e48ac0551ecbc0e4fe8dac9a"></iframe></div>
 </div>
 
 
@@ -3473,10 +3473,10 @@
 
 <script>
     if ('querySelector' in document && 'addEventListener' in window) {
-        document.write('<script src="//assets.fstatic.nl/master_22/assets/vendor.js"><\/script>');
-        document.write('<script src="//assets.fstatic.nl/master_22/assets/index.js"><\/script>');
+        document.write('<script src="//assets.fstatic.nl/master_25/assets/vendor.js"><\/script>');
+        document.write('<script src="//assets.fstatic.nl/master_25/assets/index.js"><\/script>');
     }
-</script><script src="//assets.fstatic.nl/master_22/assets/vendor.js"></script><script src="//assets.fstatic.nl/master_22/assets/index.js"></script>
+</script><script src="//assets.fstatic.nl/master_25/assets/vendor.js"></script><script src="//assets.fstatic.nl/master_25/assets/index.js"></script>
 
 
 
