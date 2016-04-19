@@ -26,7 +26,7 @@
 		<td><pre>&lt;status&gt;OK&lt;/status&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>$mockUrl&lt;-[http://172.17.0.141:8000/FitNesseMock]</td>
+		<td>$mockUrl&lt;-[http://172.17.0.131:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -45,25 +45,25 @@ Now we post files to the service. Note the different notation options. We can:<b
 		<td>post file <span class="fail">File &lt;a href="files/subfolder/testFile.txt"&gt;http://files/subfolder/testFile.txt&lt;/a&gt; not found. Resolved to: /home/travis/build/fhoeben/hsac-fitnesse-fixtures/files/subfolder/testFile.txt</span></td>
 		<td><a href="files/subfolder/testFile.txt">http://files/subfolder/testFile.txt</a></td>
 		<td>to</td>
-		<td>$mockUrl->[http://172.17.0.141:8000/FitNesseMock]</td>
+		<td>$mockUrl->[http://172.17.0.131:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor2">
 		<td>post file <span class="ignore">Test not run</span></td>
 		<td>files/subfolder/testFile.txt</td>
 		<td>to</td>
-		<td>$mockUrl->[http://172.17.0.141:8000/FitNesseMock]</td>
+		<td>$mockUrl->[http://172.17.0.131:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor2">
 		<td>post file <span class="ignore">Test not run</span></td>
 		<td><img src="files/test.png"/></td>
 		<td>to</td>
-		<td>$mockUrl->[http://172.17.0.141:8000/FitNesseMock]</td>
+		<td>$mockUrl->[http://172.17.0.131:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor2">
 		<td>post file <span class="ignore">Test not run</span></td>
 		<td>files/test.png</td>
 		<td>to</td>
-		<td>$mockUrl->[http://172.17.0.141:8000/FitNesseMock]</td>
+		<td>$mockUrl->[http://172.17.0.131:8000/FitNesseMock]</td>
 	</tr>
 </table>
 <br/>The Message report will show the received request:<br/><br/><table>
