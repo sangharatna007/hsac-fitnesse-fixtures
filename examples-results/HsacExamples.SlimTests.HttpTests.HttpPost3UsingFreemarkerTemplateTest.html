@@ -128,7 +128,19 @@
 	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;GetWeatherResponse xmlns=&quot;http://www.webserviceX.NET&quot;&gt;
-            &lt;GetWeatherResult&gt;Data Not Found&lt;/GetWeatherResult&gt;
+            &lt;GetWeatherResult&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&amp;gt;
+&amp;lt;CurrentWeather&amp;gt;
+  &amp;lt;Location&amp;gt;Vancouver International Air-Port, B. C., Canada (CYVR) 49-11N 123-10W 2M&amp;lt;/Location&amp;gt;
+  &amp;lt;Time&amp;gt;May 09, 2016 - 10:00 AM EDT / 2016.05.09 1400 UTC&amp;lt;/Time&amp;gt;
+  &amp;lt;Wind&amp;gt; from the NE (050 degrees) at 5 MPH (4 KT):0&amp;lt;/Wind&amp;gt;
+  &amp;lt;Visibility&amp;gt; 20 mile(s):0&amp;lt;/Visibility&amp;gt;
+  &amp;lt;SkyConditions&amp;gt; mostly clear&amp;lt;/SkyConditions&amp;gt;
+  &amp;lt;Temperature&amp;gt; 50 F (10 C)&amp;lt;/Temperature&amp;gt;
+  &amp;lt;DewPoint&amp;gt; 44 F (7 C)&amp;lt;/DewPoint&amp;gt;
+  &amp;lt;RelativeHumidity&amp;gt; 81%&amp;lt;/RelativeHumidity&amp;gt;
+  &amp;lt;Pressure&amp;gt; 30.07 in. Hg (1018 hPa)&amp;lt;/Pressure&amp;gt;
+  &amp;lt;Status&amp;gt;Success&amp;lt;/Status&amp;gt;
+&amp;lt;/CurrentWeather&amp;gt;&lt;/GetWeatherResult&gt;
         &lt;/GetWeatherResponse&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
@@ -143,6 +155,18 @@
 		<td>show</td>
 		<td>xPath</td>
 		<td colspan="2">//wsX:GetWeatherResult/text()</td>
-	<td>Data Not Found</td></tr>
+	<td>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;CurrentWeather&gt;
+  &lt;Location&gt;Vancouver International Air-Port, B. C., Canada (CYVR) 49-11N 123-10W 2M&lt;/Location&gt;
+  &lt;Time&gt;May 09, 2016 - 10:00 AM EDT / 2016.05.09 1400 UTC&lt;/Time&gt;
+  &lt;Wind&gt; from the NE (050 degrees) at 5 MPH (4 KT):0&lt;/Wind&gt;
+  &lt;Visibility&gt; 20 mile(s):0&lt;/Visibility&gt;
+  &lt;SkyConditions&gt; mostly clear&lt;/SkyConditions&gt;
+  &lt;Temperature&gt; 50 F (10 C)&lt;/Temperature&gt;
+  &lt;DewPoint&gt; 44 F (7 C)&lt;/DewPoint&gt;
+  &lt;RelativeHumidity&gt; 81%&lt;/RelativeHumidity&gt;
+  &lt;Pressure&gt; 30.07 in. Hg (1018 hPa)&lt;/Pressure&gt;
+  &lt;Status&gt;Success&lt;/Status&gt;
+&lt;/CurrentWeather&gt;</td></tr>
 </table>
 </article></body></html>
