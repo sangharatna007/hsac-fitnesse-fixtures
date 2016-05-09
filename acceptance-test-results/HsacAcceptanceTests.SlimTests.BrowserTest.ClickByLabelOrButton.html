@@ -3,11 +3,25 @@
 &lt;body&gt;
 &lt;button value="b2"&gt;Button 2&lt;/button&gt;
 &lt;button value="b3"&gt;Button 3&lt;/button&gt;
-&lt;label&gt;&lt;span&gt;Hello1&lt;/span&gt;&lt;input value="Hoi" style="display:none;"&gt;&lt;/label&gt;
 &lt;div&gt;
 &lt;label for="g2"&gt;Hello2&lt;/label&gt;&lt;input id="g2" value="Hi"&gt;
 &lt;/div&gt;
 &lt;label for="g4"&gt;Hello4&lt;/label&gt;&lt;input id="g4" value="Hallo"&gt;
+                            &lt;div class="layout layout--6col layout--centered"&gt;
+                                &lt;div class="radio"&gt;
+                                    &lt;label class="radio_label"&gt;&lt;input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" 
+                                           style="display: block;    position: absolute;    top: 0;    bottom: 0;    right: 0;    left: 0;    opacity: 0;    z-index: 500;"
+                                    &gt; &lt;span&gt;&lt;/span&gt; Ja, ik heb producten&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="layout layout--6col layout--centered"&gt;
+                                &lt;div class="radio"&gt;
+                                    &lt;label class="radio_label"&gt;&lt;input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"
+                                           style="display: block;    position: absolute;    top: 0;    bottom: 0;    right: 0;    left: 0;    opacity: 0;    z-index: 500;"
+                                    &gt; &lt;span&gt;&lt;/span&gt; Nee, ik heb geen producten&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
 <br/><br/><br/><table>
@@ -22,16 +36,30 @@
 &lt;body&gt;
 &lt;button value="b2"&gt;Button 2&lt;/button&gt;
 &lt;button value="b3"&gt;Button 3&lt;/button&gt;
-&lt;label&gt;&lt;span&gt;Hello1&lt;/span&gt;&lt;input value="Hoi" style="display:none;"&gt;&lt;/label&gt;
 &lt;div&gt;
 &lt;label for="g2"&gt;Hello2&lt;/label&gt;&lt;input id="g2" value="Hi"&gt;
 &lt;/div&gt;
 &lt;label for="g4"&gt;Hello4&lt;/label&gt;&lt;input id="g4" value="Hallo"&gt;
+                            &lt;div class="layout layout--6col layout--centered"&gt;
+                                &lt;div class="radio"&gt;
+                                    &lt;label class="radio_label"&gt;&lt;input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" 
+                                           style="display: block;    position: absolute;    top: 0;    bottom: 0;    right: 0;    left: 0;    opacity: 0;    z-index: 500;"
+                                    &gt; &lt;span&gt;&lt;/span&gt; Ja, ik heb producten&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="layout layout--6col layout--centered"&gt;
+                                &lt;div class="radio"&gt;
+                                    &lt;label class="radio_label"&gt;&lt;input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"
+                                           style="display: block;    position: absolute;    top: 0;    bottom: 0;    right: 0;    left: 0;    opacity: 0;    z-index: 500;"
+                                    &gt; &lt;span&gt;&lt;/span&gt; Nee, ik heb geen producten&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.3.29:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.32:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -46,7 +74,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td>$url->[http://172.17.3.29:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.32:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
@@ -62,15 +90,23 @@
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
-		<td>label: exact hidden, exact visible and partial</td>
+		<td>label: exact hidden, exact visible</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">click</span></td>
-		<td>Hello1</td>
+		<td>Ja, ik heb producten</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">click</span></td>
 		<td>Hello2</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td>label: partial hidden, partial visible</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td>geen</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">click</span></td>
