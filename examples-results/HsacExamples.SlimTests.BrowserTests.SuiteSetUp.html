@@ -22,11 +22,74 @@
 	<tr class="slimRowColor0">
 		<td><span class="pass">nl.hsac.fitnesse.fixture.slim.web</span></td>
 	</tr>
+	<tr class="slimRowColor1">
+		<td><span class="pass">nl.hsac.fitnesse.fixture.FixtureDebugTest</span></td>
+	</tr>
 </table>
 <br/></div>
 </div>
 <br/>The Selenium configuration below uses lines starting with <i>|note</i> to have configuration values present that are not currently used.<br/>This allows us to switch to another browser by just adding <i>|note</i> to one line and removing it from another, instead of typing the entire line.<br/><br/>Furthermore this configuration is prepared for both running the browser on the same (development) machine running Fitnesse (with <i>start driver for</i>), as remotely on a node in a Selenium Grid (with <i>connect to driver for</i>). <br/>The latter allows tests to be executed on different operating systems. This is also very useful to run tests as part of a continuous integration server (i.e. build server), when no browsers are installed on the server running the tests. <br/><br/><span class="meta">variable defined: GRID_HUB=http://remote-selenium.local:4444/wd/hub</span>
-<br/><br/><table>
+<br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Define $mobileEmulation device attributes</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19</td>
+		<td>for</td>
+		<td>userAgent</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>set int value</td>
+		<td>360</td>
+		<td>for</td>
+		<td>deviceMetrics.width</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>set int value</td>
+		<td>640</td>
+		<td>for</td>
+		<td>deviceMetrics.height</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>set double value</td>
+		<td>3.0</td>
+		<td>for</td>
+		<td>deviceMetrics.pixelRatio</td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td>$mobileEmulation&lt;-[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">userAgent</td>
+		<td class="hash_value">Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">deviceMetrics</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">width</td>
+		<td class="hash_value">360</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">height</td>
+		<td class="hash_value">640</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">pixelRatio</td>
+		<td class="hash_value">3.0</td>
+	</tr>
+</table></td>
+	</tr>
+</table>]</td>
+		<td colspan="3">copy map</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="4"><span class="pass">selenium driver setup</span></td>
@@ -59,6 +122,25 @@
 		<td>note</td>
 		<td>start driver for</td>
 		<td colspan="3">phantomjs</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td>start driver for</td>
+		<td>chrome mobile emulation</td>
+		<td>with profile</td>
+		<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">deviceName</td>
+		<td class="hash_value">Apple iPhone 6</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td>start driver for</td>
+		<td>chrome mobile emulation</td>
+		<td>with profile</td>
+		<td>$mobileEmulation</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
@@ -118,6 +200,6 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="4">driver description</td>
-	<td><div><pre>org.openqa.selenium.remote.RemoteWebDriver</pre> at <strong>ondemand.saucelabs.com</strong><table><tbody><tr><th>platform</th><td>XP</td></tr><tr><th>acceptSslCerts</th><td>true</td></tr><tr><th>javascriptEnabled</th><td>true</td></tr><tr><th>hasMetadata</th><td>true</td></tr><tr><th>browserName</th><td>chrome</td></tr><tr><th>chrome</th><td>{userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1960_12202, chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4)}</td></tr><tr><th>rotatable</th><td>false</td></tr><tr><th>locationContextEnabled</th><td>true</td></tr><tr><th>mobileEmulationEnabled</th><td>false</td></tr><tr><th>webdriver.remote.sessionid</th><td>572848b5e2424f2a8427f4b321b7a13e</td></tr><tr><th>version</th><td>51.0.2704.63</td></tr><tr><th>takesHeapSnapshot</th><td>true</td></tr><tr><th>databaseEnabled</th><td>false</td></tr><tr><th>cssSelectorsEnabled</th><td>true</td></tr><tr><th>handlesAlerts</th><td>true</td></tr><tr><th>browserConnectionEnabled</th><td>false</td></tr><tr><th>nativeEvents</th><td>true</td></tr><tr><th>webStorageEnabled</th><td>true</td></tr><tr><th>hasTouchScreen</th><td>false</td></tr><tr><th>applicationCacheEnabled</th><td>false</td></tr><tr><th>takesScreenshot</th><td>true</td></tr></tbody></table><a href="https://saucelabs.com/jobs/572848b5e2424f2a8427f4b321b7a13e?auth=3beeffd08b855d86e47cc4af7d44d662" target="_blank">Job details</a></div></td></tr>
+	<td><div><pre>org.openqa.selenium.remote.RemoteWebDriver</pre> at <strong>ondemand.saucelabs.com</strong><table><tbody><tr><th>platform</th><td>XP</td></tr><tr><th>acceptSslCerts</th><td>true</td></tr><tr><th>javascriptEnabled</th><td>true</td></tr><tr><th>hasMetadata</th><td>true</td></tr><tr><th>browserName</th><td>chrome</td></tr><tr><th>chrome</th><td>{userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1732_24924, chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4)}</td></tr><tr><th>rotatable</th><td>false</td></tr><tr><th>locationContextEnabled</th><td>true</td></tr><tr><th>mobileEmulationEnabled</th><td>false</td></tr><tr><th>webdriver.remote.sessionid</th><td>0261d125438e4715bddecf4a97c161e1</td></tr><tr><th>version</th><td>51.0.2704.63</td></tr><tr><th>takesHeapSnapshot</th><td>true</td></tr><tr><th>databaseEnabled</th><td>false</td></tr><tr><th>cssSelectorsEnabled</th><td>true</td></tr><tr><th>handlesAlerts</th><td>true</td></tr><tr><th>browserConnectionEnabled</th><td>false</td></tr><tr><th>nativeEvents</th><td>true</td></tr><tr><th>webStorageEnabled</th><td>true</td></tr><tr><th>hasTouchScreen</th><td>false</td></tr><tr><th>applicationCacheEnabled</th><td>false</td></tr><tr><th>takesScreenshot</th><td>true</td></tr></tbody></table><a href="https://saucelabs.com/jobs/0261d125438e4715bddecf4a97c161e1?auth=9ff1530f51b2416a9d84afa73bc80d43" target="_blank">Job details</a></div></td></tr>
 </table>
 </article></body></html>
