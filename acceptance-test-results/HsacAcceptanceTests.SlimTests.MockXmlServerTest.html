@@ -21,7 +21,7 @@
 		<td>201</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.10.39:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.9.176:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -34,7 +34,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.10.39:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.9.176:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -65,7 +65,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.10.39:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.9.176:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -113,7 +113,7 @@
 		<td><pre>&lt;bye/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.10.39:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.9.176:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -126,7 +126,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.10.39:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.9.176:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -142,7 +142,7 @@
 		<td>post</td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.10.39:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.9.176:8000/FitNesseMock]</td>
 	<td>false</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -162,94 +162,6 @@
 </pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;bye/&gt;
 </pre></div></div></td></tr><tr><td class="fail">2</td><td><div class="collapsible"><p class="title">request</p><div><pre>&lt;Hallo2/&gt;
 </pre></div></div></td><td>Unexpected request, no response set up</td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
-<br/><table>
-	<tr class="slimRowTitle">
-		<td>script</td>
-		<td><span class="pass">mock xml server setup</span></td>
-	</tr>
-	<tr class="slimRowColor4">
-		<td colspan="2">stop</td>
-	</tr>
-</table>
-<br/><h2>Use a file as the response</h2>
-<br/><table>
-	<tr class="slimRowTitle">
-		<td>script</td>
-		<td colspan="4"><span class="pass">file fixture</span></td>
-	</tr>
-	<tr class="slimRowColor5">
-		<td>set directory</td>
-		<td colspan="4"><a href="files/test">http://files/test</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>$responseFile&lt;-[<a href="files/test/response.xml">response.xml</a>]</td>
-		<td>create</td>
-		<td>response.xml</td>
-		<td>containing</td>
-		<td><responseFromFile/></td>
-	</tr>
-</table>
-<br/><table>
-	<tr class="slimRowTitle">
-		<td>script</td>
-		<td colspan="3"><span class="pass">mock xml server setup</span></td>
-	</tr>
-	<tr class="slimRowColor6">
-		<td>add response file</td>
-		<td colspan="3">$responseFile->[<a href="files/test/response.xml">response.xml</a>]</td>
-	</tr>
-	<tr class="slimRowColor6">
-		<td>add response file</td>
-		<td>$responseFile->[<a href="files/test/response.xml">response.xml</a>]</td>
-		<td>with status</td>
-		<td>201</td>
-	</tr>
-	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.10.39:8000/FitNesseMock]</td>
-		<td colspan="3">get mock server url</td>
-	</tr>
-</table>
-<br/><table>
-	<tr class="slimRowTitle">
-		<td>script</td>
-		<td colspan="2"><span class="pass">xml http test</span></td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td><span class="pass">get from</span></td>
-		<td colspan="2">$url->[http://172.17.10.39:8000/FitNesseMock]</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>response status</td>
-		<td><span class="pass">200</span></td>
-	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td colspan="2">response</td>
-	<td><pre>&lt;responseFromFile/&gt;
-</pre></td></tr>
-	<tr class="slimRowColor8">
-		<td><span class="pass">get from</span></td>
-		<td colspan="2">$url->[http://172.17.10.39:8000/FitNesseMock]</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>response status</td>
-		<td><span class="pass">201</span></td>
-	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td colspan="2">response</td>
-	<td><pre>&lt;responseFromFile/&gt;
-</pre></td></tr>
-</table>
-<br/><br/><table>
-	<tr class="slimRowTitle">
-		<td><span class="pass">table: Mock Server Message Report</span></td>
-	</tr>
-<tr><td><table><tbody><tr class="scenario closed"><td class="pass">Expected and received 2 requests</td></tr><tr class="scenario-detail closed-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;responseFromFile/&gt;
-</pre></div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;responseFromFile/&gt;
-</pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
