@@ -2,26 +2,30 @@
 <br/><br/>On this page we test whether we can find a nice house which is for sale in Utrecht, The Netherlands. <br/>We check whether they have not been changing the original asking price or its size in square meters. Furthermore we look at, and capture, the first three pictures<br/><br/>To do this we use a Slim script table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScriptTable?edit&amp;nonExistent=true">[?]</a> driving the Java class BrowserTest (which uses Selenium).<br/>This class allows us to specify what we want to do using a web browser, by the (end user visible) texts on screen. We don't need to specify any HTML code or write any custom Java logic. By only using the texts visible on screen we only need to change the script if the site's interaction design changes, but not for changes in HTML structure, element naming or styling.<br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3"><span class="pass">browser test</span></td>
+		<td colspan="3">browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: Resolution you specified is not available for this OS/browser/version/device combo: OS: 'Windows 2008', Browser: 'googlechrome', Version: '51.0.2704.63', Device: 'unspecified', Screen Resolution: '1400x1050' available resolutions: '800x600', '1024x768', '1152x864', '1280x800', '1280x960', '1280x1024', '1440x900', '1600x1200', '1680x1050', '1920x1200', '2560x1600'
+Command duration or timeout: 276 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'testing-worker-linux-docker-2a54f4d2-3398-linux-1', ip: '172.17.0.192', os.name: 'Linux', os.arch: 'amd64', os.version: '3.13.0-40-generic', java.version: '1.7.0_76'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td><span class="pass">select</span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>€ 800.000</td>
 		<td>for</td>
 		<td>van</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td><span class="pass">select</span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>€ 1.000.000</td>
 		<td>for</td>
 		<td>tot</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td><span class="pass">enter</span></td>
+		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>Gageldijk, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
@@ -36,57 +40,57 @@
 		<td colspan="2">seconds</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Gageldijk 104</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>page title</td>
-		<td colspan="2"><span class="pass">Huis te koop: Gageldijk 104 3566 MH Utrecht [funda]</span></td>
+		<td colspan="2">Huis te koop: Gageldijk 104 3566 MH Utrecht [funda] <span class="error">Method pageTitle[0] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
 		<td>Status</td>
-		<td><span class="pass">Beschikbaar</span></td>
+		<td>Beschikbaar <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
 		<td>Woonoppervlakte</td>
-		<td><span class="pass">270 m²</span></td>
+		<td>270 m² <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
 		<td colspan="3">set width so we see button to go to next photo</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>set browser width</td>
+		<td>set browser width <span class="error">Method setBrowserWidth[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">1200</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Foto's</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="error">Method takeScreenshot[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>take screenshot</td>
 		<td colspan="2">Foto_1</td>
-	<td><a href="files/screenshots/Foto_1.png"><img src="files/screenshots/Foto_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/Foto_1.png" height="200"/></a></td></tr>
+	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Volgende foto</td>
 	</tr>
 	<tr class="slimRowColor8">
@@ -98,12 +102,12 @@
 		<td colspan="3">1</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="error">Method takeScreenshot[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>take screenshot</td>
 		<td colspan="2">Foto_2</td>
-	<td><a href="files/screenshots/Foto_2.png"><img src="files/screenshots/Foto_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/Foto_2.png" height="200"/></a></td></tr>
+	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Volgende foto</td>
 	</tr>
 	<tr class="slimRowColor0">
@@ -111,9 +115,9 @@
 		<td colspan="3">1</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="error">Method takeScreenshot[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>take screenshot</td>
 		<td colspan="2">Foto_3</td>
-	<td><a href="files/screenshots/Foto_3.png"><img src="files/screenshots/Foto_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/Foto_3.png" height="200"/></a></td></tr>
+	</tr>
 </table>
 <br/>When multiple similar sequences of steps are needed a script can be generalized using a scenario, which is show in <a href="HsacExamples.SlimTests.BrowserTests.ScenarioTest">ScenarioTest</a>. <br/>To make test more readable, maintainable and powerful we can also create custom subclasses of BrowserTest. This is shown in <a href="HsacExamples.SlimTests.BrowserTests.CustomFixtureTest">CustomFixtureTest</a>.<br/></article></body></html>

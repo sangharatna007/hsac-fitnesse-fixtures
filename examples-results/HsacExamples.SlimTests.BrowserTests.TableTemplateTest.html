@@ -76,7 +76,11 @@
 <br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td><span class="pass">browser test</span></td>
+		<td>browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: Resolution you specified is not available for this OS/browser/version/device combo: OS: 'Windows 2008', Browser: 'googlechrome', Version: '51.0.2704.63', Device: 'unspecified', Screen Resolution: '1400x1050' available resolutions: '800x600', '1024x768', '1152x864', '1280x800', '1280x960', '1280x1024', '1440x900', '1600x1200', '1680x1050', '1920x1200', '2560x1600'
+Command duration or timeout: 283 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'testing-worker-linux-docker-2a54f4d2-3398-linux-1', ip: '172.17.0.192', os.name: 'Linux', os.arch: 'amd64', os.version: '3.13.0-40-generic', java.version: '1.7.0_76'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver</span></td>
 	</tr>
 </table>
 <br/><table>
@@ -93,36 +97,36 @@
 		<td>volume?</td>
 	</tr>
 	<tr class="scenario closed">
-		<td>Gageldijk 104</td>
-		<td>Utrecht</td>
-		<td><span class="pass">€ 900.000 k.k.</span></td>
-		<td><span class="pass">Beschikbaar</span></td>
-		<td>270</td>
-		<td><span class="pass">1906</span></td>
-		<td><span class="pass">1.270 m³</span></td>
+		<td class="error">Gageldijk 104</td>
+		<td class="error">Utrecht</td>
+		<td class="error">€ 900.000 k.k. <span class="ignore">Test not run</span></td>
+		<td class="error">Beschikbaar <span class="ignore">Test not run</span></td>
+		<td class="error">270</td>
+		<td class="error">1906 <span class="ignore">Test not run</span></td>
+		<td class="error">1.270 m³ <span class="ignore">Test not run</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="7"><table>
 	<tr>
 		<td>table template</td>
 		<td colspan="3">check original price</td>
 	</tr>
 	<tr>
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr>
-		<td><span class="pass">select</span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>€ 900.000</td>
 		<td>for</td>
 		<td>van</td>
 	</tr>
 	<tr>
-		<td><span class="pass">select</span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>tot</td>
 	</tr>
 	<tr>
-		<td><span class="pass">enter</span></td>
+		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>Gageldijk 104, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
@@ -132,33 +136,33 @@
 		<td colspan="3">select option from autocomplete</td>
 	</tr>
 	<tr>
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr>
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr>
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr>
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Gageldijk 104</td>
 	</tr>
 	<tr>
-		<td>$price&lt;-[€ 900.000 k.k.]</td>
+		<td>$price= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr>
-		<td>$state&lt;-[Beschikbaar]</td>
+		<td>$state= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
 	<tr>
-		<td>$volume&lt;-[1.270 m³]</td>
+		<td>$volume= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Inhoud</td>
 	</tr>
@@ -166,45 +170,45 @@
 		<td>check</td>
 		<td>value of</td>
 		<td>Woonoppervlakte</td>
-		<td><span class="pass">270 m²</span></td>
+		<td>270 m² <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 	</tr>
 	<tr>
-		<td>$yearBuilt&lt;-[1906]</td>
+		<td>$yearBuilt= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Bouwjaar</td>
 	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td>Wilhelminapark 46</td>
-		<td>Utrecht</td>
-		<td><span class="pass">€ 1.295.000 k.k.</span></td>
-		<td>[<span class="diff">Ond</span>e<span class="diff">r </span>b<span class="diff">od</span>] <span class="fail">expected [</span><span class="diff">B</span><span class="fail">e</span><span class="diff">schik</span><span class="fail">b</span><span class="diff">aar</span><span class="fail">]</span></td>
-		<td>312</td>
-		<td><span class="pass">Voor 1906</span></td>
-		<td><span class="pass">1.370 m³</span></td>
+		<td class="error">Wilhelminapark 46</td>
+		<td class="error">Utrecht</td>
+		<td class="error">€ 1.295.000 k.k. <span class="ignore">Test not run</span></td>
+		<td class="error">Onder bod <span class="ignore">Test not run</span></td>
+		<td class="error">312</td>
+		<td class="error">Voor 1906 <span class="ignore">Test not run</span></td>
+		<td class="error">1.370 m³ <span class="ignore">Test not run</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="7"><table>
 	<tr>
 		<td>table template</td>
 		<td colspan="3">check original price</td>
 	</tr>
 	<tr>
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr>
-		<td><span class="pass">select</span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>€ 900.000</td>
 		<td>for</td>
 		<td>van</td>
 	</tr>
 	<tr>
-		<td><span class="pass">select</span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>tot</td>
 	</tr>
 	<tr>
-		<td><span class="pass">enter</span></td>
+		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>Wilhelminapark 46, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
@@ -214,33 +218,33 @@
 		<td colspan="3">select option from autocomplete</td>
 	</tr>
 	<tr>
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr>
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr>
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr>
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td colspan="3">Wilhelminapark 46</td>
 	</tr>
 	<tr>
-		<td>$price&lt;-[€ 1.295.000 k.k.]</td>
+		<td>$price= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr>
-		<td>$state&lt;-[Onder bod]</td>
+		<td>$state= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
 	<tr>
-		<td>$volume&lt;-[1.370 m³]</td>
+		<td>$volume= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Inhoud</td>
 	</tr>
@@ -248,10 +252,10 @@
 		<td>check</td>
 		<td>value of</td>
 		<td>Woonoppervlakte</td>
-		<td><span class="pass">312 m²</span></td>
+		<td>312 m² <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 	</tr>
 	<tr>
-		<td>$yearBuilt&lt;-[Voor 1906]</td>
+		<td>$yearBuilt= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.</span></td>
 		<td>value of</td>
 		<td colspan="2">Bouwjaar</td>
 	</tr>
