@@ -3,51 +3,10 @@
 		<td>script</td>
 		<td><span class="pass">selenium driver setup</span></td>
 	</tr>
-	<tr class="exception closed">
-		<td class="error">show</td>
-		<td class="error">run summary</td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="2"><pre>__EXCEPTION__:org.openqa.selenium.UnsupportedCommandException: Resolution you specified is not available for this OS/browser/version/device combo: OS: 'Windows 2008', Browser: 'googlechrome', Version: '51.0.2704.63', Device: 'unspecified', Screen Resolution: '1400x1050' available resolutions: '800x600', '1024x768', '1152x864', '1280x800', '1280x960', '1280x1024', '1440x900', '1600x1200', '1680x1050', '1920x1200', '2560x1600'
-Command duration or timeout: 334 milliseconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'testing-worker-linux-docker-201c9a65-3418-linux-4', ip: '172.17.42.128', os.name: 'Linux', os.arch: 'amd64', os.version: '3.13.0-40-generic', java.version: '1.7.0_76'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-	at sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source) [n/a]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) [rt.jar:1.7.0_76]
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206) [selenium-remote-driver-2.53.0.jar]
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158) [selenium-remote-driver-2.53.0.jar]
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678) [selenium-remote-driver-2.53.0.jar]
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249) [selenium-remote-driver-2.53.0.jar]
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131) [selenium-remote-driver-2.53.0.jar]
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158) [selenium-remote-driver-2.53.0.jar]
-	at nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup$2.createDriver(SeleniumDriverSetup.java:378) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.driver(SeleniumHelper.java:878) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.getSessionId(SeleniumHelper.java:825) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.SeleniumDriverSetup.runSummary(SeleniumDriverSetup.java:327) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:45) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:25) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:131) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:115) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20160618.jar]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:133) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:106) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementTimeoutExecutor$3.call(StatementTimeoutExecutor.java:90) [fitnesse-20160618.jar]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_76]
-	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]</pre></td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>run summary</td>
+	<td><div><script src="https://saucelabs.com/video-embed/5eac422fd3574c3ea3071b96443e1b04.js?auth=3a91388f54f01babbf85639d3b8b695e"></script></div></td></tr>
 	<tr class="slimRowColor8">
 		<td colspan="2"><span class="pass">stop driver</span></td>
 	</tr>
