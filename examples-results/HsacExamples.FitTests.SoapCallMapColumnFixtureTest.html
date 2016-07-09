@@ -100,9 +100,9 @@ Validating the check call gives the expected response is similar to checking the
 	</tr>
 	<tr>
 		<td>EUR</td>
-		<td> <span class="fit_grey">3.371</span></td>
+		<td> <span class="fit_grey">-1.0</span></td>
 		<td> <span class="fit_grey">3.4528</span></td>
-		<td class="pass">-0.5 < <b>0.9763090824837813</b> < 1.01</td>
+		<td class="pass">-0.5 < <b>-0.2896200185356812</b> < 1.01</td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita' fixture is another single class: <pre>
@@ -195,7 +195,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">210</span></td>
+		<td> <span class="fit_grey">207</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;ConversionRateResponse xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
@@ -213,7 +213,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">772</span></td>
+		<td> <span class="fit_grey">743</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
