@@ -4075,14 +4075,14 @@ Horizon.prototype = {
       <div class="icon icon-generic" jseval="updateIconClass(this.classList, iconClass)" jstcache="3"></div>
       <div id="main-message" jstcache="0">
         <h1 jsselect="heading" jsvalues=".innerHTML:msg" jstcache="7">This site can’t be reached</h1>
-        <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="8"><strong jscontent="hostName" jstcache="19">rest.kabasakalis.tk</strong> took too long to respond.</p>
+        <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="8"><strong jscontent="hostName" jstcache="19">rest.kabasakalis.tk</strong>’s server <abbr jsvalues="title:dnsDefinition" jstcache="20" title="DNS is the network service that translates a website’s name to its Internet address.">DNS address</abbr> could not be found.</p>
         <div id="suggestions-list" jsdisplay="(suggestionsSummaryList &amp;&amp; suggestionsSummaryList.length)" jstcache="9">
           <p jsvalues=".innerHTML:suggestionsSummaryListHeader" jstcache="16">Try:</p>
           <ul jsvalues=".className:suggestionsSummaryList.length == 1 ? 'single-suggestion' : ''" jstcache="17" class="">
-            <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="18" jsinstance="0">Reloading the page</li><li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="18" jsinstance="1">Checking the connection</li><li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="18" jsinstance="*2"><a href="#buttons" onclick="toggleHelpBox()" jstcache="0">Checking the proxy and the firewall</a></li>
+            <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="18" jsinstance="0">Checking the connection</li><li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="18" jsinstance="*1"><a href="#buttons" onclick="toggleHelpBox()" jstcache="0">Checking the proxy, firewall, and DNS configuration</a></li>
           </ul>
         </div>
-        <div class="error-code" jscontent="errorCode" jstcache="10">ERR_CONNECTION_TIMED_OUT</div>
+        <div class="error-code" jscontent="errorCode" jstcache="10">ERR_NAME_NOT_RESOLVED</div>
       </div>
     </div>
     <div id="buttons" class="nav-wrapper suggested-left" jstcache="0">
@@ -4102,22 +4102,35 @@ Horizon.prototype = {
         <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="15">Check any cables and reboot any routers, modems, or other network
     devices you may be using.</div>
       </div><div class="suggestions" jsselect="suggestionsDetails" jstcache="5" jsinstance="1">
+        <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="14">Check your DNS settings</div>
+        <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="15">Contact your network administrator if you're not sure what this means.</div>
+      </div><div class="suggestions" jsselect="suggestionsDetails" jstcache="5" jsinstance="2">
+        <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="14">Try disabling network prediction</div>
+        <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="15">Go to
+          the Chrome menu &gt;
+          <span jscontent="settingsTitle" jstcache="21">Settings</span>
+          &gt;
+          <span jscontent="advancedTitle" jstcache="22">Show advanced settings...</span>
+          and deselect "<span jscontent="noNetworkPredictionTitle" jstcache="23">Use a prediction service to load pages more quickly</span>."
+          If this does not resolve the issue, we recommend selecting this option
+          again for improved performance.</div>
+      </div><div class="suggestions" jsselect="suggestionsDetails" jstcache="5" jsinstance="3">
         <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="14">Allow Chrome to access the network in your firewall or antivirus
           settings.</div>
         <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="15">If it is already listed as a program allowed to access the network, try
       removing it from the list and adding it again.</div>
-      </div><div class="suggestions" jsselect="suggestionsDetails" jstcache="5" jsinstance="*2">
+      </div><div class="suggestions" jsselect="suggestionsDetails" jstcache="5" jsinstance="*4">
         <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="14">If you use a proxy server...</div>
         <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="15">Check your proxy settings or contact your network administrator to
       make sure the proxy server is working. If you don't believe you should
       be using a proxy server:
       Go to
           the Chrome menu &gt;
-          <span jscontent="settingsTitle" jstcache="20">Settings</span>
+          <span jscontent="settingsTitle" jstcache="21">Settings</span>
           &gt;
-          <span jscontent="advancedTitle" jstcache="21">Show advanced settings...</span>
+          <span jscontent="advancedTitle" jstcache="22">Show advanced settings...</span>
           &gt;
-          <span jscontent="proxyTitle" jstcache="22">Change proxy settings...</span>
+          <span jscontent="proxyTitle" jstcache="24">Change proxy settings...</span>
           &gt;
           LAN Settings
           and deselect "Use a proxy server for your LAN".</div>
@@ -4129,8 +4142,8 @@ Horizon.prototype = {
   <div id="sub-frame-error" jstcache="0">
     <!-- Show details when hovering over the icon, in case the details are
          hidden because they're too large. -->
-    <img class="icon icon-generic" jseval="updateIconClass(this.classList, iconClass)" jsvalues=".title:errorDetails" jstcache="1" title="The operation timed out.">
-    <div id="sub-frame-error-details" jsvalues=".innerHTML:errorDetails" jstcache="2">The operation timed out.</div>
+    <img class="icon icon-generic" jseval="updateIconClass(this.classList, iconClass)" jsvalues=".title:errorDetails" jstcache="1" title="Unable to resolve the server's DNS address.">
+    <div id="sub-frame-error-details" jsvalues=".innerHTML:errorDetails" jstcache="2">Unable to resolve the server's DNS address.</div>
   </div>
 
   <div id="offline-resources" jstcache="0">
@@ -4301,7 +4314,7 @@ function LoadTimeData() {}
   expect(!loadTimeData, 'should only include this file once');
   loadTimeData = new LoadTimeData;
 })();
-</script><script jstcache="0">loadTimeData.data = {"details":"Details","diagnose":"Diagnose errors...","errorCode":"ERR_CONNECTION_TIMED_OUT","errorDetails":"The operation timed out.","fontfamily":"'Segoe UI', Tahoma, sans-serif","fontsize":"75%","heading":{"hostName":"rest.kabasakalis.tk","msg":"This site can’t be reached"},"hideDetails":"Hide details","iconClass":"icon-generic","language":"en","reloadButton":{"msg":"Reload","reloadTrackingId":-1,"reloadUrl":"http://rest.kabasakalis.tk/music_db"},"suggestionsDetails":[{"body":"Check any cables and reboot any routers, modems, or other network\n    devices you may be using.","header":"Check your Internet connection"},{"body":"If it is already listed as a program allowed to access the network, try\n      removing it from the list and adding it again.","header":"Allow Chrome to access the network in your firewall or antivirus\n          settings."},{"advancedTitle":"Show advanced settings...","body":"Check your proxy settings or contact your network administrator to\n      make sure the proxy server is working. If you don't believe you should\n      be using a proxy server:\n      Go to\n          the Chrome menu >\n          \u003Cspan jscontent=\"settingsTitle\">\u003C/span>\n          >\n          \u003Cspan jscontent=\"advancedTitle\">\u003C/span>\n          >\n          \u003Cspan jscontent=\"proxyTitle\">\u003C/span>\n          >\n          LAN Settings\n          and deselect \"Use a proxy server for your LAN\".","header":"If you use a proxy server...","proxyTitle":"Change proxy settings...","settingsTitle":"Settings"}],"suggestionsSummaryList":[{"summary":"Reloading the page"},{"summary":"Checking the connection"},{"summary":"\u003Ca href=\"#buttons\" onclick=\"toggleHelpBox()\">Checking the proxy and the firewall\u003C/a>"}],"suggestionsSummaryListHeader":"Try:","summary":{"dnsDefinition":"DNS is the network service that translates a website’s name to its Internet address.","failedUrl":"http://rest.kabasakalis.tk/music_db","hostName":"rest.kabasakalis.tk","msg":"\u003Cstrong jscontent=\"hostName\">\u003C/strong> took too long to respond."},"textdirection":"ltr","title":"http://rest.kabasakalis.tk/music_db is not available"};</script><script jstcache="0">// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+</script><script jstcache="0">loadTimeData.data = {"details":"Details","diagnose":"Diagnose errors...","errorCode":"DNS_PROBE_POSSIBLE","errorDetails":"Waiting for DNS probe.","fontfamily":"'Segoe UI', Tahoma, sans-serif","fontsize":"75%","heading":{"hostName":"rest.kabasakalis.tk","msg":"This site can’t be reached"},"hideDetails":"Hide details","iconClass":"icon-generic","language":"en","reloadButton":{"msg":"Reload","reloadTrackingId":-1,"reloadUrl":"http://rest.kabasakalis.tk/music_db"},"suggestionsDetails":[],"suggestionsSummaryList":[],"suggestionsSummaryListHeader":"Try:","summary":{"dnsDefinition":"DNS is the network service that translates a website’s name to its Internet address.","failedUrl":"http://rest.kabasakalis.tk/music_db","hostName":"rest.kabasakalis.tk","msg":"\u003Cstrong jscontent=\"hostName\">\u003C/strong>’s \u003Cabbr id=\"dnsDefinition\">DNS address\u003C/abbr> could not be found. Diagnosing the problem."},"textdirection":"ltr","title":"http://rest.kabasakalis.tk/music_db is not available"};</script><script jstcache="0">// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 

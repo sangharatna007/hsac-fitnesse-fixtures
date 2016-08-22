@@ -26,14 +26,14 @@ The first example below calls a weather service, similar to <a href="HsacExample
 		<td>Vancouver International Air-Port, B. C.</td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;CurrentWeather&gt;
     &lt;Location&gt;Vancouver International Air-Port, B. C., Canada (CYVR) 49-11N 123-10W 2M&lt;/Location&gt;
-    &lt;Time&gt;Jul 09, 2016 - 03:00 PM EDT / 2016.07.09 1900 UTC&lt;/Time&gt;
-    &lt;Wind&gt;from the ESE (110 degrees) at 8 MPH (7 KT):0&lt;/Wind&gt;
+    &lt;Time&gt;Aug 22, 2016 - 10:00 AM EDT / 2016.08.22 1400 UTC&lt;/Time&gt;
+    &lt;Wind&gt;from the WNW (290 degrees) at 12 MPH (10 KT):0&lt;/Wind&gt;
     &lt;Visibility&gt;20 mile(s):0&lt;/Visibility&gt;
     &lt;SkyConditions&gt;mostly cloudy&lt;/SkyConditions&gt;
-    &lt;Temperature&gt;60 F (16 C)&lt;/Temperature&gt;
-    &lt;DewPoint&gt;53 F (12 C)&lt;/DewPoint&gt;
-    &lt;RelativeHumidity&gt;77%&lt;/RelativeHumidity&gt;
-    &lt;Pressure&gt;29.96 in. Hg (1014 hPa)&lt;/Pressure&gt;
+    &lt;Temperature&gt;59 F (15 C)&lt;/Temperature&gt;
+    &lt;DewPoint&gt;51 F (11 C)&lt;/DewPoint&gt;
+    &lt;RelativeHumidity&gt;76%&lt;/RelativeHumidity&gt;
+    &lt;Pressure&gt;30 in. Hg (1015 hPa)&lt;/Pressure&gt;
     &lt;Status&gt;Success&lt;/Status&gt;
 &lt;/CurrentWeather&gt;
 </pre></span></td>
@@ -195,11 +195,11 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">207</span></td>
+		<td> <span class="fit_grey">132</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;ConversionRateResponse xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
-            &lt;ConversionRateResult&gt;3.0487&lt;/ConversionRateResult&gt;
+            &lt;ConversionRateResult&gt;-1&lt;/ConversionRateResult&gt;
         &lt;/ConversionRateResponse&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
@@ -213,7 +213,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">743</span></td>
+		<td> <span class="fit_grey">787</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
