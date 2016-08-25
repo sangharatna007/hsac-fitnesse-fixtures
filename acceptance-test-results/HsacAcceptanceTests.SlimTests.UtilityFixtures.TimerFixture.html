@@ -28,7 +28,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>stop timer</td>
-		<td><span class="pass">6&gt;$elapsed-&gt;[5]</span></td>
+		<td><span class="pass">7&gt;$elapsed-&gt;[5]</span></td>
 	</tr>
 </table>
 <br/>We can start and use a timer with a name.<br/><br/><table>
@@ -60,7 +60,7 @@
 		<td>check</td>
 		<td>stop timer</td>
 		<td>test</td>
-		<td><span class="pass">1000&gt;=$elapsed-&gt;[1000]</span></td>
+		<td><span class="pass">1001&gt;=$elapsed-&gt;[1000]</span></td>
 	</tr>
 	<tr class="slimRowColor5">
 		<td>start timer</td>
@@ -84,7 +84,7 @@
 		<td><span class="pass">3&gt; 0</span></td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td>$elapsed&lt;-[4]</td>
+		<td>$elapsed&lt;-[3]</td>
 		<td>time on timer</td>
 		<td colspan="2">test2</td>
 	</tr>
@@ -92,7 +92,7 @@
 		<td>check</td>
 		<td>stop timer</td>
 		<td>test2</td>
-		<td><span class="pass">4&gt;=$elapsed-&gt;[4]</span></td>
+		<td><span class="pass">4&gt;=$elapsed-&gt;[3]</span></td>
 	</tr>
 </table>
 <br/>We pause and resume timers<br/><table>
@@ -206,4 +206,31 @@
 	</tr>
 </table></td></tr>
 </table>
-</article></body></html>
+<br/>We can get the current system time, possibly specifying a format (the format is the format string used by <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">Java's SimpleDateFormat</a>, also used by '!today') to use.<br/>The difference between these methods and !today is that the latter is evaluated when the test is started, these methods return the time at the moment the test executes them.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4"><span class="pass">timer fixture</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="4">current system time</td>
+	<td>08:30:57.177</td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>current system time as</td>
+		<td colspan="3">HH:MM:ss.SSS</td>
+	<td>08:08:57.177</td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>current system time as</td>
+		<td colspan="3">E dd-MMM-yy HH:mm:ss.SSS</td>
+	<td>Thu 25-Aug-16 08:30:57.177</td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>current system time as</td>
+		<td>E dd-MMM-yy HH:mm:ss.SSS</td>
+		<td>in</td>
+		<td>ja-JP-x-lvariant-JP</td>
+	<td>木 25-8-28 08:30:57.201</td></tr>
+</table>
+<br/></article></body></html>
