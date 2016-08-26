@@ -105,7 +105,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 24329,
+    &quot;parse_time_nanoseconds&quot;: 19245,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -136,7 +136,7 @@ json={"key":"value"}
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	<td><div><ul><li>object</li><li>false</li><li>24329</li><li>true</li><li>1</li></ul></div></td></tr>
+	<td><div><ul><li>object</li><li>false</li><li>19245</li><li>true</li><li>1</li></ul></div></td></tr>
 </table>
 <br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
 	<tr class="slimRowTitle">
@@ -159,7 +159,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 25046,
+    &quot;parse_time_nanoseconds&quot;: 20487,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -290,7 +290,7 @@ json={"key":"value"}
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_76]
 	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]
 Caused by: java.lang.RuntimeException: Unable to get response from: http://rest.kabasakalis.tk/api/artist
-	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:163) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:169) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:159) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
@@ -337,8 +337,8 @@ Caused by: java.net.UnknownHostException: rest.kabasakalis.tk: Name or service n
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82) [httpclient-4.3.6.jar:4.3.6]
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106) [httpclient-4.3.6.jar:4.3.6]
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57) [httpclient-4.3.6.jar:4.3.6]
-	at nl.hsac.fitnesse.fixture.util.HttpClient.getHttpResponse(HttpClient.java:196) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:133) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getHttpResponse(HttpClient.java:208) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:137) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:159) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]

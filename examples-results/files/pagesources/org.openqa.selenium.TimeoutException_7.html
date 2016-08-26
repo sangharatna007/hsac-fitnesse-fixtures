@@ -6,7 +6,7 @@
 
 
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" href="//assets.fstatic.nl/master_313/assets/components/app-icons/icons.data.svg.css" media="all"><script type="text/javascript" src="http://bam.nr-data.net/1/a0d846db61?a=9040792&amp;v=974.7d740e1&amp;to=YwZTZUVRWBJRUkVfXlpMfGd0H3kDWlRSQmNREERdQ3xfEkRyXlhFRgxdXVJCGSheVVRO&amp;rst=1650&amp;ref=http://www.funda.nl/koop/utrecht/straat-wilhelminapark/900000-1500000/&amp;ap=128&amp;be=543&amp;fe=1085&amp;dc=633&amp;tt=369975E765A7E050&amp;perf=%7B%22timing%22:%7B%22of%22:1471878077274,%22n%22:0,%22u%22:518,%22r%22:1,%22ue%22:520,%22re%22:186,%22f%22:186,%22dn%22:186,%22dne%22:186,%22c%22:186,%22ce%22:186,%22rq%22:186,%22rp%22:514,%22rpe%22:668,%22dl%22:526,%22di%22:1163,%22ds%22:1176,%22de%22:1245,%22dc%22:1627,%22l%22:1627,%22le%22:1635%7D,%22navigation%22:%7B%22rc%22:1%7D%7D&amp;jsonp=NREUM.setToken"></script><script src="http://js-agent.newrelic.com/nr-974.min.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script><script async="" src="//www.google.com/adsense/search/async-ads.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NPB6HG&amp;l=gtmDataLayer"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a0d846db61","applicationID":"9040792","transactionName":"YwZTZUVRWBJRUkVfXlpMfGd0H3kDWlRSQmNREERdQ3xfEkRyXlhFRgxdXVJCGSheVVRO","queueTime":0,"applicationTime":128,"ttGuid":"369975E765A7E050","agent":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var s=f[m[n]];return s&&s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
 
@@ -17,7 +17,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="application-name" content="funda">
 
-<script src="//cdn.optimizely.com/js/2925410175.js"></script>
+<link rel="stylesheet" href="//assets.fstatic.nl/master_331/assets/components/app-icons/icons.data.svg.css" media="all"><script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script><script async="" src="//www.google.com/adsense/search/async-ads.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NPB6HG&amp;l=gtmDataLayer"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script src="//cdn.optimizely.com/js/2925410175.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,13 +45,13 @@
         /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
 		(function(e){function n(n,t,o,a){"use strict";var i=e.document.createElement("link"),r=t||e.document.getElementsByTagName("script")[0],d=e.document.styleSheets;return i.rel="stylesheet",i.href=n,i.media="only x",a&&(i.onload=a),r.parentNode.insertBefore(i,r),i.onloadcssdefined=function(e){for(var t,o=0;d.length>o;o++)d[o].href&&d[o].href.indexOf(n)>-1&&(t=!0);t?e():setTimeout(function(){i.onloadcssdefined(e)})},i.onloadcssdefined(function(){i.media=o||"all"}),i}function t(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}var o=function(a,i){"use strict";if(a&&3===a.length){var r=e.Image,d=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===navigator.userAgent.indexOf("Chrome")||-1!==navigator.userAgent.indexOf("Series40")),c=new r;c.onerror=function(){o.method="png",o.href=a[2],n(a[2])},c.onload=function(){var e=1===c.width&&1===c.height,r=a[e&&d?0:e?1:2];o.method=e&&d?"svg":e?"datapng":"png",o.href=r,t(n(r),i)},c.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};o.loadCSS=n,o.onloadCSS=t,e.grunticon=o})(this);(function(e,n){"use strict";var t=n.document,o="grunticon:",r=function(e){if(t.attachEvent?"complete"===t.readyState:"loading"!==t.readyState)e();else{var n=!1;t.addEventListener("readystatechange",function(){n||(n=!0,e())},!1)}},a=function(e){return n.document.querySelector('link[href$="'+e+'"]')},i=function(e){var n,t,r,a,i,c,d={};if(n=e.sheet,!n)return d;t=n.cssRules?n.cssRules:n.rules;for(var s=0;t.length>s;s++)r=t[s].cssText,a=o+t[s].selectorText,i=r.split(");")[0].match(/US\-ASCII\,([^"']+)/),i&&i[1]&&(c=decodeURIComponent(i[1]),d[a]=c);return d},c=function(e){var n,r,a;r="data-grunticon-embed";for(var i in e){a=i.slice(o.length);try{n=t.querySelectorAll(a+"["+r+"]")}catch(c){continue}if(n.length)for(var d=0;n.length>d;d++)n[d].innerHTML=e[i],n[d].style.backgroundImage="none",n[d].removeAttribute(r)}return n},d=function(n){"svg"===e.method&&r(function(){c(i(a(e.href))),"function"==typeof n&&n()})};e.embedIcons=c,e.getCSS=a,e.getIcons=i,e.ready=r,e.svgLoadedCallback=d,e.embedSVG=d})(grunticon,this);(function(e,n){"use strict";var t=n.document,o=function(e,t){var o=new n.XMLHttpRequest;return"withCredentials"in o?o.open("GET",e,!0):n.XDomainRequest!==void 0&&(o=new n.XDomainRequest,o.open("GET",e)),t&&(o.onload=t),o.send(),o},r=function(n){"svg"===e.method&&e.ready(function(){o(e.href,function(){var o=t.createElement("style");o.innerHTML=this.responseText;var r=e.getCSS(e.href);r&&(r.parentNode.insertBefore(o,r),r.parentNode.removeChild(r),e.embedIcons(e.getIcons(o)),"function"==typeof n&&n())})})};e.ajaxGet=o,e.svgLoadedCORSCallback=r,e.embedSVGCors=r})(grunticon,this);
         
-		grunticon(['//assets.fstatic.nl/master_313/assets/components/app-icons/icons.data.svg.css',
-		           '//assets.fstatic.nl/master_313/assets/components/app-icons/icons.data.png.css',
-                   '//assets.fstatic.nl/master_313/assets/components/app-icons/icons.fallback.css'], grunticon.svgLoadedCORSCallback);
+		grunticon(['//assets.fstatic.nl/master_331/assets/components/app-icons/icons.data.svg.css',
+		           '//assets.fstatic.nl/master_331/assets/components/app-icons/icons.data.png.css',
+                   '//assets.fstatic.nl/master_331/assets/components/app-icons/icons.fallback.css'], grunticon.svgLoadedCORSCallback);
     }());
 </script>
 <noscript>
-    &lt;link rel="stylesheet" href="//assets.fstatic.nl/master_313/assets/components/app-icons/icons.fallback.css"&gt;
+    &lt;link rel="stylesheet" href="//assets.fstatic.nl/master_331/assets/components/app-icons/icons.fallback.css"&gt;
 </noscript>
 
 <!--[if lt IE 9]>
@@ -66,34 +66,34 @@
 
 
 <!--[if !IE]><!-->
-<link href="//assets.fstatic.nl/master_313/assets/index-fundawonen.css" rel="stylesheet" type="text/css">
+<link href="//assets.fstatic.nl/master_331/assets/index-fundawonen.css" rel="stylesheet" type="text/css">
 <!--<![endif]-->
 
 <!--[if lte IE 9]>
-<link href="//assets.fstatic.nl/master_313/assets/index-fundawonen-bless.css" rel="stylesheet" type="text/css"></link>
+<link href="//assets.fstatic.nl/master_331/assets/index-fundawonen-bless.css" rel="stylesheet" type="text/css"></link>
 <![endif]-->
 
-<link rel="icon" sizes="192x192" href="//assets.fstatic.nl/master_313/assets/funda-icon-192.png">
-<link rel="icon" type="image/x-icon" href="//assets.fstatic.nl/master_313/assets/favicon.ico">
-<link rel="apple-touch-icon" href="//assets.fstatic.nl/master_313/assets/funda-icon-180.png">
-<link rel="manifest" href="//assets.fstatic.nl/master_313/assets/manifest.json">
+<link rel="icon" sizes="192x192" href="//assets.fstatic.nl/master_331/assets/funda-icon-192.png">
+<link rel="icon" type="image/x-icon" href="//assets.fstatic.nl/master_331/assets/favicon.ico">
+<link rel="apple-touch-icon" href="//assets.fstatic.nl/master_331/assets/funda-icon-180.png">
+<link rel="manifest" href="//assets.fstatic.nl/master_331/assets/manifest.json">
 <meta property="fb:app_id" content="201092619940862">
 
 
     
-<script type="text/javascript" src="/fundadst.arcdrrvqerbzfz.js" defer=""></script><style type="text/css">#d__fFH{position:absolute;top:-5000px;left:-5000px}#d__fF{font-family:serif;font-size:200px;visibility:hidden}#eweuatwcu{display:none!important}</style><script src="http://partner.googleadservices.com/gpt/pubads_impl_94.js" async=""></script><link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html"></head>
+<script type="text/javascript" src="/fundadst.cuzbxvavbfszfarvfawv.js" defer=""></script><style type="text/css">#d__fFH{position:absolute;top:-5000px;left:-5000px}#d__fF{font-family:serif;font-size:200px;visibility:hidden}#qqqqare{display:none!important}</style><script src="http://partner.googleadservices.com/gpt/pubads_impl_94.js" async=""></script><link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html"></head>
 <body role="document">
 
 
 <noscript>
-    &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-NPB6HG&amp;userId=c02db6e1-085e-4874-9803-83a1c166c2dc&amp;isAnonymous=true&amp;language=nl&amp;pagetype=searchresults" 
+    &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-NPB6HG&amp;userId=2c36d55e-9d0f-4334-abcf-0bd47fbe1cb0&amp;isAnonymous=true&amp;language=nl&amp;pagetype=searchresults" 
             height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
 </noscript>
 <script>
     // Fill GtmDataLayer with data
     gtmDataLayer = [];
     gtmDataLayer.push({
-            'userId' : 'c02db6e1-085e-4874-9803-83a1c166c2dc',
+            'userId' : '2c36d55e-9d0f-4334-abcf-0bd47fbe1cb0',
             'isAnonymous' : 'true',
             'language' : 'nl',
             'pagetype' : 'searchresults',
@@ -116,8 +116,8 @@
         <nav role="navigation" class="app-header-nav">
             <h1 class="a11y-sr-only">Hoofdmenu</h1>
             <a class="logo" rel="home" href="/koop/" title="Naar home" data-component="logo">
-                <img alt="funda logo" src="//assets.fstatic.nl/master_313/assets/components/logo/fundawonen-logo.svg" onerror="this.onerror = null; this.src = '//assets.fstatic.nl/master_313/assets/components/logo/fundawonen-logo.png'; ">
-            </a><span id="eweuatwcu"><a rel="file" style="display: none;" href="vfqfuftbtrvtb.html">qqqqurq</a></span>
+                <img alt="funda logo" src="//assets.fstatic.nl/master_331/assets/components/logo/fundawonen-logo.svg" onerror="this.onerror = null; this.src = '//assets.fstatic.nl/master_331/assets/components/logo/fundawonen-logo.png'; ">
+            </a><a href="cduyuqszwuvxurx.html" style="display: none;" rel="file" id="qqqqare">xezutqzzvbwccdfbtr</a>
             <button class="app-header-nav-button" data-expandible-handle="">
                 <span class="icon-user-menu-white app-header-nav-icon app-header-nav-icon-open"></span>
                 <span class="icon-close-white app-header-nav-icon app-header-nav-icon-close"></span>
@@ -166,7 +166,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_313/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_331/assets/components/app-spinner/spinner.gif">
 </div>
         </div>
     </div>
@@ -255,7 +255,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_313/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_331/assets/components/app-spinner/spinner.gif">
 </div>
         <div class="save-search-container" data-save-search="expandible"></div>
     </div>
@@ -350,7 +350,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_313/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_331/assets/components/app-spinner/spinner.gif">
 </div>
 </div>
 <!-- /search-results-loading component -->
@@ -407,7 +407,7 @@
     <svg class="svg-circular" viewBox="0 0 48 48">
         <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="89,200" stroke-dashoffset="-124"></circle>
     </svg>
-    <img class="gif-circular" src="//assets.fstatic.nl/master_313/assets/components/app-spinner/spinner.gif">
+    <img class="gif-circular" src="//assets.fstatic.nl/master_331/assets/components/app-spinner/spinner.gif">
 </div>
 
                 <div class="save-search-container" data-save-search="flyout"></div>
@@ -3363,51 +3363,51 @@
 <div class="makelaar-ads injected" data-makelaar-ads="" data-makelaars-ads-valentina-baseurl="http://www.funda.nl" data-makelaars-ads-beta-baseurl="http://www.funda.nl">
     <h4 makelaar-ads-header="" class="makelaar-ads-header" style="max-height: inherit;">Makelaar in de buurt</h4>
 
-    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2880534" rel="nofollow" href="http://www.van-doorn.nl/aankoopmakelaar-utrecht.html" style="max-height: inherit;">
-        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/045/952/210_logomiddel.png">
+    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2920978" rel="nofollow" href="http://www.vanasenvanhooff.nl/" style="max-height: inherit;">
+        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/062/293/469_logomiddel.png">
             
         </div>
         <div class="makelaar-ads-text">
-            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">VAN DOORN MAKELAARDIJ</h4>
+            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Van As &amp; Van Hooff makelaars </h4>
             <p data-makelaar-ads-body="" class="makelaar-ads-body">
-                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">EEN NIEUWE WONING KOPEN?</span>
-                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">Wij helpen u hiermee!</span>
+                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">woning aankoop of verkoop in </span>
+                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">Utrecht, Houten, De Bilt e.o.</span>
             </p>
-            <p data-makelaar-ads-website="" class="makelaar-ads-website">van-doorn.nl</p>
+            <p data-makelaar-ads-website="" class="makelaar-ads-website">vanasenvanhooff.nl</p>
         </div>
     </a>
 
-    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2043365" rel="nofollow" href="http://www.thijssenmakelaars.nl/" style="max-height: inherit;">
-        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/035/424/314_logomiddel.png">
+    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="2775705" rel="nofollow" href="http://www.kraaijkampmakelaars.nl/diensten/aankoopmakelaar-op-uurtarief/" style="max-height: inherit;">
+        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/045/874/075_logomiddel.png">
             
         </div>
         <div class="makelaar-ads-text">
-            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">NWWI Taxatie nodig?</h4>
+            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Aankoopmakelaar op uurtarief</h4>
             <p data-makelaar-ads-body="" class="makelaar-ads-body">
-                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">SCHERPE ALL-IN TARIEVEN!!</span>
-                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">Bel ons 030-252 93 70!</span>
+                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">Zoveel Makelaar als je zelf </span>
+                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">wilt! Jouw makelaar v.a  € 800</span>
             </p>
-            <p data-makelaar-ads-website="" class="makelaar-ads-website">thijssenmakelaars.nl</p>
+            <p data-makelaar-ads-website="" class="makelaar-ads-website">kraaijkampmakelaars.nl</p>
         </div>
     </a>
 
-    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="3256161" rel="nofollow" href="http://www.atriamakelaardij.nl/" style="max-height: inherit;">
-        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/013/956/314_logomiddel.jpg">
+    <a data-makelaar-ads-item="" class="makelaar-ads-item loaded" target="_blank" data-globalid="1859604" rel="nofollow" href="http://www.makelaar1.nl/" style="max-height: inherit;">
+        <div class="makelaar-ads-image-wrap"><img data-makelaar-ads-logo="" class="makelaar-ads-image" src="http://cloud.funda.nl/valentina_media/017/940/541_logomiddel.png">
             
         </div>
         <div class="makelaar-ads-text">
-            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">ER UIT HALEN WAT ER IN ZIT?</h4>
+            <h4 data-makelaar-ads-title="" class="makelaar-ads-title">Zelf uw huis verkopen?</h4>
             <p data-makelaar-ads-body="" class="makelaar-ads-body">
-                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">KLANTEN GEVEN ONS EEN 9!</span>
-                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">GRATIS WAARDEBEPALING? BEL:</span>
+                <span data-makelaar-ads-line1="" class="makelaar-ads-body-line1">Voor € 495,-- All-in</span>
+                <span data-makelaar-ads-line2="" class="makelaar-ads-body-line2">met NVM hulp!</span>
             </p>
-            <p data-makelaar-ads-website="" class="makelaar-ads-website">atriamakelaardij.nl</p>
+            <p data-makelaar-ads-website="" class="makelaar-ads-website">makelaar1.nl</p>
         </div>
     </a>
 </div>
 
             <div class="container adsense is-loaded" data-adsense="" data-pubid="funda" data-width="100%" data-query="/koop/utrecht/straat-wilhelminapark/900000-1500000/" data-channel="koop-redesign" data-attribution-text="Advertenties door Google" data-extrawords="huis,woning,woonhuis,koophuis">
-        <div id="adcontainer" data-ad-container="" style="height: 0px; width: 100%; font-weight: normal; text-align: center;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="{&quot;name&quot;:&quot;master-1&quot;,&quot;master-1&quot;:{&quot;container&quot;:&quot;adcontainer&quot;,&quot;linkTarget&quot;:&quot;_blank&quot;,&quot;verticalSpacing&quot;:8,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;16px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;100%&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;}}" id="master-1" src="https://www.google.com/afs/ads?q=%20koop%20utrecht%20straat%20wilhelminapark%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20woonhuis&amp;lo=false&amp;adpage=1&amp;r=m&amp;fexp=21404%2C7000107&amp;client=funda&amp;channel=koop-redesign&amp;type=0&amp;oe=UTF-8&amp;ie=UTF-8&amp;jsei=3&amp;format=n2&amp;ad=n2&amp;nocache=9881471878078672&amp;num=0&amp;output=uds_ads_only&amp;v=3&amp;bsl=10&amp;u_his=28&amp;u_tz=0&amp;dt=1471878078677&amp;u_w=1680&amp;u_h=1050&amp;biw=1174&amp;bih=976&amp;psw=1174&amp;psh=3122&amp;frm=0&amp;uio=uv3cs1vp1sl0lo0sr0st16sd13sv13sn13lt20ld20lv20da0-&amp;jsv=14100&amp;rurl=http%3A%2F%2Fwww.funda.nl%2Fkoop%2Futrecht%2Fstraat-wilhelminapark%2F900000-1500000%2F&amp;referer=http%3A%2F%2Fwww.funda.nl%2F#master-1" style="visibility: hidden; height: 0px;" cd_frame_id_="f9c3c5b7aceacad7814b2448b1ac819c"></iframe></div>
+        <div id="adcontainer" data-ad-container="" style="height: 0px; width: 100%; font-weight: normal; text-align: center;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="{&quot;name&quot;:&quot;master-1&quot;,&quot;master-1&quot;:{&quot;container&quot;:&quot;adcontainer&quot;,&quot;linkTarget&quot;:&quot;_blank&quot;,&quot;verticalSpacing&quot;:8,&quot;lines&quot;:3,&quot;colorTitleLink&quot;:&quot;#4A8CCB&quot;,&quot;colorDomainLink&quot;:&quot;#999&quot;,&quot;fontSizeTitle&quot;:&quot;16px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;13px&quot;,&quot;fontSizeAnnotation&quot;:13,&quot;titleBold&quot;:1,&quot;noTitleUnderline&quot;:true,&quot;adIconLocation&quot;:&quot;ad-left&quot;,&quot;lineHeightTitle&quot;:20,&quot;lineHeightDescription&quot;:20,&quot;lineHeightDomainLink&quot;:20,&quot;width&quot;:&quot;100%&quot;,&quot;detailedAttribution&quot;:false,&quot;type&quot;:&quot;ads&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;}}" id="master-1" src="https://www.google.com/afs/ads?q=%20koop%20utrecht%20straat%20wilhelminapark%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20woonhuis&amp;lo=false&amp;adpage=1&amp;r=m&amp;fexp=21404%2C7000108&amp;client=funda&amp;channel=koop-redesign&amp;type=0&amp;oe=UTF-8&amp;ie=UTF-8&amp;jsei=4&amp;format=n2&amp;ad=n2&amp;nocache=21472197025685&amp;num=0&amp;output=uds_ads_only&amp;v=3&amp;bsl=10&amp;u_his=28&amp;u_tz=0&amp;dt=1472197025690&amp;u_w=1680&amp;u_h=1050&amp;biw=1174&amp;bih=976&amp;psw=1174&amp;psh=3122&amp;frm=0&amp;uio=uv3cs1vp1sl0lo0sr0st16sd13sv13sn13lt20ld20lv20da0-&amp;jsv=14100&amp;rurl=http%3A%2F%2Fwww.funda.nl%2Fkoop%2Futrecht%2Fstraat-wilhelminapark%2F900000-1500000%2F&amp;referer=http%3A%2F%2Fwww.funda.nl%2F#master-1" style="visibility: hidden; height: 0px;" cd_frame_id_="6e070686ebebde8191d1a3515a16e28e"></iframe></div>
     </div>
 
 
@@ -3530,10 +3530,10 @@
 </div>
 </div><script>
     if ('querySelector' in document && 'addEventListener' in window) {
-        document.write('<script src="//assets.fstatic.nl/master_313/assets/vendor.js"><\/script>');
-        document.write('<script src="//assets.fstatic.nl/master_313/assets/index.js"><\/script>');
+        document.write('<script src="//assets.fstatic.nl/master_331/assets/vendor.js"><\/script>');
+        document.write('<script src="//assets.fstatic.nl/master_331/assets/index.js"><\/script>');
     }
-</script><script src="//assets.fstatic.nl/master_313/assets/vendor.js"></script><script src="//assets.fstatic.nl/master_313/assets/index.js"></script>
+</script><script src="//assets.fstatic.nl/master_331/assets/vendor.js"></script><script src="//assets.fstatic.nl/master_331/assets/index.js"></script>
 
 
 
