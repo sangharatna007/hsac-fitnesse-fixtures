@@ -50,7 +50,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td colspan="3"><pre>&lt;binary/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.24:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.4.67:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -59,11 +59,16 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>script</td>
 		<td colspan="4"><span class="pass">xml http test</span></td>
 	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response time</td>
+		<td colspan="3"><span class="pass">-1</span></td>
+	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.0.24:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.4.67:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -71,12 +76,17 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>count(/dag)</td>
 		<td colspan="2"><span class="pass">1</span></td>
 	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response time</td>
+		<td colspan="3"><span class="pass">911&gt;0</span></td>
+	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">reject</span></td>
 		<td>post</td>
 		<td><pre>&lt;ClientFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.24:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.4.67:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -113,7 +123,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Thu, 01 Sep 2016 15:18:47 GMT</td>
+		<td class="hash_value">Mon, 05 Sep 2016 11:26:13 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-length</td>
@@ -142,7 +152,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;ServerFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.24:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.4.67:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -189,7 +199,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;NoXml/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.24:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.4.67:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
