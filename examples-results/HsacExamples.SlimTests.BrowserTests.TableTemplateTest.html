@@ -1,5 +1,5 @@
 <html><head><title>HsacExamples.SlimTests.BrowserTests.TableTemplateTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.TableTemplateTest</h2></header><article><br/><h1>Website testing using <i>table template</i> and BrowserTest</h1>
-<br/><br/>On this page we test whether we check the prices of a couple of houses for sale in Utrecht, The Netherlands. <br/>This test continues where <a href="HsacExamples.SlimTests.BrowserTests.ScenarioTest">ScenarioTest</a> left of. It uses 'table template', a custom extension of Slim's scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a>, to define a parameterized script. This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row. The advantage of this custom extension is that the scenario's parameters do not have to be listed in its first row (but only in the rows where they are used and in the decision table). This is, of course, especially convenient when there are many parameters. 'Table template' supports both input and output parameters, just like regular scenarios. Output parameters are indicated in the decision table by the fact that their column header ends with '?'. <br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/><table>
+<br/><br/>On this page we test whether we check the prices of a couple of houses for sale in Utrecht, The Netherlands.<br/>This test continues where <a href="HsacExamples.SlimTests.BrowserTests.ScenarioTest">ScenarioTest</a> left of. It uses 'table template', a custom extension of Slim's scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a>, to define a parameterized script. This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row. The advantage of this custom extension is that the scenario's parameters do not have to be listed in its first row (but only in the rows where they are used and in the decision table). This is, of course, especially convenient when there are many parameters. 'Table template' supports both input and output parameters, just like regular scenarios. Output parameters are indicated in the decision table by the fact that their column header ends with '?'.<br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/><table>
 	<tr>
 		<td>table template</td>
 		<td colspan="3">check original price</td>
@@ -96,7 +96,7 @@
 		<td>Gageldijk 104</td>
 		<td>Utrecht</td>
 		<td><span class="pass">€ 900.000 k.k.</span></td>
-		<td>[<span class="diff">V</span>e<span class="diff">rko</span>ch<span class="diff">t onder voor</span>b<span class="diff">ehoud</span>] <span class="fail">expected [</span><span class="diff">B</span><span class="fail">e</span><span class="diff">s</span><span class="fail">ch</span><span class="diff">ik</span><span class="fail">b</span><span class="diff">aar</span><span class="fail">]</span></td>
+		<td><span class="pass">Verkocht onder voorbehoud</span></td>
 		<td>270</td>
 		<td><span class="pass">1906</span></td>
 		<td><span class="pass">1.270 m³</span></td>
@@ -175,13 +175,13 @@
 	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td class="fail">Wilhelminapark 46</td>
-		<td class="fail">Utrecht</td>
-		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">€ 1.295.000 k.k.</span><span class="fail">]</span></td>
-		<td class="fail">[n<span class="diff">ull</span>] <span class="fail">expected [</span><span class="diff">O</span><span class="fail">n</span><span class="diff">der bod</span><span class="fail">]</span></td>
-		<td class="fail">312</td>
-		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Voor 1906</span><span class="fail">]</span></td>
-		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">1.370 m³</span><span class="fail">]</span></td>
+		<td>Lange Nieuwstraat 72</td>
+		<td>Utrecht</td>
+		<td><span class="pass">€ 1.942.500 k.k.</span></td>
+		<td><span class="pass">Beschikbaar</span></td>
+		<td>820</td>
+		<td><span class="pass">Voor 1906</span></td>
+		<td><span class="pass">3.190 m³</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="7"><table>
 	<tr>
 		<td>table template</td>
@@ -205,7 +205,7 @@
 	</tr>
 	<tr>
 		<td><span class="pass">enter</span></td>
-		<td>Wilhelminapark 46, Utrecht</td>
+		<td>Lange Nieuwstraat 72, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
 	</tr>
@@ -226,21 +226,21 @@
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr>
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_3.html">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_3.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_3.png" height="200"/></a></div></div></span></td>
-		<td colspan="3">Wilhelminapark 46</td>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Lange Nieuwstraat 72</td>
 	</tr>
 	<tr>
-		<td>$price&lt;-[null]</td>
+		<td>$price&lt;-[€ 1.942.500 k.k.]</td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr>
-		<td>$state&lt;-[null]</td>
+		<td>$state&lt;-[Beschikbaar]</td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
 	<tr>
-		<td>$volume&lt;-[null]</td>
+		<td>$volume&lt;-[3.190 m³]</td>
 		<td>value of</td>
 		<td colspan="2">Inhoud</td>
 	</tr>
@@ -248,10 +248,10 @@
 		<td>check</td>
 		<td>value of</td>
 		<td>Woonoppervlakte</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">312 m²</span><span class="fail">]</span></td>
+		<td><span class="pass">820 m²</span></td>
 	</tr>
 	<tr>
-		<td>$yearBuilt&lt;-[null]</td>
+		<td>$yearBuilt&lt;-[Voor 1906]</td>
 		<td>value of</td>
 		<td colspan="2">Bouwjaar</td>
 	</tr>

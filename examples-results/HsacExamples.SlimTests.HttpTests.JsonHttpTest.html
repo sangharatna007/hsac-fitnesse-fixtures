@@ -105,7 +105,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 23282,
+    &quot;parse_time_nanoseconds&quot;: 33539,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -136,7 +136,7 @@ json={"key":"value"}
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	<td><div><ul><li>object</li><li>false</li><li>23282</li><li>true</li><li>1</li></ul></div></td></tr>
+	<td><div><ul><li>object</li><li>false</li><li>33539</li><li>true</li><li>1</li></ul></div></td></tr>
 </table>
 <br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
 	<tr class="slimRowTitle">
@@ -159,7 +159,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 28296,
+    &quot;parse_time_nanoseconds&quot;: 29878,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -221,199 +221,14 @@ json={"key":"value"}
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
-		<td>$.fields.order.basic_products[0].product_name</td>
-		<td>[n<span class="diff">ull</span>] <span class="fail">expected [</span><span class="diff">I</span><span class="fail">n</span><span class="diff">ternet 50Mb</span><span class="fail">]</span></td>
+		<td>$.fields.pricing_info.initial_onetime.pricing_info</td>
+		<td><span class="pass">Eenmalig betaal je</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
-		<td>$.fields.order.basic_products[1].product_name</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">TV Start</span><span class="fail">]</span></td>
-	</tr>
-</table>
-<br/>Next a POST/DELETE combination<br/><br/><table>
-	<tr class="slimRowTitle">
-		<td>script</td>
-		<td colspan="3"><span class="pass">json http test</span></td>
-	</tr>
-	<tr class="slimRowColor5">
-		<td>set value</td>
-		<td>dsfsdf</td>
-		<td>for</td>
-		<td>name</td>
-	</tr>
-	<tr class="slimRowColor5">
-		<td>set value</td>
-		<td>2010</td>
-		<td>for</td>
-		<td>year_formed</td>
-	</tr>
-	<tr class="slimRowColor5">
-		<td>set value</td>
-		<td>1</td>
-		<td>for</td>
-		<td>genre_id</td>
-	</tr>
-	<tr class="slimRowColor5">
-		<td>set value</td>
-		<td>Afghanistan</td>
-		<td>for</td>
-		<td>country</td>
-	</tr>
-	<tr class="exception closed">
-		<td class="fail">post values as json to</td>
-		<td colspan="3" class="fail"><a href="http://rest.kabasakalis.tk/api/artist">http://rest.kabasakalis.tk/api/artist</a></td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:ABORT_SLIM_TEST:nl.hsac.fitnesse.fixture.slim.StopTestException: Unable to get response from POST to: http://rest.kabasakalis.tk/api/artist
-	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:161) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.JsonHttpTest.postValuesAsJsonTo(JsonHttpTest.java:15) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:45) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:25) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:131) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:115) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20160618.jar]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:133) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:106) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementTimeoutExecutor$3.call(StatementTimeoutExecutor.java:90) [fitnesse-20160618.jar]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_76]
-	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]
-Caused by: java.lang.RuntimeException: Unable to get response from: http://rest.kabasakalis.tk/api/artist
-	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:169) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:159) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.JsonHttpTest.postValuesAsJsonTo(JsonHttpTest.java:15) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:45) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:25) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:131) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:115) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20160618.jar]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:133) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:106) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementTimeoutExecutor$3.call(StatementTimeoutExecutor.java:90) [fitnesse-20160618.jar]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_76]
-	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]
-Caused by: java.net.UnknownHostException: rest.kabasakalis.tk: Name or service not known
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) [rt.jar:1.7.0_76]
-	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901) [rt.jar:1.7.0_76]
-	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1295) [rt.jar:1.7.0_76]
-	at java.net.InetAddress.getAllByName0(InetAddress.java:1248) [rt.jar:1.7.0_76]
-	at java.net.InetAddress.getAllByName(InetAddress.java:1164) [rt.jar:1.7.0_76]
-	at java.net.InetAddress.getAllByName(InetAddress.java:1098) [rt.jar:1.7.0_76]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106) [httpclient-4.3.6.jar:4.3.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57) [httpclient-4.3.6.jar:4.3.6]
-	at nl.hsac.fitnesse.fixture.util.HttpClient.getHttpResponse(HttpClient.java:208) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:137) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:159) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.JsonHttpTest.postValuesAsJsonTo(JsonHttpTest.java:15) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:45) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:25) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:148) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:131) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:115) [fitnesse-20160618.jar]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20160618.jar]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:133) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:106) [fitnesse-20160618.jar]
-	at fitnesse.slim.StatementTimeoutExecutor$3.call(StatementTimeoutExecutor.java:90) [fitnesse-20160618.jar]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_76]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_76]
-	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]</pre></td></tr>
-	<tr class="slimRowColor9">
-		<td>show <span class="ignore">Test not run</span></td>
-		<td colspan="3">request</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>response status</td>
-		<td colspan="2">200 <span class="ignore">Test not run</span></td>
-	</tr>
-	<tr class="slimRowColor9">
-		<td>show <span class="ignore">Test not run</span></td>
-		<td colspan="3">response</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>$id= <span class="ignore">Test not run</span></td>
-		<td>json path</td>
-		<td colspan="2">data.artist.id</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>json path</td>
-		<td>data.artist.name</td>
-		<td>dsfsdf <span class="ignore">Test not run</span></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>json path</td>
-		<td>data.artist.country</td>
-		<td>Afghanistan <span class="ignore">Test not run</span></td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>delete <span class="ignore">Test not run</span></td>
-		<td colspan="3"><a href="http://rest.kabasakalis.tk/api/artist/$id">http://rest.kabasakalis.tk/api/artist/$id</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>response status</td>
-		<td colspan="2">200 <span class="ignore">Test not run</span></td>
-	</tr>
-	<tr class="slimRowColor9">
-		<td>show <span class="ignore">Test not run</span></td>
-		<td colspan="3">response</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>json path</td>
-		<td>success</td>
-		<td>true <span class="ignore">Test not run</span></td>
+		<td>$.fields.pricing_info.initial_monthly.pricing_info</td>
+		<td><span class="pass">Maandelijks</span></td>
 	</tr>
 </table>
 <br/>Next a PUT example<br/><span class="meta">variable defined: PUT_BODY= {{{
@@ -425,10 +240,10 @@ json={"id": 1,
 <br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3">json http test <span class="ignore">Test not run</span></td>
+		<td colspan="3"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor5">
-		<td>put <span class="ignore">Test not run</span></td>
+		<td><span class="pass">put</span></td>
 		<td><pre>
 json={"id": 1,
     "title": "foo",
@@ -439,25 +254,31 @@ json={"id": 1,
 		<td><a href="http://jsonplaceholder.typicode.com/posts/1/">http://jsonplaceholder.typicode.com/posts/1/</a></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show <span class="ignore">Test not run</span></td>
+		<td>show</td>
 		<td colspan="3">response</td>
-	</tr>
+	<td><pre>{
+    &quot;id&quot;: 1,
+    &quot;json&quot;: &quot;{\&quot;id\&quot;: 1,\n    \&quot;title\&quot;: \&quot;foo\&quot;,\n    \&quot;body\&quot;: \&quot;bar\&quot;,\n    \&quot;userId\&quot;: 1}&quot;
+}</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>id</td>
-		<td>&gt;0 <span class="ignore">Test not run</span></td>
+		<td><span class="pass">1&gt;0</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>$.*</td>
-		<td>&gt;=2 <span class="ignore">Test not run</span></td>
+		<td><span class="pass">2&gt;=2</span></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show <span class="ignore">Test not run</span></td>
+		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	</tr>
+	<td><div><ul><li>{"id": 1,
+    "title": "foo",
+    "body": "bar",
+    "userId": 1}</li><li>1</li></ul></div></td></tr>
 </table>
 </article></body></html>
