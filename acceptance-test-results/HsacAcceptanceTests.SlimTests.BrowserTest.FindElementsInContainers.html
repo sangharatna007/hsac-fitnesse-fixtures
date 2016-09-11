@@ -1,0 +1,474 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.FindElementsInContainers</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.FindElementsInContainers</h2></header><article><br/>When the same label or link occurs on a page multiple times we can indicate which one to use by specifiying a 'search context'.<br/>A search context can be provided inline (using the 'in &lt;container&gt;') versions of methods, or be configured for all subsequent commands, until a reset.<br/><br/>By default container found are:<br/><ul>
+	<li>fieldsets with legends are defined. We use those fieldset's legend to indicate which we want to use.</li>
+	<li>aria labels on those containers.</li>
+	<li>technical selectors</li>
+</ul>
+<br/><br/>We use a mock server running to serve the HTML defined in this page.<br/><br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;span id="lastButton"&gt;None&lt;/span&gt;
+&lt;button onclick='document.getElementById("lastButton").innerHTML = "Normal Button";'&gt;Button&lt;/button&gt;
+&lt;label for="g2"&gt;Hello2&lt;/label&gt;&lt;input id="g2" value="Hi"&gt;
+&lt;/div&gt;
+&lt;label&gt;Hello4&lt;input value="Hallo"&gt;&lt;/label&gt;
+&lt;label for="list1"&gt;Lijstje&lt;/label&gt;&lt;ul id="list1"&gt;&lt;li&gt;one&lt;/li&gt;&lt;li&gt;two&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Least favorite&lt;/li&gt;&lt;li&gt;Favorite Todo &lt;/li&gt;&lt;/ol&gt;
+&lt;label for="select1"&gt;Cars&lt;/label&gt;
+&lt;select id="select1"&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+  &lt;option value="mercedes"&gt;Mercedes&lt;/option&gt;
+  &lt;option value="audi"&gt;Audi&lt;/option&gt;
+&lt;/select&gt;
+&lt;fieldset aria-label="My fieldset"&gt;
+
+&lt;legend&gt;Special&lt;/legend&gt;
+&lt;button onclick='document.getElementById("lastButton").innerHTML = "Special Button";'&gt;Button&lt;/button&gt;
+&lt;div&gt;
+&lt;label for="g6"&gt;Hello2&lt;/label&gt;&lt;input id="g6" value="Hi2"&gt;
+&lt;/div&gt;
+&lt;label&gt;Hello4&lt;input value="Hallo2"&gt;&lt;/label&gt;
+&lt;label&gt;Hello hidden&lt;input value="I should NOT be hidden"&gt;&lt;/label&gt;
+&lt;label for="list2"&gt;Lijstje&lt;/label&gt;&lt;ul id="list2"&gt;&lt;li&gt;three&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;NOOOO&lt;/li&gt;&lt;li&gt;Least favorite&lt;/li&gt;&lt;li&gt;Favorite Todo &lt;/li&gt;&lt;/ol&gt;
+&lt;label for="select2"&gt;Cars&lt;/label&gt;
+&lt;select id="select2"&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+  &lt;option value="mercedes"&gt;Mercedes&lt;/option&gt;
+  &lt;option value="audi"&gt;Audi&lt;/option&gt;
+&lt;/select&gt;
+&lt;/fieldset&gt;
+
+&lt;div id="extraOptions" aria-labelledby="extraOptionsLabel"&gt;
+&lt;h2 id="extraOptionsLabel"&gt;Extras&lt;/h2&gt;
+&lt;button onclick='document.getElementById("lastButton").innerHTML = "Extra Special Button";'&gt;Button&lt;/button&gt;
+&lt;div&gt;
+&lt;label for="g10"&gt;Hello2&lt;/label&gt;&lt;input id="g10" value="Hi4"&gt;
+&lt;/div&gt;
+&lt;label&gt;Hello4&lt;input value="Hallo4"&gt;&lt;/label&gt;
+&lt;label for="list5"&gt;Lijstje&lt;/label&gt;&lt;ul id="list5"&gt;&lt;li&gt;5&lt;/li&gt;&lt;li&gt;6&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Favorite Todo &lt;/li&gt;&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;span id="lastButton"&gt;None&lt;/span&gt;
+&lt;button onclick='document.getElementById("lastButton").innerHTML = "Normal Button";'&gt;Button&lt;/button&gt;
+&lt;label for="g2"&gt;Hello2&lt;/label&gt;&lt;input id="g2" value="Hi"&gt;
+&lt;/div&gt;
+&lt;label&gt;Hello4&lt;input value="Hallo"&gt;&lt;/label&gt;
+&lt;label for="list1"&gt;Lijstje&lt;/label&gt;&lt;ul id="list1"&gt;&lt;li&gt;one&lt;/li&gt;&lt;li&gt;two&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Least favorite&lt;/li&gt;&lt;li&gt;Favorite Todo &lt;/li&gt;&lt;/ol&gt;
+&lt;label for="select1"&gt;Cars&lt;/label&gt;
+&lt;select id="select1"&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+  &lt;option value="mercedes"&gt;Mercedes&lt;/option&gt;
+  &lt;option value="audi"&gt;Audi&lt;/option&gt;
+&lt;/select&gt;
+&lt;fieldset aria-label="My fieldset"&gt;
+
+&lt;legend&gt;Special&lt;/legend&gt;
+&lt;button onclick='document.getElementById("lastButton").innerHTML = "Special Button";'&gt;Button&lt;/button&gt;
+&lt;div&gt;
+&lt;label for="g6"&gt;Hello2&lt;/label&gt;&lt;input id="g6" value="Hi2"&gt;
+&lt;/div&gt;
+&lt;label&gt;Hello4&lt;input value="Hallo2"&gt;&lt;/label&gt;
+&lt;label&gt;Hello hidden&lt;input value="I should NOT be hidden"&gt;&lt;/label&gt;
+&lt;label for="list2"&gt;Lijstje&lt;/label&gt;&lt;ul id="list2"&gt;&lt;li&gt;three&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;NOOOO&lt;/li&gt;&lt;li&gt;Least favorite&lt;/li&gt;&lt;li&gt;Favorite Todo &lt;/li&gt;&lt;/ol&gt;
+&lt;label for="select2"&gt;Cars&lt;/label&gt;
+&lt;select id="select2"&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+  &lt;option value="mercedes"&gt;Mercedes&lt;/option&gt;
+  &lt;option value="audi"&gt;Audi&lt;/option&gt;
+&lt;/select&gt;
+&lt;/fieldset&gt;
+
+&lt;div id="extraOptions" aria-labelledby="extraOptionsLabel"&gt;
+&lt;h2 id="extraOptionsLabel"&gt;Extras&lt;/h2&gt;
+&lt;button onclick='document.getElementById("lastButton").innerHTML = "Extra Special Button";'&gt;Button&lt;/button&gt;
+&lt;div&gt;
+&lt;label for="g10"&gt;Hello2&lt;/label&gt;&lt;input id="g10" value="Hi4"&gt;
+&lt;/div&gt;
+&lt;label&gt;Hello4&lt;input value="Hallo4"&gt;&lt;/label&gt;
+&lt;label for="list5"&gt;Lijstje&lt;/label&gt;&lt;ul id="list5"&gt;&lt;li&gt;5&lt;/li&gt;&lt;li&gt;6&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Favorite Todo &lt;/li&gt;&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.169:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">list fixture</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="2">display lists standard</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="6"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="6">1</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="6">$url->[http://172.17.0.169:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=lastButton</td>
+		<td colspan="4"><span class="pass">None</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="6">Button</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=lastButton</td>
+		<td colspan="4"><span class="pass">Normal Button</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td colspan="4"><span class="pass">Hi</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td colspan="4"><span class="pass">Hallo</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>1</td>
+		<td>for</td>
+		<td colspan="4">Hello2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td colspan="4"><span class="pass">Hi1</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>Hallo1</td>
+		<td>as</td>
+		<td colspan="4">Hello4</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td colspan="4"><span class="pass">Hallo1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>Lijstje</td>
+		<td colspan="4"><span class="pass">[one, two]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>Favorite Todo</td>
+		<td colspan="4"><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>Saab</td>
+		<td>for</td>
+		<td colspan="4">Cars</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value for</td>
+		<td>Cars</td>
+		<td colspan="4"><span class="pass">Saab</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td>Button</td>
+		<td>in</td>
+		<td colspan="4">Special</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=lastButton</td>
+		<td colspan="4"><span class="pass">Special Button</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">Hi2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td>in</td>
+		<td>My fieldset</td>
+		<td colspan="2"><span class="pass">Hallo2</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>3</td>
+		<td>for</td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td colspan="2">Special</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">Hi23</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>Hallo5</td>
+		<td>as</td>
+		<td>Hello4</td>
+		<td>in</td>
+		<td colspan="2">Special</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">Hallo5</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>Lijstje</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">[three, 4]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>Todo</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>Audi</td>
+		<td>for</td>
+		<td>Cars</td>
+		<td>in</td>
+		<td>Special</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value for</td>
+		<td>Cars</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">Audi</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>is enabled</td>
+		<td>Hello hidden</td>
+		<td>in</td>
+		<td colspan="3">Special</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td>Hello hidden</td>
+		<td>in</td>
+		<td colspan="4">Special</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>is visible</td>
+		<td>Hello hidden</td>
+		<td>in</td>
+		<td colspan="3">Special</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>is visible on page</td>
+		<td>Hello hidden</td>
+		<td>in</td>
+		<td colspan="3">Special</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">wait for visible</span></td>
+		<td>Hello hidden</td>
+		<td>in</td>
+		<td colspan="4">Special</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click if available</span></td>
+		<td>Button</td>
+		<td>in</td>
+		<td colspan="4">xpath=//h2[text()='Extras']/..</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=lastButton</td>
+		<td colspan="4"><span class="pass">Extra Special Button</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td>id=extraOptions</td>
+		<td colspan="2"><span class="pass">Hi4</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td>in</td>
+		<td>id=extraOptions</td>
+		<td colspan="2"><span class="pass">Hallo4</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>Lijstje</td>
+		<td>in</td>
+		<td>id=extraOptions</td>
+		<td colspan="2"><span class="pass">[5, 6]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number for</td>
+		<td>Todo</td>
+		<td>in</td>
+		<td>id=extraOptions</td>
+		<td colspan="2"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td>Extras</td>
+		<td colspan="2"><span class="pass">Hi4</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="6">id=lastButton</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td colspan="4"><span class="pass">Hi1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value for</td>
+		<td>Cars</td>
+		<td colspan="4"><span class="pass">Saab</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">set search context to</span></td>
+		<td colspan="6">Special</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td colspan="4"><span class="pass">Hi23</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value for</td>
+		<td>Cars</td>
+		<td colspan="4"><span class="pass">Audi</span></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td colspan="7">clear search context</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td colspan="4"><span class="pass">Hi1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value for</td>
+		<td>Cars</td>
+		<td colspan="4"><span class="pass">Saab</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td><span class="pass">clear</span></td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td colspan="4">Special</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td>Special</td>
+		<td colspan="2"><span class="pass">BLANK</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td>Hello2</td>
+		<td>in</td>
+		<td colspan="4">Special</td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/><br/></article></body></html>
