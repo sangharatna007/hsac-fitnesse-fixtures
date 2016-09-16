@@ -1,5 +1,13 @@
 <html><head><title>HsacAcceptanceTests.SlimTests.HttpTest.XmlHttpTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.HttpTest.XmlHttpTest</h2></header><article><br/><table>
 	<tr class="slimRowTitle">
+		<td>library</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">stop test fixture</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">mock xml server setup</span></td>
 	</tr>
@@ -50,7 +58,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td colspan="3"><pre>&lt;binary/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.2.121:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.9.99:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -68,7 +76,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.2.121:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.9.99:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -79,14 +87,14 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response time</td>
-		<td colspan="3"><span class="pass">937&gt;0</span></td>
+		<td colspan="3"><span class="pass">912&gt;0</span></td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">reject</span></td>
 		<td>post</td>
 		<td><pre>&lt;ClientFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.2.121:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.9.99:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -123,7 +131,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Wed, 14 Sep 2016 18:45:40 GMT</td>
+		<td class="hash_value">Fri, 16 Sep 2016 21:44:01 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-length</td>
@@ -152,7 +160,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;ServerFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.2.121:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.9.99:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -199,12 +207,26 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;NoXml/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.2.121:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.9.99:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
 		<td colspan="3"><span class="pass">200</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="4">we use StopTestFixture as library to abort the test if status code is not what we expect</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$responseStatus&lt;-[200]</td>
+		<td colspan="4">response status</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td><span class="pass">stop test if</span></td>
+		<td>$responseStatus->[200]</td>
+		<td>is not</td>
+		<td colspan="2">200</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -223,7 +245,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>0</td>
 	</tr>
 </table>
-<br/><table>
+<br/><br/><br/><table>
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
