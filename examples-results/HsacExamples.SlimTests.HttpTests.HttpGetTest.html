@@ -11,13 +11,13 @@
 		<td>ZIP</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">get from</span></td>
+		<td><span class="fail">get from</span></td>
 		<td colspan="3"><a href="http://wsf.cdyne.com/WeatherWS/Weather.asmx">http://wsf.cdyne.com/WeatherWS/Weather.asmx</a>/GetCityWeatherByZIP</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2"><span class="pass">200</span></td>
+		<td colspan="2">[<span class="diff">5</span>00] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">00]</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -26,23 +26,8 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;WeatherReturn xmlns=&quot;http://ws.cdyne.com/WeatherWS/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-    &lt;Success&gt;true&lt;/Success&gt;
-    &lt;ResponseText&gt;City Found&lt;/ResponseText&gt;
-    &lt;State&gt;CA&lt;/State&gt;
-    &lt;City&gt;Beverly Hills&lt;/City&gt;
-    &lt;WeatherStationCity&gt;Van Nuys&lt;/WeatherStationCity&gt;
-    &lt;WeatherID&gt;4&lt;/WeatherID&gt;
-    &lt;Description&gt;Sunny&lt;/Description&gt;
-    &lt;Temperature&gt;68&lt;/Temperature&gt;
-    &lt;RelativeHumidity&gt;54&lt;/RelativeHumidity&gt;
-    &lt;Wind&gt;CALM&lt;/Wind&gt;
-    &lt;Pressure&gt;29.89R&lt;/Pressure&gt;
-    &lt;Visibility/&gt;
-    &lt;WindChill/&gt;
-    &lt;Remarks/&gt;
-&lt;/WeatherReturn&gt;
-</pre></td></tr>
+	<td>Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+</td></tr>
 	<tr class="slimRowColor5">
 		<td>register prefix</td>
 		<td>weather</td>
@@ -53,7 +38,7 @@
 		<td>check</td>
 		<td>xPath</td>
 		<td>//weather:City/text()</td>
-		<td><span class="pass">Beverly Hills</span></td>
+		<td>Beverly Hills <span class="error"><div>Unable to check for SOAP fault, is the result XML? Response was:<pre>Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.<br/></pre></div></span></td>
 	</tr>
 </table>
 </article></body></html>

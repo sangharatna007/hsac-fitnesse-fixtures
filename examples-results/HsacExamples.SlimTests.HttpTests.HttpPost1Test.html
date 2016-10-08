@@ -14,7 +14,7 @@
 		<td colspan="3"><span class="pass">xml http test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">post</span></td>
+		<td><span class="fail">post</span></td>
 		<td><pre>
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
@@ -30,31 +30,18 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2"><span class="pass">200</span></td>
+		<td colspan="2">[<span class="diff">5</span>00] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">00]</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
 	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
-        &lt;GetCityWeatherByZIPResponse xmlns=&quot;http://ws.cdyne.com/WeatherWS/&quot;&gt;
-            &lt;GetCityWeatherByZIPResult&gt;
-                &lt;Success&gt;true&lt;/Success&gt;
-                &lt;ResponseText&gt;City Found&lt;/ResponseText&gt;
-                &lt;State&gt;CA&lt;/State&gt;
-                &lt;City&gt;Beverly Hills&lt;/City&gt;
-                &lt;WeatherStationCity&gt;Van Nuys&lt;/WeatherStationCity&gt;
-                &lt;WeatherID&gt;4&lt;/WeatherID&gt;
-                &lt;Description&gt;Sunny&lt;/Description&gt;
-                &lt;Temperature&gt;68&lt;/Temperature&gt;
-                &lt;RelativeHumidity&gt;54&lt;/RelativeHumidity&gt;
-                &lt;Wind&gt;CALM&lt;/Wind&gt;
-                &lt;Pressure&gt;29.89R&lt;/Pressure&gt;
-                &lt;Visibility/&gt;
-                &lt;WindChill/&gt;
-                &lt;Remarks/&gt;
-            &lt;/GetCityWeatherByZIPResult&gt;
-        &lt;/GetCityWeatherByZIPResponse&gt;
+        &lt;soap:Fault&gt;
+            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
+            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)&lt;/faultstring&gt;
+            &lt;detail/&gt;
+        &lt;/soap:Fault&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></td></tr>
@@ -68,15 +55,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 18 Sep 2016 11:47:58 GMT</td>
+		<td class="hash_value">Sat, 08 Oct 2016 08:02:28 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Length</td>
-		<td class="hash_value">759</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Expires</td>
-		<td class="hash_value">-1</td>
+		<td class="hash_value">728</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Type</td>
@@ -91,12 +74,8 @@
 		<td class="hash_value">Microsoft-IIS/7.5</td>
 	</tr>
 	<tr class="hash_row">
-		<td class="hash_key">Pragma</td>
-		<td class="hash_value">no-cache</td>
-	</tr>
-	<tr class="hash_row">
 		<td class="hash_key">Cache-Control</td>
-		<td class="hash_value">no-cache</td>
+		<td class="hash_value">private</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor5">
@@ -109,7 +88,7 @@
 		<td>check</td>
 		<td>xPath</td>
 		<td>//weather:City/text()</td>
-		<td><span class="pass">Beverly Hills</span></td>
+		<td>Beverly Hills <span class="error"><div>SOAP fault received: <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;<br/>    &lt;soap:Body&gt;<br/>        &lt;soap:Fault&gt;<br/>            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;<br/>            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)&lt;/faultstring&gt;<br/>            &lt;detail/&gt;<br/>        &lt;/soap:Fault&gt;<br/>    &lt;/soap:Body&gt;<br/>&lt;/soap:Envelope&gt;<br/></pre></div></span></td>
 	</tr>
 </table>
 </article></body></html>
