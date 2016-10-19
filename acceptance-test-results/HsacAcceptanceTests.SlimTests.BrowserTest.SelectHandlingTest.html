@@ -1,0 +1,127 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.SelectHandlingTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.SelectHandlingTest</h2></header><article><br/>This test ensures we can work with select boxes. We use a mock server running to serve the HTML defined in this page.<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;label for="s"&gt;Option to&amp;nbsp;choose&lt;/label&gt;
+&lt;select id="s"&gt;
+    &lt;option value="1"&gt;example5@example.com&lt;/option&gt;
+    &lt;option value="2"&gt;example6@example.com&lt;/option&gt;
+    &lt;option value="3"&gt;example7@example.com&lt;/option&gt;
+    &lt;option value="4" selected&gt;example8@example.com&lt;/option&gt;
+&lt;/select&gt;
+&lt;label for="s2"&gt;Options to choose&lt;/label&gt;
+&lt;select id="s2"&gt;
+    &lt;option value="1"&gt;example1@example.com&lt;/option&gt;
+    &lt;option value="2" selected&gt;example2@example.com&lt;/option&gt;
+    &lt;option value="3"&gt;example3@example.com&lt;/option&gt;
+    &lt;option value="4"&gt;example4@example.com&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;label for="s"&gt;Option to&amp;nbsp;choose&lt;/label&gt;
+&lt;select id="s"&gt;
+    &lt;option value="1"&gt;example5@example.com&lt;/option&gt;
+    &lt;option value="2"&gt;example6@example.com&lt;/option&gt;
+    &lt;option value="3"&gt;example7@example.com&lt;/option&gt;
+    &lt;option value="4" selected&gt;example8@example.com&lt;/option&gt;
+&lt;/select&gt;
+&lt;label for="s2"&gt;Options to choose&lt;/label&gt;
+&lt;select id="s2"&gt;
+    &lt;option value="1"&gt;example1@example.com&lt;/option&gt;
+    &lt;option value="2" selected&gt;example2@example.com&lt;/option&gt;
+    &lt;option value="3"&gt;example3@example.com&lt;/option&gt;
+    &lt;option value="4"&gt;example4@example.com&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.252:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/>Ensure we use our custom list formatting.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.0.252:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Option to choose</td>
+		<td><span class="pass">example8@example.com</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>example5@example.com</td>
+		<td>for</td>
+		<td>Option to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Option to choose</td>
+		<td><span class="pass">example5@example.com</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td><a href="mailto:example6@example.com">example6@example.com</a></td>
+		<td>for</td>
+		<td>Option to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Option to choose</td>
+		<td><span class="pass">example6@example.com</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Options to choose</td>
+		<td><span class="pass">example2@example.com</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td><a href="mailto:example3@example.com">example3@example.com</a></td>
+		<td>for</td>
+		<td>Options to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Options to choose</td>
+		<td><span class="pass">example3@example.com</span></td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/></article></body></html>
