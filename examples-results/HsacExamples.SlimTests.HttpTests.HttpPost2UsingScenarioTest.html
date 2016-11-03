@@ -100,7 +100,7 @@
     &lt;soap:Body&gt;
         &lt;soap:Fault&gt;
             &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
-            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.&lt;/faultstring&gt;
+            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)&lt;/faultstring&gt;
             &lt;detail/&gt;
         &lt;/soap:Fault&gt;
     &lt;/soap:Body&gt;
@@ -113,7 +113,7 @@
 		<td><a href="http://ws.cdyne.com/WeatherWS/">http://ws.cdyne.com/WeatherWS/</a></td>
 	</tr>
 	<tr>
-		<td>$City= <span class="error"><div>SOAP fault received: <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;<br/>    &lt;soap:Body&gt;<br/>        &lt;soap:Fault&gt;<br/>            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;<br/>            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.&lt;/faultstring&gt;<br/>            &lt;detail/&gt;<br/>        &lt;/soap:Fault&gt;<br/>    &lt;/soap:Body&gt;<br/>&lt;/soap:Envelope&gt;<br/></pre></div></span></td>
+		<td>$City= <span class="error"><div>SOAP fault received: <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;<br/>    &lt;soap:Body&gt;<br/>        &lt;soap:Fault&gt;<br/>            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;<br/>            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)&lt;/faultstring&gt;<br/>            &lt;detail/&gt;<br/>        &lt;/soap:Fault&gt;<br/>    &lt;/soap:Body&gt;<br/>&lt;/soap:Envelope&gt;<br/></pre></div></span></td>
 		<td>xPath</td>
 		<td colspan="2">//weather:City/text()</td>
 	</tr>
