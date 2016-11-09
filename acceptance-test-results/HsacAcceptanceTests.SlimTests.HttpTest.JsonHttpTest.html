@@ -17,11 +17,11 @@
 <br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td><span class="pass">mock xml server setup</span></td>
+		<td colspan="3"><span class="pass">mock xml server setup</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>add response</td>
-		<td>{
+		<td colspan="3">{
 	"airplanes": [{
 		"id": "001",
 		"type": "747",
@@ -38,9 +38,15 @@
     }
 </td>
 	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td>Broken</td>
+		<td>with status</td>
+		<td>500</td>
+	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.6.21:8000/FitNesseMock]</td>
-		<td>get mock server url</td>
+		<td>$url&lt;-[http://172.17.6.160:8000/FitNesseMock]</td>
+		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
 <br/><table>
@@ -50,7 +56,7 @@
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="3">$url->[http://172.17.6.21:8000/FitNesseMock]</td>
+		<td colspan="3">$url->[http://172.17.6.160:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -113,4 +119,24 @@
     }
 ]}</pre></td></tr>
 </table>
-<br/></article></body></html>
+<br/>And now a call which returns an error status code.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="3">script</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>get from</td>
+		<td>$url->[http://172.17.6.160:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td><span class="pass">500</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response</td>
+		<td><span class="pass">Broken</span></td>
+	</tr>
+</table>
+</article></body></html>
