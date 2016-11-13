@@ -58,7 +58,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td colspan="3"><pre>&lt;binary/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.13:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -76,7 +76,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.13:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -87,14 +87,14 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response time</td>
-		<td colspan="3"><span class="pass">958&gt;0</span></td>
+		<td colspan="3"><span class="pass">2&gt;0</span></td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">reject</span></td>
 		<td>post</td>
 		<td><pre>&lt;ClientFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.13:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -135,7 +135,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 13 Nov 2016 09:10:17 GMT</td>
+		<td class="hash_value">Sun, 13 Nov 2016 10:30:44 GMT</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor0">
@@ -160,7 +160,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;ServerFault/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.13:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -207,7 +207,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 		<td>post</td>
 		<td><pre>&lt;NoXml/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.13:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -249,24 +249,9 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
-<tr><td><table><tbody><tr class="scenario"><td class="fail">1 (of 7) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>{
-	"airplanes": [{
-		"id": "001",
-		"type": "747",
-		"brand": "Boeing",
-		"seats": "400",
-		"airline": "KLM"
-	}, {
-		"id": "002",
-		"type": "737",
-		"brand": "Boeing",
-		"seats": "400",
-		"airline": "Virgin"
-	}]
-    }
-</div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>Broken</div></div></td></tr><tr><td class="pass">3</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
+<tr><td><table><tbody><tr class="scenario"><td class="fail">1 (of 5) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;Hallo/&gt;
 </pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;dag/&gt;
-</pre></div></div></td></tr><tr><td class="pass">4</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;ClientFault/&gt;
+</pre></div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;ClientFault/&gt;
 </pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;SOAP-ENV:Header/&gt;
     &lt;SOAP-ENV:Body&gt;
@@ -281,7 +266,7 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
         &lt;/SOAP-ENV:Fault&gt;
     &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
-</pre></div></div></td></tr><tr><td class="pass">5</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;ServerFault/&gt;
+</pre></div></div></td></tr><tr><td class="pass">3</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;ServerFault/&gt;
 </pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;SOAP-ENV:Header/&gt;
     &lt;SOAP-ENV:Body&gt;
@@ -296,8 +281,8 @@ Incomplete address: no zip code&lt;/PO:confirmation&gt;
         &lt;/SOAP-ENV:Fault&gt;
     &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
-</pre></div></div></td></tr><tr><td class="pass">6</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;NoXml/&gt;
-</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><no xml</div></div></td></tr><tr><td class="fail">7</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;binary/&gt;
+</pre></div></div></td></tr><tr><td class="pass">4</td><td><div class="collapsible closed"><p class="title">request</p><div><pre>&lt;NoXml/&gt;
+</pre></div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><no xml</div></div></td></tr><tr><td class="fail">5</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;binary/&gt;
 </pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><table>
 	<tr class="slimRowTitle">
