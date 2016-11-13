@@ -18,7 +18,7 @@
 &lt;/body&gt;&lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -29,7 +29,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="2">$url->[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -41,7 +41,7 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="2">save page source</td>
-	<td><a href="files/pagesources/FitNesseMock.html">FitNesseMock.html</a></td></tr>
+	<td><a href="files/pagesources/FitNesseMock.HTML">FitNesseMock.html</a></td></tr>
 	<tr class="slimRowColor4">
 		<td>$source&lt;-[<pre>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Start Page Title&lt;/title&gt;
 &lt;/head&gt;&lt;body&gt;
@@ -52,7 +52,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>save page source</td>
-		<td><span class="pass">/&lt;a href="files/.*?\.html"&gt;FitNesseMock.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/FitNesseMock_1.html"&gt;FitNesseMock.html&lt;/a&gt;</span></td>
+		<td><span class="pass">/&lt;a href="files/.*?\.HTML"&gt;FitNesseMock.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/FitNesseMock_1.HTML"&gt;FitNesseMock.html&lt;/a&gt;</span></td>
 	</tr>
 </table>
 <br/><table>
@@ -101,7 +101,7 @@
 &lt;/body&gt;&lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.10:8000/test.html]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/test.html]</td>
 		<td colspan="2">get mock server url</td>
 	</tr>
 </table>
@@ -112,12 +112,12 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="2">$url->[http://172.17.0.10:8000/test.html]</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/test.html]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>save page source</td>
-		<td><span class="pass">/&lt;a href="files/.*?\.html"&gt;test.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/test.html"&gt;test.html&lt;/a&gt;</span></td>
+		<td><span class="pass">/&lt;a href="files/.*?\.HTML"&gt;test.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/test.HTML"&gt;test.html&lt;/a&gt;</span></td>
 	</tr>
 </table>
 <br/><table>
@@ -146,7 +146,7 @@
 &lt;/body&gt;&lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.10:8000/test/]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/test/]</td>
 		<td colspan="2">get mock server url</td>
 	</tr>
 </table>
@@ -157,12 +157,12 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="2">$url->[http://172.17.0.10:8000/test/]</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/test/]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>save page source</td>
-		<td><span class="pass">/&lt;a href="files/.*?\.html"&gt;pageSource.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/pageSource.html"&gt;pageSource.html&lt;/a&gt;</span></td>
+		<td><span class="pass">/&lt;a href="files/.*?\.HTML"&gt;pageSource.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/pageSource.HTML"&gt;pageSource.html&lt;/a&gt;</span></td>
 	</tr>
 </table>
 <br/><table>
@@ -191,7 +191,7 @@
 &lt;/body&gt;&lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.10:8000/test]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/test]</td>
 		<td colspan="2">get mock server url</td>
 	</tr>
 </table>
@@ -202,12 +202,12 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="2">$url->[http://172.17.0.10:8000/test]?hallo=1&yes=no</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/test]?hallo=1&yes=no</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>save page source</td>
-		<td><span class="pass">/&lt;a href="files/.*?\.html"&gt;test.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/test_1.html"&gt;test.html&lt;/a&gt;</span></td>
+		<td><span class="pass">/&lt;a href="files/.*?\.HTML"&gt;test.html&lt;/a&gt;/ found in: &lt;a href="files/pagesources/test_1.HTML"&gt;test.html&lt;/a&gt;</span></td>
 	</tr>
 </table>
 <br/><table>
