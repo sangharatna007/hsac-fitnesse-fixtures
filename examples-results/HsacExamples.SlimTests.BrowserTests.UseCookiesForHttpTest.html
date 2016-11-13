@@ -1,69 +1,11 @@
-<html><head><title>HsacExamples.SlimTests.BrowserTests.UseCookiesForHttpTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.UseCookiesForHttpTest</h2></header><article><br/>By taking cookies from a browser's session we can test REST services that are only accessible in after (complex) login procedures.<br/><br/>Here we don't actually test a login procedure. We just validate cookies are copied and subsequent requests by http test can change the cookies stored.<br/><br/><table>
-	<tr class="slimRowTitle">
-		<td>script</td>
-		<td colspan="2"><span class="pass">browser test</span></td>
-	</tr>
-	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
-		<td colspan="2"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
-	</tr>
-	<tr class="slimRowColor6">
-		<td>$uaid&lt;-[963a9ef9bb454cda9e26f63daa512ee9]</td>
-		<td>cookie value</td>
-		<td>uaid</td>
-	</tr>
-	<tr class="slimRowColor3">
-		<td>$ck&lt;-[G1479040962982]</td>
-		<td>cookie value</td>
-		<td>CkTst</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>$pok&lt;-[$uuid-08cfbaad-21ae-40ee-9f87-6e44fe9e2039]</td>
-		<td>cookie value</td>
-		<td>MSPOK</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>$requ&lt;-[lt=1479040964&amp;co=1&amp;id=64855]</td>
-		<td>cookie value</td>
-		<td>MSPRequ</td>
-	</tr>
-</table>
-<br/>Copying from browser's cookie store implicitly ensures cookies are stored/sent.<br/><br/><table>
+<html><head><title>HsacExamples.SlimTests.BrowserTests.UseCookiesForHttpTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.UseCookiesForHttpTest</h2></header><article><br/>By taking cookies from a browser's session we can test REST services that are only accessible in after (complex) login procedures.<br/><br/>Here we don't actually test a login procedure. We just validate cookies are copied and subsequent requests by http test can change the cookies stored.<br/><br/>First http test on its own: 2nd request (with cookies from 1st) gets same cookie value.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">http test</span></td>
 	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">we set version information for cookies (Selenium cannot supply it)</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>copy browser cookies with version</td>
-		<td colspan="3">1</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>cookie value</td>
-		<td>uaid</td>
-		<td><span class="pass">$uaid-&gt;[963a9ef9bb454cda9e26f63daa512ee9]</span></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>cookie value</td>
-		<td>CkTst</td>
-		<td><span class="pass">$ck-&gt;[G1479040962982]</span></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>cookie value</td>
-		<td>MSPOK</td>
-		<td><span class="pass">$pok-&gt;[$uuid-08cfbaad-21ae-40ee-9f87-6e44fe9e2039]</span></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>cookie value</td>
-		<td>MSPRequ</td>
-		<td><span class="pass">$requ-&gt;[lt=1479040964&amp;co=1&amp;id=64855]</span></td>
+	<tr class="slimRowColor2">
+		<td>set store cookies</td>
+		<td colspan="3">true</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
@@ -84,7 +26,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Length</td>
-		<td class="hash_value">15345</td>
+		<td class="hash_value">15343</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Type</td>
@@ -92,7 +34,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Expires</td>
-		<td class="hash_value">Sun, 13 Nov 2016 12:41:46 GMT</td>
+		<td class="hash_value">Sun, 13 Nov 2016 13:13:38 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Server</td>
@@ -104,7 +46,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[uaid=3e0a562dbf6b4820a1a8cf8babf1cdbe; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1, MSPRequ=lt=1479040966&amp;"lt=1479040964&amp;id=64855&amp;co=1; secure= ;path=/;HTTPOnly=;version=1, MSPOK="$uuid-08cfbaad-21ae-40ee-9f87-6e44fe9e2039", $Version=1$uuid-5b4c12c1-aa28-4dc0-91da-2cd9f73c5af0; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1]</td>
+		<td class="hash_value">[uaid=52a80b410e8d440a8601d8e2bb1d28bc; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1, MSPRequ=lt=1479042878&amp;co=1&amp;id=64855; secure= ;path=/;HTTPOnly=;version=1, MSPOK=$uuid-34f80eec-f35d-4e4c-b6c4-1509ae29b7be; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Frame-Options</td>
@@ -124,7 +66,275 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 13 Nov 2016 12:42:45 GMT</td>
+		<td class="hash_value">Sun, 13 Nov 2016 13:14:38 GMT</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Connection</td>
+		<td class="hash_value">close</td>
+	</tr>
+</table></td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">cookie values</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">MSPOK</td>
+		<td class="hash_value">$uuid-34f80eec-f35d-4e4c-b6c4-1509ae29b7be</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">MSPRequ</td>
+		<td class="hash_value">lt=1479042878&amp;co=1&amp;id=64855</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">uaid</td>
+		<td class="hash_value">52a80b410e8d440a8601d8e2bb1d28bc</td>
+	</tr>
+</table></td></tr>
+	<tr class="slimRowColor9">
+		<td>check not</td>
+		<td>cookie value</td>
+		<td>uaid</td>
+		<td><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>$uaid1&lt;-[52a80b410e8d440a8601d8e2bb1d28bc]</td>
+		<td>cookie value</td>
+		<td colspan="2">uaid</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">see that we get same cookie value again</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">get from</span></td>
+		<td colspan="3"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2"><span class="pass">200</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">response headers</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">Cache-Control</td>
+		<td class="hash_value">max-age=0</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Content-Length</td>
+		<td class="hash_value">15365</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Content-Type</td>
+		<td class="hash_value">text/html; charset=utf-8</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Expires</td>
+		<td class="hash_value">Sun, 13 Nov 2016 13:13:39 GMT</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Server</td>
+		<td class="hash_value">Microsoft-IIS/8.5</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">P3P</td>
+		<td class="hash_value">CP="DSP CUR OTPi IND OTRi ONL FIN"</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Set-Cookie</td>
+		<td class="hash_value">[uaid=52a80b410e8d440a8601d8e2bb1d28bc; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1, MSPRequ=lt=1479042879&amp;id=64855&amp;co=2; secure= ;path=/;HTTPOnly=;version=1, MSPOK=$uuid-34f80eec-f35d-4e4c-b6c4-1509ae29b7be$uuid-166ecd07-9a4a-4cb4-abec-ccc73292bc19; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1]</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">X-Frame-Options</td>
+		<td class="hash_value">deny</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">X-Content-Type-Options</td>
+		<td class="hash_value">nosniff</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Strict-Transport-Security</td>
+		<td class="hash_value">max-age=31536000</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">X-XSS-Protection</td>
+		<td class="hash_value">1; mode=block</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Date</td>
+		<td class="hash_value">Sun, 13 Nov 2016 13:14:38 GMT</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Connection</td>
+		<td class="hash_value">close</td>
+	</tr>
+</table></td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">cookie values</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">MSPOK</td>
+		<td class="hash_value">$uuid-34f80eec-f35d-4e4c-b6c4-1509ae29b7be$uuid-166ecd07-9a4a-4cb4-abec-ccc73292bc19</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">MSPRequ</td>
+		<td class="hash_value">lt=1479042879&amp;id=64855&amp;co=2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">uaid</td>
+		<td class="hash_value">52a80b410e8d440a8601d8e2bb1d28bc</td>
+	</tr>
+</table></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>cookie value</td>
+		<td>uaid</td>
+		<td><span class="pass">$uaid1-&gt;[52a80b410e8d440a8601d8e2bb1d28bc]</span></td>
+	</tr>
+</table>
+<br/>Then two requestes one by browser and one by plain http: again same cookie on 2nd request (but not the same as first table).<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$uaid&lt;-[6c944ee63d3b4ee7803e44e035d12a2f]</td>
+		<td>cookie value</td>
+		<td colspan="2">uaid</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">see that we get different cookie value</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>check not</td>
+		<td>cookie value</td>
+		<td>uaid</td>
+		<td><span class="pass">$uaid1</span></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$ck&lt;-[G1479042878601]</td>
+		<td>cookie value</td>
+		<td colspan="2">CkTst</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>$pok&lt;-[$uuid-f04894bb-88e7-49e9-aa83-403f9c85ffa5]</td>
+		<td>cookie value</td>
+		<td colspan="2">MSPOK</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>$requ&lt;-[lt=1479042879&amp;co=1&amp;id=64855]</td>
+		<td>cookie value</td>
+		<td colspan="2">MSPRequ</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>$loc&lt;-[https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1479042879&amp;rver=6.4.6456.0&amp;wp=MBI_SSL_SHARED&amp;wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Frru%3Dinbox&amp;lc=1033&amp;id=64855&amp;mkt=en-us&amp;cbcxt=mai]</td>
+		<td colspan="3">location</td>
+	</tr>
+</table>
+<br/>Copying from browser's cookie store implicitly ensures cookies are stored/sent.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">http test</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">we set version information for cookies (Selenium cannot supply it)</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td colspan="4">copy browser cookies</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>cookie value</td>
+		<td>uaid</td>
+		<td><span class="pass">$uaid-&gt;[6c944ee63d3b4ee7803e44e035d12a2f]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>cookie value</td>
+		<td>CkTst</td>
+		<td><span class="pass">$ck-&gt;[G1479042878601]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>cookie value</td>
+		<td>MSPOK</td>
+		<td><span class="pass">$pok-&gt;[$uuid-f04894bb-88e7-49e9-aa83-403f9c85ffa5]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>cookie value</td>
+		<td>MSPRequ</td>
+		<td><span class="pass">$requ-&gt;[lt=1479042879&amp;co=1&amp;id=64855]</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">get from</span></td>
+		<td colspan="3">$loc->[https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1479042879&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Frru%3Dinbox&lc=1033&id=64855&mkt=en-us&cbcxt=mai]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2"><span class="pass">200</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="3">response headers</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">Cache-Control</td>
+		<td class="hash_value">max-age=0</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Content-Length</td>
+		<td class="hash_value">15363</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Content-Type</td>
+		<td class="hash_value">text/html; charset=utf-8</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Expires</td>
+		<td class="hash_value">Sun, 13 Nov 2016 13:13:41 GMT</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Server</td>
+		<td class="hash_value">Microsoft-IIS/8.5</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">P3P</td>
+		<td class="hash_value">CP="DSP CUR OTPi IND OTRi ONL FIN"</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Set-Cookie</td>
+		<td class="hash_value">[uaid=6c944ee63d3b4ee7803e44e035d12a2f; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1, MSPRequ=lt=1479042881&amp;id=64855&amp;co=2; secure= ;path=/;HTTPOnly=;version=1, MSPOK=$uuid-f04894bb-88e7-49e9-aa83-403f9c85ffa5$uuid-0812bc83-fc05-4e78-9f4b-f9c529049df0; domain=login.live.com;secure= ;path=/;HTTPOnly= ;version=1]</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">X-Frame-Options</td>
+		<td class="hash_value">deny</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">X-Content-Type-Options</td>
+		<td class="hash_value">nosniff</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Strict-Transport-Security</td>
+		<td class="hash_value">max-age=31536000</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">X-XSS-Protection</td>
+		<td class="hash_value">1; mode=block</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Date</td>
+		<td class="hash_value">Sun, 13 Nov 2016 13:14:41 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Connection</td>
@@ -137,44 +347,30 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">CkTst</td>
-		<td class="hash_value">G1479040962982</td>
+		<td class="hash_value">G1479042878601</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">MSPOK</td>
-		<td class="hash_value">$uuid-08cfbaad-21ae-40ee-9f87-6e44fe9e2039</td>
+		<td class="hash_value">$uuid-f04894bb-88e7-49e9-aa83-403f9c85ffa5$uuid-0812bc83-fc05-4e78-9f4b-f9c529049df0</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">MSPRequ</td>
-		<td class="hash_value">lt=1479040966&amp;"lt=1479040964&amp;id=64855&amp;co=1</td>
+		<td class="hash_value">lt=1479042881&amp;id=64855&amp;co=2</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">uaid</td>
-		<td class="hash_value">3e0a562dbf6b4820a1a8cf8babf1cdbe</td>
+		<td class="hash_value">6c944ee63d3b4ee7803e44e035d12a2f</td>
 	</tr>
 </table></td></tr>
-	<tr class="slimRowColor9">
-		<td>check not</td>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">see that we get same cookie value as we copied from browser</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
 		<td>cookie value</td>
 		<td>uaid</td>
-		<td><span class="pass">$uaid</span></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>cookie value</td>
-		<td>CkTst</td>
-		<td><span class="pass">$ck-&gt;[G1479040962982]</span></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>cookie value</td>
-		<td>MSPOK</td>
-		<td><span class="pass">$pok-&gt;[$uuid-08cfbaad-21ae-40ee-9f87-6e44fe9e2039]</span></td>
-	</tr>
-	<tr class="slimRowColor9">
-		<td>check not</td>
-		<td>cookie value</td>
-		<td>MSPRequ</td>
-		<td><span class="pass">$requ</span></td>
+		<td><span class="pass">$uaid-&gt;[6c944ee63d3b4ee7803e44e035d12a2f]</span></td>
 	</tr>
 </table>
 <br/></article></body></html>
