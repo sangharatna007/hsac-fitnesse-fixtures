@@ -24,7 +24,103 @@ The first example below calls a weather service, similar to <a href="HsacExample
 	<tr>
 		<td>Canada</td>
 		<td>Vancouver International Air-Port, B. C.</td>
-		<td> <span class="fit_grey">error</span></td>
+		<td class="error" class="error"><hr><pre><div class="fit_stacktrace">java.lang.RuntimeException: Unable to get response from: http://www.webservicex.com/globalweather.asmx
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:157)
+	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:73)
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:262)
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251)
+	at nl.hsac.fitnesse.fixture.Environment.callService(Environment.java:224)
+	at nl.hsac.fitnesse.fixture.fit.SoapCallMapColumnFixture.callSoapService(SoapCallMapColumnFixture.java:85)
+	at nl.hsac.fitnesse.fixture.fit.SoapCallMapColumnFixture.callServiceImpl(SoapCallMapColumnFixture.java:59)
+	at nl.hsac.fitnesse.sample.GetWeatherFixture.callService(GetWeatherFixture.java:21)
+	at nl.hsac.fitnesse.sample.GetWeatherFixture.callService(GetWeatherFixture.java:6)
+	at nl.hsac.fitnesse.fixture.fit.ServiceAndCheckMapColumnFixture.execute(ServiceAndCheckMapColumnFixture.java:49)
+	at fit.ColumnFixture.executeIfNeeded(ColumnFixture.java:51)
+	at fit.ColumnFixture.check(ColumnFixture.java:41)
+	at fit.Binding$QueryBinding.doCell(Binding.java:224)
+	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
+	at fit.Fixture.doCells(Fixture.java:174)
+	at fit.Fixture.doRow(Fixture.java:168)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
+	at fit.Fixture.doRows(Fixture.java:162)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
+	at fit.Fixture.doTable(Fixture.java:156)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
+	at fit.Fixture.interpretTables(Fixture.java:107)
+	at fit.Fixture.doTables(Fixture.java:81)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:196)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:139)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:155)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:284)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:261)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:165)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:272)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:124)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at nl.hsac.fitnesse.fixture.util.HttpClient.executeMethod(HttpClient.java:189)
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:152)
+	... 33 more
+</div></pre><hr><pre><div class="fit_stacktrace">java.lang.NullPointerException
+	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getRawXPath(XmlHttpResponse.java:69)
+	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getRawXPath(XmlHttpResponse.java:64)
+	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:54)
+	at nl.hsac.fitnesse.sample.GetWeatherFixture.weatherResult(GetWeatherFixture.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
+	at fit.TypeAdapter.get(TypeAdapter.java:97)
+	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
+	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
+	at fit.Fixture.compareCellToResult(Fixture.java:302)
+	at fit.Fixture.check(Fixture.java:298)
+	at fit.ColumnFixture.check(ColumnFixture.java:45)
+	at fit.Binding$QueryBinding.doCell(Binding.java:224)
+	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
+	at fit.Fixture.doCells(Fixture.java:174)
+	at fit.Fixture.doRow(Fixture.java:168)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
+	at fit.Fixture.doRows(Fixture.java:162)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
+	at fit.Fixture.doTable(Fixture.java:156)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
+	at fit.Fixture.interpretTables(Fixture.java:107)
+	at fit.Fixture.doTables(Fixture.java:81)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
+	at java.lang.Thread.run(Thread.java:745)
+</div></pre></td>
 	</tr>
 </table>
 <br/>The Java code for the 'Get Weather' fixture is a single class: <pre>
@@ -82,9 +178,49 @@ Validating the check call gives the expected response is similar to checking the
 	</tr>
 	<tr>
 		<td>USD</td>
-		<td> <span class="fit_grey">-1.0</span></td>
+		<td> <span class="fit_grey">error</span></td>
 		<td> <span class="fit_grey">2.8387</span></td>
-		<td class="pass">-0.50 < <b>-0.35227392820657344</b> < 1.10</td>
+		<td class="error">-0.50 &lt; _ &lt; 1.10<hr><pre><div class="fit_stacktrace">java.lang.RuntimeException: Server error returned: 503
+	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:28)
+	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24)
+	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52)
+	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPathDouble(XmlHttpResponse.java:84)
+	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.conversionRate(ToLithuanianLitaFixture.java:36)
+	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
+	at fit.TypeAdapter.get(TypeAdapter.java:97)
+	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
+	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
+	at fit.Fixture.compareCellToResult(Fixture.java:302)
+	at fit.Fixture.check(Fixture.java:298)
+	at fit.ColumnFixture.check(ColumnFixture.java:45)
+	at fit.Binding$QueryBinding.doCell(Binding.java:224)
+	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
+	at fit.Fixture.doCells(Fixture.java:174)
+	at fit.Fixture.doRow(Fixture.java:168)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
+	at fit.Fixture.doRows(Fixture.java:162)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
+	at fit.Fixture.doTable(Fixture.java:156)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
+	at fit.Fixture.interpretTables(Fixture.java:107)
+	at fit.Fixture.doTables(Fixture.java:81)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
+	at java.lang.Thread.run(Thread.java:745)
+</div></pre></td>
 	</tr>
 	<tr>
 		<td>EUR</td>
@@ -183,7 +319,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">460</span></td>
+		<td> <span class="fit_grey">831</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;ConversionRateResponse xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
@@ -201,7 +337,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">1322</span></td>
+		<td> <span class="fit_grey">1329</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;

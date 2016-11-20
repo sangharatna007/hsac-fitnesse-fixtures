@@ -21,7 +21,7 @@
 		<td>201</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -34,7 +34,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -65,7 +65,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -113,7 +113,7 @@
 		<td><pre>&lt;bye/&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -126,7 +126,7 @@
 		<td><span class="pass">post</span></td>
 		<td><pre>&lt;Hallo/&gt;</pre></td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -142,7 +142,7 @@
 		<td>post</td>
 		<td><pre>&lt;Hallo2/&gt;</pre></td>
 		<td>to</td>
-		<td>$url->[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	<td>false</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -205,7 +205,7 @@
 		<td>201</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.5:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
@@ -216,7 +216,7 @@
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="2">$url->[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -230,7 +230,7 @@
 </pre></td></tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="2">$url->[http://172.17.0.13:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -243,13 +243,155 @@
 	<td><pre>&lt;responseFromFile/&gt;
 </pre></td></tr>
 </table>
-<br/><br/><table>
+<br/><br/><h2>Headers</h2>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td>bye</td>
+		<td>with headers</td>
+		<td colspan="3"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">Content-type</td>
+		<td class="hash_value">application/xml</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">My-header</td>
+		<td class="hash_value">abc-Ë</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td>bye2</td>
+		<td>with headers</td>
+		<td colspan="3"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">Content-type</td>
+		<td class="hash_value">text/html; charset=iso-8859-1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">My-header</td>
+		<td class="hash_value">xyz-Ë</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td>bye3</td>
+		<td>with status</td>
+		<td>201</td>
+		<td>and headers</td>
+		<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">Content-Type</td>
+		<td class="hash_value">text/html; charset=UTF-16</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">My-header</td>
+		<td class="hash_value">x-Ë</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.5:8000/FitNesseMock]</td>
+		<td colspan="5">get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">http test</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">get from</span></td>
+		<td colspan="3">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response header</td>
+		<td>Content-type</td>
+		<td><span class="pass">application/xml</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response header</td>
+		<td>My-header</td>
+		<td><span class="pass">abc-Ë</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2"><span class="pass">200</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response</td>
+		<td colspan="2"><span class="pass">bye</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">get from</span></td>
+		<td colspan="3">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response header</td>
+		<td>Content-type</td>
+		<td><span class="pass">text/html; charset=iso-8859-1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response header</td>
+		<td>My-header</td>
+		<td><span class="pass">xyz-Ë</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2"><span class="pass">200</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response</td>
+		<td colspan="2"><span class="pass">bye2</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">get from</span></td>
+		<td colspan="3">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response header</td>
+		<td>Content-type</td>
+		<td><span class="pass">text/html; charset=UTF-16</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response header</td>
+		<td>My-header</td>
+		<td><span class="pass">x-Ë</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2"><span class="pass">201</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response</td>
+		<td colspan="2"><span class="pass">bye3</span></td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/><br/><table>
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
-<tr><td><table><tbody><tr class="scenario closed"><td class="pass">Expected and received 2 requests</td></tr><tr class="scenario-detail closed-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;responseFromFile/&gt;
+<tr><td><table><tbody><tr class="scenario closed"><td class="pass">Expected and received 5 requests</td></tr><tr class="scenario-detail closed-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;responseFromFile/&gt;
 </pre></div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div><pre>&lt;responseFromFile/&gt;
-</pre></div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
+</pre></div></div></td></tr><tr><td class="pass">3</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>bye</div></div></td></tr><tr><td class="pass">4</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>bye2</div></div></td></tr><tr><td class="pass">5</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>bye3</div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
