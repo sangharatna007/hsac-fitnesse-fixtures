@@ -35,7 +35,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[50<span class="diff">3</span>] <span class="fail">expected [50</span><span class="diff">0</span><span class="fail">]</span></td>
+		<td colspan="2"><span class="pass">500</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -51,13 +51,27 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd"&gt;
-&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Service Unavailable&lt;/TITLE&gt;
-&lt;META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"&gt;&lt;/HEAD&gt;
-&lt;BODY&gt;&lt;h2&gt;Service Unavailable&lt;/h2&gt;
-&lt;hr&gt;&lt;p&gt;HTTP Error 503. The service is unavailable.&lt;/p&gt;
-&lt;/BODY&gt;&lt;/HTML&gt;
-</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;soap:Fault&gt;
+            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
+            &lt;faultstring&gt;System.Web.Services.Protocols.SoapException: Server was unable to process request. ---&amp;gt; System.Data.SqlClient.SqlException: Procedure or function 'getWeather' expects parameter '@CityName', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp;amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp;amp; task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp;amp; task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at WebServicex.GlobalWeather.GetWeather(String CityName, String CountryName)
+   --- End of inner exception stack trace ---&lt;/faultstring&gt;
+            &lt;detail/&gt;
+        &lt;/soap:Fault&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></td></tr>
 </table>
 <br/><h3>Send a cityName element: success</h3>
 <br/>When a cityName value is set the enclosing element is sent by the Freemarker template (as visible in the shown request content below), and the SOAP call will succeed.<br/><br/><table>
@@ -87,77 +101,101 @@
 		<td>for</td>
 		<td>cityName</td>
 	</tr>
-	<tr class="slimRowColor5">
-		<td><span class="fail">post template to</span></td>
-		<td colspan="3"><a href="http://www.webservicex.com/globalweather.asmx">http://www.webservicex.com/globalweather.asmx</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>check</td>
-		<td>response status</td>
-		<td colspan="2">[<span class="diff">5</span>0<span class="diff">3</span>] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">0</span><span class="diff">0</span><span class="fail">]</span></td>
-	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td colspan="3">request</td>
-	<td><pre>&lt;s11:Envelope xmlns:s11=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
-    &lt;s11:Body&gt;
-        &lt;ns1:GetWeather xmlns:ns1=&quot;http://www.webserviceX.NET&quot;&gt;
-            &lt;ns1:CityName&gt;Vancouver International Air-Port, B. C.&lt;/ns1:CityName&gt;
-            &lt;ns1:CountryName&gt;Canada&lt;/ns1:CountryName&gt;
-        &lt;/ns1:GetWeather&gt;
-    &lt;/s11:Body&gt;
-&lt;/s11:Envelope&gt;
-</pre></td></tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td colspan="3">response headers</td>
-	<td><table class="hash_table">
-	<tr class="hash_row">
-		<td class="hash_key">Content-Type</td>
-		<td class="hash_value">text/html; charset=us-ascii</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Server</td>
-		<td class="hash_value">Microsoft-HTTPAPI/2.0</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 20 Nov 2016 14:32:16 GMT</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Connection</td>
-		<td class="hash_value">close</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Content-Length</td>
-		<td class="hash_value">326</td>
-	</tr>
-</table></td></tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td colspan="3">response</td>
-	<td>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd"&gt;
-&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Service Unavailable&lt;/TITLE&gt;
-&lt;META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"&gt;&lt;/HEAD&gt;
-&lt;BODY&gt;&lt;h2&gt;Service Unavailable&lt;/h2&gt;
-&lt;hr&gt;&lt;p&gt;HTTP Error 503. The service is unavailable.&lt;/p&gt;
-&lt;/BODY&gt;&lt;/HTML&gt;
-</td></tr>
-	<tr class="slimRowColor5">
-		<td>register prefix</td>
-		<td>wsX</td>
-		<td>for namespace</td>
-		<td><a href="http://www.webserviceX.NET">http://www.webserviceX.NET</a></td>
-	</tr>
 	<tr class="exception closed">
-		<td class="error">show</td>
-		<td class="error">xPath</td>
-		<td colspan="2" class="error">//wsX:GetWeatherResult/text()</td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:java.lang.RuntimeException: Server error returned: 503
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:28) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.XmlHttpTest.xPath(XmlHttpTest.java:72) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+		<td class="fail">post template to</td>
+		<td colspan="3" class="fail"><a href="http://www.webservicex.com/globalweather.asmx">http://www.webservicex.com/globalweather.asmx</a></td>
+	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:ABORT_SLIM_TEST:nl.hsac.fitnesse.fixture.slim.StopTestException: Unable to get response from POST to: http://www.webservicex.com/globalweather.asmx
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postTemplateTo(HttpTest.java:123) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
+	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:50) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:30) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
+	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]
+Caused by: java.lang.RuntimeException: Unable to get response from: http://www.webservicex.com/globalweather.asmx
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:157) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:73) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:262) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postTemplateTo(HttpTest.java:121) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
+	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:50) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:30) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
+	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:196) [rt.jar:1.7.0_76]
+	at java.net.SocketInputStream.read(SocketInputStream.java:122) [rt.jar:1.7.0_76]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:139) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:155) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:284) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:261) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:165) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:167) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:272) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:124) [httpcore-4.4.4.jar:4.4.4]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:271) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82) [httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55) [httpclient-4.5.2.jar:4.5.2]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.executeMethod(HttpClient.java:189) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:152) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:73) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:262) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:251) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postTemplateTo(HttpTest.java:121) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
@@ -187,5 +225,33 @@
 	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
 	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
 	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]</pre></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>response status</td>
+		<td colspan="2">200 <span class="ignore">Test not run</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show <span class="ignore">Test not run</span></td>
+		<td colspan="3">request</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show <span class="ignore">Test not run</span></td>
+		<td colspan="3">response headers</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show <span class="ignore">Test not run</span></td>
+		<td colspan="3">response</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>register prefix <span class="ignore">Test not run</span></td>
+		<td>wsX</td>
+		<td>for namespace</td>
+		<td><a href="http://www.webserviceX.NET">http://www.webserviceX.NET</a></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show <span class="ignore">Test not run</span></td>
+		<td>xPath</td>
+		<td colspan="2">//wsX:GetWeatherResult/text()</td>
+	</tr>
 </table>
 </article></body></html>
