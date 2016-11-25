@@ -93,13 +93,13 @@
 		<td>volume?</td>
 	</tr>
 	<tr class="scenario closed">
-		<td>Wittevrouwensingel 66</td>
-		<td>Utrecht</td>
-		<td><span class="pass">€ 1.395.000 k.k.</span></td>
-		<td><span class="pass">Beschikbaar</span></td>
-		<td>323</td>
-		<td><span class="pass">Voor 1906</span></td>
-		<td><span class="pass">1.513 m³</span></td>
+		<td class="fail">Wittevrouwensingel 66</td>
+		<td class="fail">Utrecht</td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">€ 1.395.000 k.k.</span><span class="fail">]</span></td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Beschikbaar</span><span class="fail">]</span></td>
+		<td class="fail">323</td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Voor 1906</span><span class="fail">]</span></td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">1.513 m³</span><span class="fail">]</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="7"><table>
 	<tr>
 		<td>table template</td>
@@ -144,21 +144,21 @@
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr>
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_8.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_8.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_8.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_8.png" height="200"/></a></div></div></span></td>
 		<td colspan="3">Wittevrouwensingel 66</td>
 	</tr>
 	<tr>
-		<td>$price&lt;-[€ 1.395.000 k.k.]</td>
+		<td>$price&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr>
-		<td>$state&lt;-[Beschikbaar]</td>
+		<td>$state&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
 	<tr>
-		<td>$volume&lt;-[1.513 m³]</td>
+		<td>$volume&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Inhoud</td>
 	</tr>
@@ -166,22 +166,22 @@
 		<td>check</td>
 		<td>value of</td>
 		<td>Woonoppervlakte</td>
-		<td><span class="pass">323 m²</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">323 m²</span><span class="fail">]</span></td>
 	</tr>
 	<tr>
-		<td>$yearBuilt&lt;-[Voor 1906]</td>
+		<td>$yearBuilt&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Bouwjaar</td>
 	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td class="error">Lange Nieuwstraat 72</td>
-		<td class="error">Utrecht</td>
-		<td class="error"><span class="pass">€ 1.942.500 k.k.</span></td>
-		<td class="error"><span class="pass">Beschikbaar</span></td>
-		<td class="error">820</td>
-		<td class="error"><span class="pass">Voor 1906</span></td>
-		<td class="error"><span class="pass">3.190 m³</span></td>
+		<td class="fail">Lange Nieuwstraat 72</td>
+		<td class="fail">Utrecht</td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">€ 1.942.500 k.k.</span><span class="fail">]</span></td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Beschikbaar</span><span class="fail">]</span></td>
+		<td class="fail">820</td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Voor 1906</span><span class="fail">]</span></td>
+		<td class="fail">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">3.190 m³</span><span class="fail">]</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="7"><table>
 	<tr>
 		<td>table template</td>
@@ -222,25 +222,25 @@
 		<td colspan="3">enter</td>
 	</tr>
 	<tr>
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_4.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_4.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_4.png" height="200"/></a></div></div></span></td>
+		<td><span class="pass">click</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr>
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_9.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_9.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_9.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_9.png" height="200"/></a></div></div></span></td>
 		<td colspan="3">Lange Nieuwstraat 72</td>
 	</tr>
 	<tr>
-		<td>$price&lt;-[€ 1.942.500 k.k.]</td>
+		<td>$price&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr>
-		<td>$state&lt;-[Beschikbaar]</td>
+		<td>$state&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
 	<tr>
-		<td>$volume&lt;-[3.190 m³]</td>
+		<td>$volume&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Inhoud</td>
 	</tr>
@@ -248,10 +248,10 @@
 		<td>check</td>
 		<td>value of</td>
 		<td>Woonoppervlakte</td>
-		<td><span class="pass">820 m²</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">820 m²</span><span class="fail">]</span></td>
 	</tr>
 	<tr>
-		<td>$yearBuilt&lt;-[Voor 1906]</td>
+		<td>$yearBuilt&lt;-[null]</td>
 		<td>value of</td>
 		<td colspan="2">Bouwjaar</td>
 	</tr>
