@@ -1,4 +1,7 @@
 <html><head><title>HsacAcceptanceTests.SlimTests.UtilityFixtures.FileFixture</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.UtilityFixtures.FileFixture</h2></header><article><br/>The FileFixture allows file manipulation, either in the wiki's files section<a title="create page" href="FitNesse.FullReferenceGuide.UserGuide.FitNesseWiki.FilesSection?edit&amp;nonExistent=true">[?]</a>, or on the file system.<br/>Files can be generated using Freemarker templates, directly from strings or by copying files. <br/>File's content and size may be retrieved.<br/>Filenames may be manipulated.<br/><br/><span class="meta">variable defined: DIR=.</span>
+<br/><br/><span class="meta">variable defined: LIST_CONTENT=!-001
+002
+last one!-!</span>
 <br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -177,4 +180,58 @@
 		<td colspan="2"><span class="pass">txt</span></td>
 	</tr>
 </table>
-<br/><br/></article></body></html>
+<br/>Table below shows how we can use a list of non-reusable data from a file:<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set directory</td>
+		<td colspan="3"><a href="files/fileFixture">http://files/fileFixture</a></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>create</td>
+		<td>list.txt</td>
+		<td>containing</td>
+		<td>001
+002
+last one!</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>text in</td>
+		<td colspan="2">list.txt</td>
+	<td>001
+002
+last one!</td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>take first line from</td>
+		<td>list.txt</td>
+		<td><span class="pass">001</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>text in</td>
+		<td colspan="2">list.txt</td>
+	<td>002
+last one!
+</td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>take first line from</td>
+		<td>list.txt</td>
+		<td><span class="pass">002</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>take first line from</td>
+		<td>list.txt</td>
+		<td><span class="pass">last one!</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>text in</td>
+		<td colspan="2">list.txt</td>
+	<td></td></tr>
+</table>
+<br/><br/><br/></article></body></html>
