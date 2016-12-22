@@ -82,95 +82,15 @@ Validating the check call gives the expected response is similar to checking the
 	</tr>
 	<tr>
 		<td>USD</td>
-		<td> <span class="fit_grey">error</span></td>
+		<td> <span class="fit_grey">-1.0</span></td>
 		<td> <span class="fit_grey">2.8387</span></td>
-		<td class="error">-0.50 &lt; _ &lt; 1.10<hr><pre><div class="fit_stacktrace">java.lang.RuntimeException: Server error returned: 500
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:28)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPathDouble(XmlHttpResponse.java:84)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.conversionRate(ToLithuanianLitaFixture.java:36)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
-	at fit.TypeAdapter.get(TypeAdapter.java:97)
-	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
-	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
-	at fit.Fixture.compareCellToResult(Fixture.java:302)
-	at fit.Fixture.check(Fixture.java:298)
-	at fit.ColumnFixture.check(ColumnFixture.java:45)
-	at fit.Binding$QueryBinding.doCell(Binding.java:224)
-	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
-	at fit.Fixture.doCells(Fixture.java:174)
-	at fit.Fixture.doRow(Fixture.java:168)
-	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
-	at fit.Fixture.doRows(Fixture.java:162)
-	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
-	at fit.Fixture.doTable(Fixture.java:156)
-	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
-	at fit.Fixture.interpretTables(Fixture.java:107)
-	at fit.Fixture.doTables(Fixture.java:81)
-	at fit.FitServer.process(FitServer.java:81)
-	at fit.FitServer.run(FitServer.java:56)
-	at fit.FitServer.main(FitServer.java:41)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
-	at java.lang.Thread.run(Thread.java:745)
-</div></pre></td>
+		<td class="pass">-0.50 < <b>-0.35227392820657344</b> < 1.10</td>
 	</tr>
 	<tr>
 		<td>EUR</td>
-		<td> <span class="fit_grey">error</span></td>
+		<td> <span class="fit_grey">-1.0</span></td>
 		<td> <span class="fit_grey">3.4528</span></td>
-		<td class="error">-0.5 &lt; _ &lt; 1.01<hr><pre><div class="fit_stacktrace">java.lang.RuntimeException: Server error returned: 500
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:28)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPathDouble(XmlHttpResponse.java:84)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.conversionRate(ToLithuanianLitaFixture.java:36)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
-	at fit.TypeAdapter.get(TypeAdapter.java:97)
-	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
-	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
-	at fit.Fixture.compareCellToResult(Fixture.java:302)
-	at fit.Fixture.check(Fixture.java:298)
-	at fit.ColumnFixture.check(ColumnFixture.java:45)
-	at fit.Binding$QueryBinding.doCell(Binding.java:224)
-	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
-	at fit.Fixture.doCells(Fixture.java:174)
-	at fit.Fixture.doRow(Fixture.java:168)
-	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
-	at fit.Fixture.doRows(Fixture.java:162)
-	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
-	at fit.Fixture.doTable(Fixture.java:156)
-	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
-	at fit.Fixture.interpretTables(Fixture.java:107)
-	at fit.Fixture.doTables(Fixture.java:81)
-	at fit.FitServer.process(FitServer.java:81)
-	at fit.FitServer.run(FitServer.java:56)
-	at fit.FitServer.main(FitServer.java:41)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
-	at java.lang.Thread.run(Thread.java:745)
-</div></pre></td>
+		<td class="pass">-0.5 < <b>-0.2896200185356812</b> < 1.01</td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita' fixture is another single class: <pre>
@@ -223,8 +143,8 @@ public class ToLithuanianLitaFixture extends SoapCallMapColumnFixture&lt;XmlHttp
 	</tr>
 	<tr>
 		<td>USD</td>
-		<td> <span class="fit_grey">error</span></td>
-		<td> <span class="fit_grey">error</span></td>
+		<td> <span class="fit_grey">-1.0</span></td>
+		<td> <span class="fit_grey">2.8387</span></td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita Retrying' fixture is: <pre>
@@ -263,10 +183,25 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">427</span></td>
-		<td> <span class="fit_grey">error</span></td>
-		<td> <span class="fit_grey">error</span></td>
-		<td> <span class="fit_grey">319</span></td>
+		<td> <span class="fit_grey">205</span></td>
+		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;ConversionRateResponse xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
+            &lt;ConversionRateResult&gt;-1&lt;/ConversionRateResult&gt;
+        &lt;/ConversionRateResponse&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></span></td>
+		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;getExchangeRate xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
+            &lt;Currency&gt;USD&lt;/Currency&gt;
+            &lt;Date&gt;2014-12-31&lt;/Date&gt;
+        &lt;/getExchangeRate&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></span></td>
+		<td> <span class="fit_grey">1242</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
@@ -275,7 +210,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td class="fail">4 <span class="fit_label">expected</span><hr>1 <span class="fit_label">actual</span></td>
+		<td class="pass">4</td>
 	</tr>
 </table>
 </article></body></html>

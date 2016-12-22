@@ -51,101 +51,27 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files'.&lt;/title&gt;
-        &lt;meta name="viewport" content="width=device-width" /&gt;
-        &lt;style&gt;
-         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
-         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
-         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
-         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
-         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
-         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
-         .marker {font-weight: bold; color: black;text-decoration: none;}
-         .version {color: gray;}
-         .error {margin-bottom: 10px;}
-         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
-         @media screen and (max-width: 639px) {
-          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
-         }
-         @media screen and (max-width: 479px) {
-          pre { width: 280px; }
-         }
-        &lt;/style&gt;
-    &lt;/head&gt;
-
-    &lt;body bgcolor="white"&gt;
-
-            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
-
-            &lt;h2&gt; &lt;i&gt;The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files'.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
-
-            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
-
-            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
-
-            &lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt; Exception Details: &lt;/b&gt;System.Web.HttpException: The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files'.&lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;
-
-An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-[HttpException (0x80004005): The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.]
-   System.Web.HttpRuntime.SetUpCodegenDirectory(CompilationSection compilationSection) +9996684
-   System.Web.HttpRuntime.HostingInit(HostingEnvironmentFlags hostingFlags, PolicyLevel policyLevel, Exception appDomainCreationException) +204
-
-[HttpException (0x80004005): The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.]
-   System.Web.HttpRuntime.FirstRequestInit(HttpContext context) +9940780
-   System.Web.HttpRuntime.EnsureFirstRequestInit(HttpContext context) +90
-   System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context) +261
-&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;hr width=100% size=1 color=silver&gt;
-
-            &lt;b&gt;Version Information:&lt;/b&gt;&amp;nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.6.118.0
-
-            &lt;/font&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
-&lt;!-- 
-[HttpException]: The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.
-   at System.Web.HttpRuntime.SetUpCodegenDirectory(CompilationSection compilationSection)
-   at System.Web.HttpRuntime.HostingInit(HostingEnvironmentFlags hostingFlags, PolicyLevel policyLevel, Exception appDomainCreationException)
-[HttpException]: The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.
-   at System.Web.HttpRuntime.FirstRequestInit(HttpContext context)
-   at System.Web.HttpRuntime.EnsureFirstRequestInit(HttpContext context)
-   at System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context)
---&gt;&lt;!-- 
-This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &amp;lt;customErrors mode="Off"/&amp;gt;. Consider using &amp;lt;customErrors mode="On"/&amp;gt; or &amp;lt;customErrors mode="RemoteOnly"/&amp;gt; in production environments.--&gt;</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;soap:Fault&gt;
+            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
+            &lt;faultstring&gt;System.Web.Services.Protocols.SoapException: Server was unable to process request. ---&amp;gt; System.Data.SqlClient.SqlException: Procedure or function 'getWeather' expects parameter '@CityName', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp;amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp;amp; task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp;amp; task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at WebServicex.GlobalWeather.GetWeather(String CityName, String CountryName)
+   --- End of inner exception stack trace ---&lt;/faultstring&gt;
+            &lt;detail/&gt;
+        &lt;/soap:Fault&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></td></tr>
 </table>
 <br/><h3>Send a cityName element: success</h3>
 <br/>When a cityName value is set the enclosing element is sent by the Freemarker template (as visible in the shown request content below), and the SOAP call will succeed.<br/><br/><table>
@@ -176,13 +102,13 @@ This error page might contain sensitive information because ASP.NET is configure
 		<td>cityName</td>
 	</tr>
 	<tr class="slimRowColor5">
-		<td><span class="fail">post template to</span></td>
+		<td><span class="pass">post template to</span></td>
 		<td colspan="3"><a href="http://www.webservicex.com/globalweather.asmx">http://www.webservicex.com/globalweather.asmx</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">5</span>00] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">00]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -202,11 +128,11 @@ This error page might contain sensitive information because ASP.NET is configure
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">Cache-Control</td>
-		<td class="hash_value">private</td>
+		<td class="hash_value">private, max-age=0</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Type</td>
-		<td class="hash_value">text/html; charset=utf-8</td>
+		<td class="hash_value">text/xml; charset=utf-8</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Server</td>
@@ -222,154 +148,34 @@ This error page might contain sensitive information because ASP.NET is configure
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Fri, 25 Nov 2016 21:18:26 GMT</td>
+		<td class="hash_value">Thu, 22 Dec 2016 16:19:35 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Length</td>
-		<td class="hash_value">5253</td>
+		<td class="hash_value">373</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files'.&lt;/title&gt;
-        &lt;meta name="viewport" content="width=device-width" /&gt;
-        &lt;style&gt;
-         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
-         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
-         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
-         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
-         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
-         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
-         .marker {font-weight: bold; color: black;text-decoration: none;}
-         .version {color: gray;}
-         .error {margin-bottom: 10px;}
-         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
-         @media screen and (max-width: 639px) {
-          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
-         }
-         @media screen and (max-width: 479px) {
-          pre { width: 280px; }
-         }
-        &lt;/style&gt;
-    &lt;/head&gt;
-
-    &lt;body bgcolor="white"&gt;
-
-            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
-
-            &lt;h2&gt; &lt;i&gt;The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files'.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
-
-            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
-
-            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
-
-            &lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt; Exception Details: &lt;/b&gt;System.Web.HttpException: The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files'.&lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;
-
-An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-[HttpException (0x80004005): The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.]
-   System.Web.HttpRuntime.SetUpCodegenDirectory(CompilationSection compilationSection) +9996684
-   System.Web.HttpRuntime.HostingInit(HostingEnvironmentFlags hostingFlags, PolicyLevel policyLevel, Exception appDomainCreationException) +204
-
-[HttpException (0x80004005): The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.]
-   System.Web.HttpRuntime.FirstRequestInit(HttpContext context) +9940780
-   System.Web.HttpRuntime.EnsureFirstRequestInit(HttpContext context) +90
-   System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context) +261
-&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;hr width=100% size=1 color=silver&gt;
-
-            &lt;b&gt;Version Information:&lt;/b&gt;&amp;nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.6.118.0
-
-            &lt;/font&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
-&lt;!-- 
-[HttpException]: The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.
-   at System.Web.HttpRuntime.SetUpCodegenDirectory(CompilationSection compilationSection)
-   at System.Web.HttpRuntime.HostingInit(HostingEnvironmentFlags hostingFlags, PolicyLevel policyLevel, Exception appDomainCreationException)
-[HttpException]: The current identity (NT AUTHORITY\NETWORK SERVICE) does not have write access to &amp;#39;C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files&amp;#39;.
-   at System.Web.HttpRuntime.FirstRequestInit(HttpContext context)
-   at System.Web.HttpRuntime.EnsureFirstRequestInit(HttpContext context)
-   at System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context)
---&gt;&lt;!-- 
-This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &amp;lt;customErrors mode="Off"/&amp;gt;. Consider using &amp;lt;customErrors mode="On"/&amp;gt; or &amp;lt;customErrors mode="RemoteOnly"/&amp;gt; in production environments.--&gt;</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;GetWeatherResponse xmlns=&quot;http://www.webserviceX.NET&quot;&gt;
+            &lt;GetWeatherResult&gt;Data Not Found&lt;/GetWeatherResult&gt;
+        &lt;/GetWeatherResponse&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></td></tr>
 	<tr class="slimRowColor5">
 		<td>register prefix</td>
 		<td>wsX</td>
 		<td>for namespace</td>
 		<td><a href="http://www.webserviceX.NET">http://www.webserviceX.NET</a></td>
 	</tr>
-	<tr class="exception closed">
-		<td class="error">show</td>
-		<td class="error">xPath</td>
-		<td colspan="2" class="error">//wsX:GetWeatherResult/text()</td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:java.lang.RuntimeException: Server error returned: 500
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:28) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.XmlHttpTest.xPath(XmlHttpTest.java:76) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_76]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_76]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:50) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:30) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_76]
-	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_76]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20161106.jar:20161106]
-	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
-	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
-	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_76]</pre></td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>xPath</td>
+		<td colspan="2">//wsX:GetWeatherResult/text()</td>
+	<td>Data Not Found</td></tr>
 </table>
 </article></body></html>
