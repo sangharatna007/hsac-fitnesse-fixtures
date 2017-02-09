@@ -96,16 +96,79 @@
 	<tr>
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-    &lt;soap:Body&gt;
-        &lt;soap:Fault&gt;
-            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
-            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)&lt;/faultstring&gt;
-            &lt;detail/&gt;
-        &lt;/soap:Fault&gt;
-    &lt;/soap:Body&gt;
-&lt;/soap:Envelope&gt;
-</pre></td></tr>
+	<td>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Runtime Error&lt;/title&gt;
+        &lt;style&gt;
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Lucida Console";font-size: .9em}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body bgcolor="white"&gt;
+
+            &lt;span&gt;&lt;H1&gt;Server Error in '/WeatherWS' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
+
+            &lt;h2&gt; &lt;i&gt;Runtime Error&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
+
+            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
+
+            &lt;b&gt; Description: &lt;/b&gt;An application error occurred on the server. The current custom error settings for this application prevent the details of the application error from being viewed remotely (for security reasons). It could, however, be viewed by browsers running on the local server machine.
+            &lt;br&gt;&lt;br&gt;
+
+            &lt;b&gt;Details:&lt;/b&gt; To enable the details of this specific error message to be viewable on remote machines, please create a &amp;lt;customErrors&amp;gt; tag within a &amp;quot;web.config&amp;quot; configuration file located in the root directory of the current web application. This &amp;lt;customErrors&amp;gt; tag should then have its &amp;quot;mode&amp;quot; attribute set to &amp;quot;Off&amp;quot;.&lt;br&gt;&lt;br&gt;
+
+            &lt;table width=100% bgcolor="#ffffcc"&gt;
+               &lt;tr&gt;
+                  &lt;td&gt;
+                      &lt;code&gt;&lt;pre&gt;
+
+&amp;lt;!-- Web.Config Configuration File --&amp;gt;
+
+&amp;lt;configuration&amp;gt;
+    &amp;lt;system.web&amp;gt;
+        &amp;lt;customErrors mode=&amp;quot;Off&amp;quot;/&amp;gt;
+    &amp;lt;/system.web&amp;gt;
+&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
+
+                  &lt;/td&gt;
+               &lt;/tr&gt;
+            &lt;/table&gt;
+
+            &lt;br&gt;
+
+            &lt;b&gt;Notes:&lt;/b&gt; The current error page you are seeing can be replaced by a custom error page by modifying the &amp;quot;defaultRedirect&amp;quot; attribute of the application's &amp;lt;customErrors&amp;gt; configuration tag to point to a custom error page URL.&lt;br&gt;&lt;br&gt;
+
+            &lt;table width=100% bgcolor="#ffffcc"&gt;
+               &lt;tr&gt;
+                  &lt;td&gt;
+                      &lt;code&gt;&lt;pre&gt;
+
+&amp;lt;!-- Web.Config Configuration File --&amp;gt;
+
+&amp;lt;configuration&amp;gt;
+    &amp;lt;system.web&amp;gt;
+        &amp;lt;customErrors mode=&amp;quot;RemoteOnly&amp;quot; defaultRedirect=&amp;quot;mycustompage.htm&amp;quot;/&amp;gt;
+    &amp;lt;/system.web&amp;gt;
+&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
+
+                  &lt;/td&gt;
+               &lt;/tr&gt;
+            &lt;/table&gt;
+
+            &lt;br&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</td></tr>
 	<tr>
 		<td>register prefix</td>
 		<td>weather</td>
@@ -181,16 +244,79 @@
 	<tr>
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-    &lt;soap:Body&gt;
-        &lt;soap:Fault&gt;
-            &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
-            &lt;faultstring&gt;Server was unable to process request. ---&amp;gt; A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)&lt;/faultstring&gt;
-            &lt;detail/&gt;
-        &lt;/soap:Fault&gt;
-    &lt;/soap:Body&gt;
-&lt;/soap:Envelope&gt;
-</pre></td></tr>
+	<td>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Runtime Error&lt;/title&gt;
+        &lt;style&gt;
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Lucida Console";font-size: .9em}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body bgcolor="white"&gt;
+
+            &lt;span&gt;&lt;H1&gt;Server Error in '/WeatherWS' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
+
+            &lt;h2&gt; &lt;i&gt;Runtime Error&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
+
+            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
+
+            &lt;b&gt; Description: &lt;/b&gt;An application error occurred on the server. The current custom error settings for this application prevent the details of the application error from being viewed remotely (for security reasons). It could, however, be viewed by browsers running on the local server machine.
+            &lt;br&gt;&lt;br&gt;
+
+            &lt;b&gt;Details:&lt;/b&gt; To enable the details of this specific error message to be viewable on remote machines, please create a &amp;lt;customErrors&amp;gt; tag within a &amp;quot;web.config&amp;quot; configuration file located in the root directory of the current web application. This &amp;lt;customErrors&amp;gt; tag should then have its &amp;quot;mode&amp;quot; attribute set to &amp;quot;Off&amp;quot;.&lt;br&gt;&lt;br&gt;
+
+            &lt;table width=100% bgcolor="#ffffcc"&gt;
+               &lt;tr&gt;
+                  &lt;td&gt;
+                      &lt;code&gt;&lt;pre&gt;
+
+&amp;lt;!-- Web.Config Configuration File --&amp;gt;
+
+&amp;lt;configuration&amp;gt;
+    &amp;lt;system.web&amp;gt;
+        &amp;lt;customErrors mode=&amp;quot;Off&amp;quot;/&amp;gt;
+    &amp;lt;/system.web&amp;gt;
+&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
+
+                  &lt;/td&gt;
+               &lt;/tr&gt;
+            &lt;/table&gt;
+
+            &lt;br&gt;
+
+            &lt;b&gt;Notes:&lt;/b&gt; The current error page you are seeing can be replaced by a custom error page by modifying the &amp;quot;defaultRedirect&amp;quot; attribute of the application's &amp;lt;customErrors&amp;gt; configuration tag to point to a custom error page URL.&lt;br&gt;&lt;br&gt;
+
+            &lt;table width=100% bgcolor="#ffffcc"&gt;
+               &lt;tr&gt;
+                  &lt;td&gt;
+                      &lt;code&gt;&lt;pre&gt;
+
+&amp;lt;!-- Web.Config Configuration File --&amp;gt;
+
+&amp;lt;configuration&amp;gt;
+    &amp;lt;system.web&amp;gt;
+        &amp;lt;customErrors mode=&amp;quot;RemoteOnly&amp;quot; defaultRedirect=&amp;quot;mycustompage.htm&amp;quot;/&amp;gt;
+    &amp;lt;/system.web&amp;gt;
+&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
+
+                  &lt;/td&gt;
+               &lt;/tr&gt;
+            &lt;/table&gt;
+
+            &lt;br&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</td></tr>
 	<tr>
 		<td>register prefix</td>
 		<td>weather</td>
