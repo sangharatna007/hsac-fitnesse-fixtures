@@ -66,6 +66,13 @@ button:hover {
   margin-top: 1em;
 }
 
+.debugging-content-fixed-width {
+  display: block;
+  font-family: monospace;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
 .debugging-title {
   font-weight: bold;
 }
@@ -94,11 +101,11 @@ button:hover {
 }
 
 .error-code {
-  color: #696969;
+  color: #646464;
   display: inline;
   font-size: .86667em;
   margin-top: 15px;
-  opacity: .5;
+  opacity: 1;
   text-transform: uppercase;
 }
 
@@ -164,6 +171,8 @@ input[type=checkbox]:focus ~ .checkbox {
 
 #extended-reporting-opt-in label {
   position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 .nav-wrapper {
@@ -233,6 +242,10 @@ input[type=checkbox]:focus ~ .checkbox {
       url(data:image/png;base64,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) 2x);
 }
 
+.checkboxes {
+  flex: 0 0 24px;
+}
+
 .checkbox {
   background: transparent;
   border: 1px solid white;
@@ -242,7 +255,7 @@ input[type=checkbox]:focus ~ .checkbox {
   left: 0;
   position: absolute;
   right: 0;
-  top: -1px;
+  top: 3px;
   width: 14px;
 }
 
@@ -989,6 +1002,30 @@ html[subframe] body {
   float: none;
 }
 
+/* download-button shows both icon and text. */
+#download-button {
+  box-shadow: none;
+  position: relative;
+}
+
+#download-button:before {
+  -webkit-margin-end: 4px;
+  background: -webkit-image-set(
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAO0lEQVQ4y2NgGArgPxIY1YChsOE/LtBAmpYG0mxpIOSDBpKUo2lpIDZxNJCkHKqlYZAla3RAHQ1DFgAARRroHyLNTwwAAAAASUVORK5CYII=) 1x,
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAZElEQVRYw+3Ruw3AMAwDUY3OzZUmRRD4E9iim9wNwAdbEURHyk4AAAAATiCVK8lLyPsKeT9K3lsownnunfkPxO78hKiYHxBV8x2icr5BVM+/CMf8g3DN34Rzns6ViwHUAUQ/6wIAd5Km7l6c8AAAAABJRU5ErkJggg==) 2x)
+    no-repeat;
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+#download-button:disabled {
+  background: rgb(180, 206, 249);
+  color: rgb(255, 255, 255);
+}
+
 #buttons::after {
   clear: both;
   content: '';
@@ -1299,9 +1336,12 @@ function showSavedCopyButtonClick() {
   }
 }
 
-function showOfflinePagesButtonClick() {
+function downloadButtonClick() {
   if (window.errorPageController) {
-    errorPageController.showOfflinePagesButtonClick();
+    errorPageController.downloadButtonClick();
+    var downloadButton = document.getElementById('download-button');
+    downloadButton.disabled = true;
+    downloadButton.textContent = downloadButton.disabledText;
   }
 }
 
@@ -1339,17 +1379,16 @@ function onDocumentLoad() {
   var reloadButton = document.getElementById('reload-button');
   var detailsButton = document.getElementById('details-button');
   var showSavedCopyButton = document.getElementById('show-saved-copy-button');
-  var showOfflinePagesButton =
-      document.getElementById('show-offline-pages-button');
+  var downloadButton = document.getElementById('download-button');
 
   var reloadButtonVisible = loadTimeData.valueExists('reloadButton') &&
       loadTimeData.getValue('reloadButton').msg;
   var showSavedCopyButtonVisible =
       loadTimeData.valueExists('showSavedCopyButton') &&
       loadTimeData.getValue('showSavedCopyButton').msg;
-  var showOfflinePagesButtonVisible =
-      loadTimeData.valueExists('showOfflinePagesButton') &&
-      loadTimeData.getValue('showOfflinePagesButton').msg;
+  var downloadButtonVisible =
+      loadTimeData.valueExists('downloadButton') &&
+      loadTimeData.getValue('downloadButton').msg;
 
   var primaryButton, secondaryButton;
   if (showSavedCopyButton.primary) {
@@ -1376,17 +1415,17 @@ function onDocumentLoad() {
 
   if (reloadButton.style.display == 'none' &&
       showSavedCopyButton.style.display == 'none' &&
-      showOfflinePagesButton.style.display == 'none') {
+      downloadButton.style.display == 'none') {
     detailsButton.classList.add('singular');
   }
 
   // Show control buttons.
   if (reloadButtonVisible || showSavedCopyButtonVisible ||
-      showOfflinePagesButtonVisible) {
+      downloadButtonVisible) {
     controlButtonDiv.hidden = false;
 
     // Set the secondary button state in the cases of two call to actions.
-    if ((reloadButtonVisible || showOfflinePagesButtonVisible) &&
+    if ((reloadButtonVisible || downloadButtonVisible) &&
         showSavedCopyButtonVisible) {
       secondaryButton.classList.add('secondary-button');
     }
@@ -4101,11 +4140,11 @@ Horizon.prototype = {
 <body id="t" i18n-values=".style.fontFamily:fontfamily;.style.fontSize:fontsize" jstcache="0" class="neterror" style="font-family: &quot;Segoe UI&quot;, Tahoma, sans-serif; font-size: 75%;">
   <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
     <div id="main-content" jstcache="0">
-      <div class="icon icon-generic" jseval="updateIconClass(this.classList, iconClass)" jstcache="1"></div>
+      <div class="icon icon-generic" jseval="updateIconClass(this.classList, iconClass)" alt="" jstcache="1"></div>
       <div id="main-message" jstcache="0">
         <h1 jsselect="heading" jsvalues=".innerHTML:msg" jstcache="5">This site can’t be reached</h1>
         <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="2"><strong jscontent="hostName" jstcache="16">toolsentesters.nl</strong>’s server <abbr jsvalues="title:dnsDefinition" jstcache="17" title="DNS is the network service that translates a website’s name to its Internet address.">DNS address</abbr> could not be found.</p>
-        <div id="suggestions-list" style="" jsdisplay="(suggestionsSummaryList &amp;&amp; suggestionsSummaryList.length)" jstcache="6">
+        <div id="suggestions-list" jsdisplay="(suggestionsSummaryList &amp;&amp; suggestionsSummaryList.length)" jstcache="6">
           <p jsvalues=".innerHTML:suggestionsSummaryListHeader" jstcache="13">Try:</p>
           <ul jsvalues=".className:suggestionsSummaryList.length == 1 ? 'single-suggestion' : ''" jstcache="14" class="">
             <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="0">Checking the connection</li><li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="1"><a href="#buttons" onclick="toggleHelpBox()" jstcache="0">Checking the proxy, firewall, and DNS configuration</a></li><li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="*2"><a href="javascript:diagnoseErrors()" id="diagnose-link" jstcache="0">Running Windows Network Diagnostics</a></li>
@@ -4121,7 +4160,7 @@ Horizon.prototype = {
         </button><button id="reload-button" class="blue-button text-button" onclick="trackClick(this.trackingId);
                      reloadButtonClick(this.url);" jsselect="reloadButton" jsvalues=".url:reloadUrl; .trackingId:reloadTrackingId" jscontent="msg" jstcache="8">Reload</button>
         
-        <button id="show-offline-pages-button" class="gray-button text-button" onclick="showOfflinePagesButtonClick()" jsselect="showOfflinePagesButton" jscontent="msg" jstcache="10" style="display: none;">
+        <button id="download-button" class="blue-button text-button" onclick="downloadButtonClick()" jsselect="downloadButton" jscontent="msg" jsvalues=".disabledText:disabledMsg" jstcache="10" style="display: none;">
         </button>
       </div>
       <button id="details-button" class="text-button small-link" onclick="detailsButtonClick(); toggleHelpBox()" jscontent="details" jsdisplay="(suggestionsDetails &amp;&amp; suggestionsDetails.length > 0) || diagnose" jsvalues=".detailsText:details; .hideDetailsText:hideDetails;" jstcache="3">Details</button>
