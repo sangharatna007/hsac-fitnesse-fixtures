@@ -5,6 +5,7 @@
 &lt;input name="remove" type="button" value="Remove"&gt;
 &lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
 &lt;a id="link" href="#"&gt;My link&lt;/a&gt;
+&lt;b&gt;My first mixed content string&lt;br/&gt;My second mixed content string&lt;/b&gt;
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
 <br/><br/><span class="meta">variable defined: HTML2= {{{
@@ -40,6 +41,7 @@
 &lt;input name="remove" type="button" value="Remove"&gt;
 &lt;label&gt;Add button&lt;input name="add" type="button" value="Add"&gt;&lt;/label&gt;
 &lt;a id="link" href="#"&gt;My link&lt;/a&gt;
+&lt;b&gt;My first mixed content string&lt;br/&gt;My second mixed content string&lt;/b&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre></td>
 	</tr>
@@ -66,7 +68,7 @@
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.8:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.6:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -77,7 +79,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3">$url->[http://172.17.0.8:8000/FitNesseMock]</td>
+		<td colspan="3">$url->[http://172.17.0.6:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -108,6 +110,14 @@
 		<td>check</td>
 		<td>seconds before page load timeout</td>
 		<td colspan="2"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">wait for visible</span></td>
+		<td colspan="3">My first mixed content string</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">wait for visible</span></td>
+		<td colspan="3">My second mixed content string</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>seconds before page load timeout</td>
