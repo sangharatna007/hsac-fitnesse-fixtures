@@ -3,6 +3,10 @@
 &lt;body&gt;
 &lt;a href="http://google.com/" id="a"&gt;My link&lt;/a&gt;
 &lt;a href="http://google.nl/" id="b"&gt;Mijn link&lt;/a&gt;
+&lt;a href="http://google.de/" id="c"&gt;Meine &lt;span&gt;kleine&lt;/span&gt; link&lt;/a&gt;
+&lt;a href="http://google.fr/" id="d"&gt;&lt;img title="French"/&gt;&lt;/a&gt;
+&lt;a href="http://google.es/" id="e"&gt;&lt;span aria-label="Spanish"&gt;Link&lt;/span&gt;&lt;/a&gt;
+&lt;a href="http://google.ru/" id="f" aria-label="Russian"&gt;Link&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
 <br/><br/><br/><table>
@@ -17,11 +21,15 @@
 &lt;body&gt;
 &lt;a href="http://google.com/" id="a"&gt;My link&lt;/a&gt;
 &lt;a href="http://google.nl/" id="b"&gt;Mijn link&lt;/a&gt;
+&lt;a href="http://google.de/" id="c"&gt;Meine &lt;span&gt;kleine&lt;/span&gt; link&lt;/a&gt;
+&lt;a href="http://google.fr/" id="d"&gt;&lt;img title="French"/&gt;&lt;/a&gt;
+&lt;a href="http://google.es/" id="e"&gt;&lt;span aria-label="Spanish"&gt;Link&lt;/span&gt;&lt;/a&gt;
+&lt;a href="http://google.ru/" id="f" aria-label="Russian"&gt;Link&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.4:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.8:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -32,7 +40,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3">$url->[http://172.17.0.4:8000/FitNesseMock]</td>
+		<td colspan="3">$url->[http://172.17.0.8:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -52,6 +60,47 @@
 		<td>Mijn</td>
 		<td><span class="pass">http://google.nl/</span></td>
 	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>target of link</td>
+		<td>Meine</td>
+		<td><span class="pass">http://google.de/</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>target of link</td>
+		<td>klein</td>
+		<td><span class="pass">http://google.de/</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>target of link</td>
+		<td>French</td>
+		<td><span class="pass">http://google.fr/</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>target of link</td>
+		<td>Fr</td>
+		<td><span class="pass">http://google.fr/</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>target of link</td>
+		<td>Spanish</td>
+		<td><span class="pass">http://google.es/</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>target of link</td>
+		<td>Rus</td>
+		<td><span class="pass">http://google.ru/</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>download</td>
+		<td colspan="2">Mijn</td>
+	<td><a href="files/downloads/download">download</a></td></tr>
 </table>
 <br/><table>
 	<tr class="slimRowTitle">
